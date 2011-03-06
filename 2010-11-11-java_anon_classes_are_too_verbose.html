@@ -1,0 +1,107 @@
+<html>
+
+<head>
+<title>Thomas Kappler</title>
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/index.rss" />
+<link rel="stylesheet" href="/static/site.css" type="text/css" />
+
+<!-- http://softwaremaniacs.org/soft/highlight/en/description/ -->
+<link rel="stylesheet" href="/static/highlight/styles/magula.css">
+<script src="/static/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+
+<div class="site">
+
+<div class="header meta">
+   <a href="/index.html">Thomas Kappler</a>
+   <a href="/index.html" class="nav">Home</a>
+   <a href="/about.html" class="nav">About</a>
+</div>
+<h1>Java anonymous classes are too verbose</h1>
+
+<div class="abstract">
+  <span class="published">No fun emulating closures.</span>
+  <br /><span class="published">2010-11-11<!--, in <a href="" class="nav">Desperate Java</a> --></span>
+</div>
+
+
+<p>Java doesn&#8217;t have first-class functions or closures, but you can
+emulate some of that with anonymous classes. Alas, they are just too
+cumbersome and verbose&#8212;it&#8217;s not elegant anymore if you need more LoC
+than with the iterative loop.</p>
+
+<p>Recently at work, I wanted to execute some code for each member of a
+List, and I needed to know which iteration step I was at. A
+straightforward solution is, obviously, the classic for loop:</p>
+
+<pre><code>for (int i = 0; i &lt; keyword.getSynonyms(); i++) {
+    String synonym = keyword.getSynonyms().get(i);
+    // do something
+}</code></pre>
+
+<p>That&#8217;s fine in many cases, but it has two problems. The extra line to
+get at the List element is annoying. More importantly, depending on
+the List implementation the <code>get(i)</code> operation might be in O(n),
+requiring another scan of the list each time.</p>
+
+<p>So we could iterate normally and count ourselves:</p>
+
+<pre><code>int order = 0;
+for (String synonym : keyword.getSynonyms()) {
+    // do something
+    order++;
+}</code></pre>
+
+<p>It&#8217;s better, but I needed several such loops, and I wondered if I
+couldn&#8217;t write all that plumbing just once. I came up with this:</p>
+
+<pre><code>public abstract class Counting&lt;T, E extends Throwable&gt;
+{        
+    public void loop(Iterable&lt;T&gt; things) throws E
+    {
+        int step = 0;
+        for (T t : things)
+        {
+            iteration(t, step);
+            step++;
+        }
+    }
+
+    public abstract void iteration(T thing, int step) throws E;
+}</code></pre>
+
+<p>As the loop body can throw exceptions, and we might want to declare
+the specific kind of exception, this needs to be an additional generic
+type. This breaks if you need more than one exception type.</p>
+
+<p>The above loop then becomes</p>
+
+<pre><code>new Counting&lt;String, SQLException&gt;()
+{
+    @Override public void iteration(String synonym, int step)
+    throws SQLException
+    {
+        // do something
+    }
+}.loop( keyword.getSynonyms() );</code></pre>
+
+<p>Hmmm. Even after writing an abstract class to extract the repeated
+parts, and not counting my preference for opening-brace-on-new-line, I
+still haven&#8217;t saved a single line. Can I have <code>map</code> and first-class
+functions, please? Time for Scala?</p>
+
+
+<!--
+<div class="related meta">
+  More <span class="zine">Desperate Java</span> articles: TODO
+</div>
+-->
+
+</div>
+</body>
+</html>

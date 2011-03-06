@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Thomas Kappler</title>
+    <link>/2011-01-18_geneva_jug_akka_scala.rss</link>
+    <description>Thomas Kappler's personal/programming site.</description>
+    <language>en</language>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>blosxom/2.1.2</generator>
+
+  <item>
+    <title>Geneva JUG New Year&amp;#8217;s meeting 2011</title>
+    <pubDate>Sun, 06 Mar 2011 18:40:00 +0100</pubDate>
+    <link>/2011/03/06#2011-01-18_geneva_jug_akka_scala</link>
+    <category></category>
+    <guid isPermaLink="false">/2011-01-18_geneva_jug_akka_scala</guid>
+    <description>&lt;p&gt;The &lt;a href=&quot;&quot;&gt;Geneva Java User&amp;#8217;s Group&lt;/a&gt; had their annual New Year&amp;#8217;s meeting
+yesterday, with two invited speakers. Iulian Dragos gave an Intro to
+Scala, and Jonas Bonér presented his actor library
+&lt;a href=&quot;http://akka.io&quot;&gt;Akka&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Iulian works on Scala and with Scala with Martin Odersky at EPFL
+Lausanne and Odersky&amp;#8217;s consulting company Scala Solutions. For initial
+motivation, he listed some companies already using Scala in
+production. Apart from the ones known in the anglophone hacker web
+like Twitter and Foursquare, some big European enterprises such as
+Credit Suisse, UBS, and Siemens were on the list. Iulian&amp;#8217;s
+presentation was then a straightforward intro to Scala. Up to slide
+13, I noted, it was all Perl in a different syntax :-) He then moved
+on to more advanced features such as mix-ins. Their sensitivity to the
+order in which they are included left the audience sceptical. The
+parallel collections of the upcoming Scala 2.9, on the other hand,
+looked great.&lt;/p&gt;
+
+&lt;p&gt;Overall a nice intro to Scala. It suffered a bit from lack of
+practical examples for the advanced language features, but that&amp;#8217;s
+unavoidable given the time constraints. Speaker&amp;#8217;s note: a laser
+pointer would have been very helpful for going through sample code.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jonasboner.com&quot;&gt;Jonas Bonér&lt;/a&gt; is the principal author of Akka,
+a very powerful actor framework written in Scala. Jonas uses Scala
+since 2005. He loves Erlang and only moved on to the JVM world because
+he had difficulties convincing others of its greatness. The natural
+compromise was then to implement an Erlang-style platform using Scala
+actors, which became Akka.&lt;/p&gt;
+
+&lt;p&gt;Akka is very optimized. An actor uses only 600 bytes (yes, bytes) of
+memory, so you can spawn millions of them. Syntax is easy and
+flexible: send a message to an actor with a single bang (&lt;code&gt;!&lt;/code&gt;), &lt;code&gt;!!&lt;/code&gt;
+blocks, &lt;code&gt;!!!&lt;/code&gt; returns a &lt;code&gt;Future&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;A unique property of Akka is that it combines actors with Software
+Transactional Memory, usually regarded as two separate ideas to tackle
+concurrency. You write&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import akka.stm. ...
+
+atomic {
+    atomic {
+        // Atomic blocks are composable, so they don&apos;t break
+        // encapsulation like locks.
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you, for instance, send a message to an actor a1, which updates its
+state atomically, messages another actor a2, which then also tries to
+updates its state atomically but fails, then the whole chain will be
+rolled back and retried, even if the messaging was
+asynchronous. Powerful indeed.&lt;/p&gt;
+
+&lt;p&gt;Jonas presented a fascinating integration example towards the end of
+this talk. He likes the Apache Camel integration framework. Akka comes
+with a Camel module. One can define an actor with, for example,
+&lt;code&gt;endpoint &quot;file://foo&quot;&lt;/code&gt;. Any change to &lt;code&gt;foo&lt;/code&gt; will then be send as a
+message to the actor. The other way round works, too, of course&amp;#8212;think
+websockets.&lt;/p&gt;
+
+&lt;p&gt;Almost as an aside, Jonas mentioned that Akka supports code hot-swap
+like Erlang.&lt;/p&gt;
+
+&lt;p&gt;Akka looks like a very powerful framework indeed, to be investigated.&lt;/p&gt;
+
+&lt;p&gt;Jonas presented in a great, buddy-like way, like a fellow hacker
+chatting over a beer. Some ranting and rambling only added to the
+impact of the presentation. His slides were minimal and well
+done&amp;#8212;great talk overall.&lt;/p&gt;
+</description>
+  </item>
+  </channel>
+</rss>

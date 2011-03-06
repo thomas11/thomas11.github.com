@@ -1,0 +1,62 @@
+<html>
+
+<head>
+<title>Thomas Kappler</title>
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/index.rss" />
+<link rel="stylesheet" href="/static/site.css" type="text/css" />
+
+<!-- http://softwaremaniacs.org/soft/highlight/en/description/ -->
+<link rel="stylesheet" href="/static/highlight/styles/magula.css">
+<script src="/static/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+
+<div class="site">
+
+<div class="header meta">
+   <a href="/index.html">Thomas Kappler</a>
+   <a href="/index.html" class="nav">Home</a>
+   <a href="/about.html" class="nav">About</a>
+</div>
+<h1>How to serve a static directory with Plack</h1>
+
+<div class="abstract">
+  <span class="published">From directory to http://localhost:5001/page.html as simply as possible.</span>
+  <br /><span class="published">2011-02-13<!--, in <a href="" class="nav">The Perl Nature</a> --></span>
+</div>
+
+
+<p>You have a directory containing HTML files and would like to browse it
+locally. There are absolute links like <code>/static/site.css</code> in the HTML,
+so just opening index.html would break those links.</p>
+
+<p>Perl&#8217;s recent web superstar module
+<a href="wordpress-local/docroot/wp-content/themes/ub_swiss/">Plack</a> can do it
+easily.</p>
+
+<p>Create a file named <code>plack.psgi</code> with the following content:</p>
+
+<pre><code>#!/usr/bin/env perl
+
+use Plack::App::File;
+
+my &#036;root = "/path/to/dir;
+my &#036;app = Plack::App::File-&gt;new(root =&gt; &#036;root)-&gt;to_app;</code></pre>
+
+<p>Then launch the <code>plackup</code> utility by <code>plackup -a plack.psgi --port
+5001</code>&#8212;that&#8217;s it!</p>
+
+
+<!--
+<div class="related meta">
+  More <span class="zine">The Perl Nature</span> articles: TODO
+</div>
+-->
+
+</div>
+</body>
+</html>

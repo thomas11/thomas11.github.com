@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Thomas Kappler</title>
+    <link>/</link>
+    <description>Thomas Kappler's personal/programming site.</description>
+    <language>en</language>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>blosxom/2.1.2</generator>
+
+  <item>
+    <title>Categories</title>
+    <link>/2011/02/15#foo</link>
+    <description>&lt;p&gt;This is sort of a table of contents or index by categories.&lt;/p&gt;
+
+&lt;p&gt;Perl:
+<ul><li><a href="2011-02-13_plack_static_howto.html">2011-02-13_plack_static_howto.html</a></li><li><a href="2010-09-20-yapceu_talks.html">2010-09-20-yapceu_talks.html</a></li></ul>&lt;/p&gt;
+
+&lt;p&gt;Java:
+<ul><li><a href="2010-11-11-java_anon_classes_are_too_verbose.html">2010-11-11-java_anon_classes_are_too_verbose.html</a></li><li><a href="2011-01-18.html">2011-01-18.html</a></li></ul>&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>The Perl Nature</title>
+    <link>/2011/02/12#The%20Perl%20Nature</link>
+    <description>&lt;p&gt;I write about Perl sometimes.&lt;/p&gt;
+
+&lt;p&gt;<ul><li><a href="2011-02-13_plack_static_howto.html">2011-02-13_plack_static_howto.html</a></li><li><a href="2010-09-20-yapceu_talks.html">2010-09-20-yapceu_talks.html</a></li></ul>&lt;/p&gt;
+</description>
+  </item>
+  </channel>
+</rss>
