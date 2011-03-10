@@ -9,37 +9,6 @@
     <generator>blosxom/2.1.2</generator>
 
   <item>
-    <title>Welcome</title>
-    <link>/2011/03/06#about</link>
-    <description>&lt;p&gt;Welcome! I&amp;#8217;m Thomas Kappler, sometimes known as thomas11 on the web.
-I write about programming and other things
-&lt;a href=&quot;http://news.ycombinator.com/&quot;&gt;hackers&lt;/a&gt; might find interesting.&lt;/p&gt;
-
-&lt;p&gt;Feel free to drop me a line contact me at tkappler@gmail.com.&lt;/p&gt;
-
-&lt;h2 id=&quot;mini-bio&quot;&gt;Mini-Bio&lt;/h2&gt;
-
-&lt;p&gt;I studied Computer Science at &lt;a href=&quot;&quot;&gt;KIT&lt;/a&gt;, Karlsruhe, Germany. Prof. Ralf
-Reussner, Prof. Pankaj Jalote, and Dr. Heiko Koziolek have made
-possible a fantastic experience writing
-&lt;a href=&quot;publications/2008-02-04_Towards_Automatic_Construction.html&quot;&gt;my thesis&lt;/a&gt;
-at IIT Delhi, India. &lt;a href=&quot;http://www.rene-witte.net/&quot;&gt;Dr. René Witte&lt;/a&gt;
-initiated me to the strange world of academic research and writing and
-let me do some cool stuff and write about it. Thanks!&lt;/p&gt;
-
-&lt;p&gt;Until April 2011 I was at the
-&lt;a href=&quot;http://www.isb-sib.ch&quot;&gt;Swiss Institute of Bioinformatics&lt;/a&gt; in Geneva,
-Switzerland, developing tools for biologists, from web apps to storage
-backends to RDF to Perl hacks.&lt;/p&gt;
-
-&lt;p&gt;Now I&amp;#8217;m hacking medical applications at
-&lt;a href=&quot;http://www.nhumi.com&quot;&gt;Nhumi Technologies&lt;/a&gt; in Zurich.&lt;/p&gt;
-
-&lt;p&gt;You can find more business-y info
-&lt;a href=&quot;http://www.linkedin.com/in/thomaskappler&quot;&gt;on LinkedIn&lt;/a&gt;.&lt;/p&gt;
-</description>
-  </item>
-  <item>
     <title>How to serve a static directory with Plack</title>
     <link>/2011/03/06#2011-02-13_plack_static_howto</link>
     <description>&lt;p&gt;You have a directory containing HTML files and would like to browse it

@@ -14,20 +14,24 @@
     <description>&lt;p&gt;This is sort of a table of contents or index by categories.&lt;/p&gt;
 
 &lt;p&gt;Perl:
-<ul><li><a href="2011-02-13_plack_static_howto.html">2011-02-13_plack_static_howto.html</a></li><li><a href="2010-09-20-yapceu_talks.html">2010-09-20-yapceu_talks.html</a></li></ul>&lt;/p&gt;
+<ul><li><a href="../2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
+</a></li><li><a href="../2010-09-20-yapceu_talks.html">Watching some YAPC::EU 2010 presentations
+</a></li></ul>&lt;/p&gt;
 
 &lt;p&gt;Java:
-<ul><li><a href="2010-11-11-java_anon_classes_are_too_verbose.html">2010-11-11-java_anon_classes_are_too_verbose.html</a></li><li><a href="2011-01-18.html">2011-01-18.html</a></li></ul>&lt;/p&gt;
+<ul><li><a href="../2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
+</a></li><li><a href="../2010-11-11-java_anon_classes_are_too_verbose.html">Java anonymous classes are too verbose
+</a></li></ul>&lt;/p&gt;
 </description>
   </item>
   <item>
     <title>Welcome</title>
-    <link>/2011/03/06#about</link>
+    <link>/2011/03/10#about</link>
     <description>&lt;p&gt;Welcome! I&amp;#8217;m Thomas Kappler, sometimes known as thomas11 on the web.
 I write about programming and other things
 &lt;a href=&quot;http://news.ycombinator.com/&quot;&gt;hackers&lt;/a&gt; might find interesting.&lt;/p&gt;
 
-&lt;p&gt;Feel free to drop me a line contact me at tkappler@gmail.com.&lt;/p&gt;
+&lt;p&gt;Drop me a line at tkappler@gmail.com.&lt;/p&gt;
 
 &lt;h2 id=&quot;mini-bio&quot;&gt;Mini-Bio&lt;/h2&gt;
 
@@ -44,7 +48,7 @@ let me do some cool stuff and write about it. Thanks!&lt;/p&gt;
 Switzerland, developing tools for biologists, from web apps to storage
 backends to RDF to Perl hacks.&lt;/p&gt;
 
-&lt;p&gt;Now I&amp;#8217;m hacking medical applications at
+&lt;p&gt;Now I&amp;#8217;m developing medical applications at
 &lt;a href=&quot;http://www.nhumi.com&quot;&gt;Nhumi Technologies&lt;/a&gt; in Zurich.&lt;/p&gt;
 
 &lt;p&gt;You can find more business-y info
@@ -56,7 +60,9 @@ backends to RDF to Perl hacks.&lt;/p&gt;
     <link>/2011/02/12#The%20Perl%20Nature</link>
     <description>&lt;p&gt;I write about Perl sometimes.&lt;/p&gt;
 
-&lt;p&gt;<ul><li><a href="2011-02-13_plack_static_howto.html">2011-02-13_plack_static_howto.html</a></li><li><a href="2010-09-20-yapceu_talks.html">2010-09-20-yapceu_talks.html</a></li></ul>&lt;/p&gt;
+&lt;p&gt;<ul><li><a href="../2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
+</a></li><li><a href="../2010-09-20-yapceu_talks.html">Watching some YAPC::EU 2010 presentations
+</a></li></ul>&lt;/p&gt;
 </description>
   </item>
   <item>
@@ -436,7 +442,7 @@ Poppendieck. Addison-Wesley, 2010.&lt;/p&gt;
   </item>
   <item>
     <title>Java anonymous classes are too verbose</title>
-    <link>/2011/01/11#2010-11-11-java_anon_classes_are_too_verbose</link>
+    <link>/2011/03/09#2010-11-11-java_anon_classes_are_too_verbose</link>
     <description>&lt;p&gt;Java doesn&amp;#8217;t have first-class functions or closures, but you can
 emulate some of that with anonymous classes. Alas, they are just too
 cumbersome and verbose&amp;#8212;it&amp;#8217;s not elegant anymore if you need more LoC
@@ -505,7 +511,7 @@ functions, please? Time for Scala?&lt;/p&gt;
   </item>
   <item>
     <title>Watching some YAPC::EU 2010 presentations</title>
-    <link>/2011/01/15#2010-09-20-yapceu_talks</link>
+    <link>/2011/03/09#2010-09-20-yapceu_talks</link>
     <description>&lt;p&gt;In August, Perl mongers gathered in Pisa for the annual
 &lt;a href=&quot;http://conferences.yapceurope.org/ye2010/&quot;&gt;YAPC::EU&lt;/a&gt;, one of the
 biggest Perl meetings. I couldn&amp;#8217;t make it there, but at least I
@@ -518,7 +524,7 @@ unreadable. For technical presentations with code, that&amp;#8217;s a
 dealbreaker. I know one doesn&amp;#8217;t complain about volunteer efforts,
 especially when one cannot make a reasonable suggestion for
 improvement. So all I want to say is that it would be great if the
-organizers of next years YAPC::EU could improve on that.&lt;/p&gt;
+organizers of next year&amp;#8217;s YAPC::EU could improve on that.&lt;/p&gt;
 
 &lt;p&gt;But then, it just means I gotta go myself next time. It&amp;#8217;s a community
 event, after all.&lt;/p&gt;

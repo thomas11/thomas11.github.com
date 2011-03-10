@@ -14,10 +14,14 @@
     <description>&lt;p&gt;This is sort of a table of contents or index by categories.&lt;/p&gt;
 
 &lt;p&gt;Perl:
-<ul><li><a href="2011-02-13_plack_static_howto.html">2011-02-13_plack_static_howto.html</a></li><li><a href="2010-09-20-yapceu_talks.html">2010-09-20-yapceu_talks.html</a></li></ul>&lt;/p&gt;
+<ul><li><a href="../2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
+</a></li><li><a href="../2010-09-20-yapceu_talks.html">Watching some YAPC::EU 2010 presentations
+</a></li></ul>&lt;/p&gt;
 
 &lt;p&gt;Java:
-<ul><li><a href="2010-11-11-java_anon_classes_are_too_verbose.html">2010-11-11-java_anon_classes_are_too_verbose.html</a></li><li><a href="2011-01-18.html">2011-01-18.html</a></li></ul>&lt;/p&gt;
+<ul><li><a href="../2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
+</a></li><li><a href="../2010-11-11-java_anon_classes_are_too_verbose.html">Java anonymous classes are too verbose
+</a></li></ul>&lt;/p&gt;
 </description>
   </item>
   </channel>

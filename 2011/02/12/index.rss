@@ -13,7 +13,9 @@
     <link>/2011/02/12#The%20Perl%20Nature</link>
     <description>&lt;p&gt;I write about Perl sometimes.&lt;/p&gt;
 
-&lt;p&gt;<ul><li><a href="2011-02-13_plack_static_howto.html">2011-02-13_plack_static_howto.html</a></li><li><a href="2010-09-20-yapceu_talks.html">2010-09-20-yapceu_talks.html</a></li></ul>&lt;/p&gt;
+&lt;p&gt;<ul><li><a href="../2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
+</a></li><li><a href="../2010-09-20-yapceu_talks.html">Watching some YAPC::EU 2010 presentations
+</a></li></ul>&lt;/p&gt;
 </description>
   </item>
   </channel>
