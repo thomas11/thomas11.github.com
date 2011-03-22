@@ -3,14 +3,14 @@
   <channel>
     <title>Thomas Kappler</title>
     <link>/publications</link>
-    <description>Thomas Kappler's personal/programming site.</description>
+    <description>Thomas Kappler.</description>
     <language>en</language>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <generator>blosxom/2.1.2</generator>
 
   <item>
     <title>Towards Automatic Construction of Reusable Prediction Models for Component-Based Performance Engineering</title>
-    <link>/2011/03/06#2008-02-04_Towards_Automatic_Construction</link>
+    <link>/2008/02/04#2008-02-04_Towards_Automatic_Construction</link>
     <description>&lt;p&gt;T. Kappler, H. Koziolek, K. Krogmann, and R. H. Reussner. &lt;em&gt;Towards
 Automatic Construction of Reusable Prediction Models for
 Component-Based Performance Engineering&lt;/em&gt;. In Proc. Software

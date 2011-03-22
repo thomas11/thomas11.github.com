@@ -3,15 +3,15 @@
   <channel>
     <title>Thomas Kappler</title>
     <link>/2010-11-11-java_anon_classes_are_too_verbose.rss</link>
-    <description>Thomas Kappler's personal/programming site.</description>
+    <description>Thomas Kappler.</description>
     <language>en</language>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <generator>blosxom/2.1.2</generator>
 
   <item>
     <title>Java anonymous classes are too verbose</title>
-    <pubDate>Wed, 09 Mar 2011 07:37:00 +0100</pubDate>
-    <link>/2011/03/09#2010-11-11-java_anon_classes_are_too_verbose</link>
+    <pubDate>Sun, 20 Mar 2011 22:35:00 +0100</pubDate>
+    <link>/2011/03/20#2010-11-11-java_anon_classes_are_too_verbose</link>
     <category></category>
     <guid isPermaLink="false">/2010-11-11-java_anon_classes_are_too_verbose</guid>
     <description>&lt;p&gt;Java doesn&amp;#8217;t have first-class functions or closures, but you can
@@ -23,10 +23,11 @@ than with the iterative loop.&lt;/p&gt;
 List, and I needed to know which iteration step I was at. A
 straightforward solution is, obviously, the classic for loop:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;for (int i = 0; i &amp;lt; keyword.getSynonyms(); i++) {
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;for (int i = 0; i &lt; keyword.getSynonyms(); i++) {
     String synonym = keyword.getSynonyms().get(i);
     // do something
-}&lt;/code&gt;&lt;/pre&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;That&amp;#8217;s fine in many cases, but it has two problems. The extra line to
 get at the List element is annoying. More importantly, depending on
@@ -35,18 +36,19 @@ requiring another scan of the list each time.&lt;/p&gt;
 
 &lt;p&gt;So we could iterate normally and count ourselves:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;int order = 0;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;int order = 0;
 for (String synonym : keyword.getSynonyms()) {
     // do something
     order++;
-}&lt;/code&gt;&lt;/pre&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;It&amp;#8217;s better, but I needed several such loops, and I wondered if I
 couldn&amp;#8217;t write all that plumbing just once. I came up with this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;public abstract class Counting&amp;lt;T, E extends Throwable&amp;gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;public abstract class Counting&lt;T, E extends Throwable&gt;
 {        
-    public void loop(Iterable&amp;lt;T&amp;gt; things) throws E
+    public void loop(Iterable&lt;T&gt; things) throws E
     {
         int step = 0;
         for (T t : things)
@@ -57,7 +59,8 @@ couldn&amp;#8217;t write all that plumbing just once. I came up with this:&lt;/p
     }
 
     public abstract void iteration(T thing, int step) throws E;
-}&lt;/code&gt;&lt;/pre&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;As the loop body can throw exceptions, and we might want to declare
 the specific kind of exception, this needs to be an additional generic
@@ -65,14 +68,15 @@ type. This breaks if you need more than one exception type.&lt;/p&gt;
 
 &lt;p&gt;The above loop then becomes&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;new Counting&amp;lt;String, SQLException&amp;gt;()
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;new Counting&lt;String, SQLException&gt;()
 {
     @Override public void iteration(String synonym, int step)
     throws SQLException
     {
         // do something
     }
-}.loop( keyword.getSynonyms() );&lt;/code&gt;&lt;/pre&gt;
+}.loop( keyword.getSynonyms() );
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hmmm. Even after writing an abstract class to extract the repeated
 parts, and not counting my preference for opening-brace-on-new-line, I

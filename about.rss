@@ -3,15 +3,15 @@
   <channel>
     <title>Thomas Kappler</title>
     <link>/about.rss</link>
-    <description>Thomas Kappler's personal/programming site.</description>
+    <description>Thomas Kappler.</description>
     <language>en</language>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <generator>blosxom/2.1.2</generator>
 
   <item>
     <title>Welcome</title>
-    <pubDate>Thu, 10 Mar 2011 07:55:00 +0100</pubDate>
-    <link>/2011/03/10#about</link>
+    <pubDate>Sun, 20 Mar 2011 10:34:00 +0100</pubDate>
+    <link>/2011/03/20#about</link>
     <category></category>
     <guid isPermaLink="false">/about</guid>
     <description>&lt;p&gt;Welcome! I&amp;#8217;m Thomas Kappler, sometimes known as thomas11 on the web.

@@ -2,7 +2,7 @@
 <rss version="2.0">
   <channel>
     <title>Thomas Kappler</title>
-    <link>/2010-09-20-yapceu_talks.rss</link>
+    <link>/</link>
     <description>Thomas Kappler.</description>
     <language>en</language>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
@@ -10,10 +10,7 @@
 
   <item>
     <title>Watching some YAPC::EU 2010 presentations</title>
-    <pubDate>Wed, 09 Mar 2011 07:37:00 +0100</pubDate>
     <link>/2011/03/09#2010-09-20-yapceu_talks</link>
-    <category></category>
-    <guid isPermaLink="false">/2010-09-20-yapceu_talks</guid>
     <description>&lt;p&gt;In August, Perl mongers gathered in Pisa for the annual
 &lt;a href=&quot;http://conferences.yapceurope.org/ye2010/&quot;&gt;YAPC::EU&lt;/a&gt;, one of the
 biggest Perl meetings. I couldn&amp;#8217;t make it there, but at least I

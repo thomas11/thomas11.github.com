@@ -2,7 +2,7 @@
 <rss version="2.0">
   <channel>
     <title>Thomas Kappler</title>
-    <link>/2011-01-18_geneva_jug_akka_scala.rss</link>
+    <link>/</link>
     <description>Thomas Kappler.</description>
     <language>en</language>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
@@ -10,10 +10,7 @@
 
   <item>
     <title>Geneva JUG New Year&amp;#8217;s meeting 2011</title>
-    <pubDate>Tue, 18 Jan 2011 00:00:00 +0100</pubDate>
     <link>/2011/01/18#2011-01-18_geneva_jug_akka_scala</link>
-    <category></category>
-    <guid isPermaLink="false">/2011-01-18_geneva_jug_akka_scala</guid>
     <description>&lt;p&gt;The &lt;a href=&quot;&quot;&gt;Geneva Java User&amp;#8217;s Group&lt;/a&gt; had their annual New Year&amp;#8217;s meeting
 yesterday, with two invited speakers. Iulian Dragos gave an Intro to
 Scala, and Jonas Bonér presented his actor library

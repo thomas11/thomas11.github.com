@@ -3,28 +3,24 @@
   <channel>
     <title>Thomas Kappler</title>
     <link>/categories/foo.rss</link>
-    <description>Thomas Kappler's personal/programming site.</description>
+    <description>Thomas Kappler.</description>
     <language>en</language>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <generator>blosxom/2.1.2</generator>
 
   <item>
     <title>Categories</title>
-    <pubDate>Tue, 15 Feb 2011 07:33:00 +0100</pubDate>
-    <link>/2011/02/15#foo</link>
+    <pubDate>Sun, 13 Mar 2011 09:50:00 +0100</pubDate>
+    <link>/2011/03/13#foo</link>
     <category>/categories</category>
     <guid isPermaLink="false">/categories/foo</guid>
     <description>&lt;p&gt;This is sort of a table of contents or index by categories.&lt;/p&gt;
 
 &lt;p&gt;Perl:
-<ul><li><a href="../2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
-</a></li><li><a href="../2010-09-20-yapceu_talks.html">Watching some YAPC::EU 2010 presentations
-</a></li></ul>&lt;/p&gt;
+&lt;/p&gt;
 
 &lt;p&gt;Java:
-<ul><li><a href="../2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
-</a></li><li><a href="../2010-11-11-java_anon_classes_are_too_verbose.html">Java anonymous classes are too verbose
-</a></li></ul>&lt;/p&gt;
+&lt;/p&gt;
 </description>
   </item>
   </channel>

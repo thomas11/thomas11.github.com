@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Thomas Kappler</title>
+    <link>/2011-03-20_overriding_blosxoms_mtime.rss</link>
+    <description>Thomas Kappler.</description>
+    <language>en</language>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>blosxom/2.1.2</generator>
+
+  <item>
+    <title>Overriding Blosxom&amp;#8217;s Time Stamping</title>
+    <pubDate>Sun, 20 Mar 2011 00:00:00 +0100</pubDate>
+    <link>/2011/03/20#2011-03-20_overriding_blosxoms_mtime</link>
+    <category></category>
+    <guid isPermaLink="false">/2011-03-20_overriding_blosxoms_mtime</guid>
+    <description>&lt;p&gt;&lt;a href=&quot;http://blosxom.sourceforge.net/&quot;&gt;Blosxom&lt;/a&gt;, the Perl blog engine
+powering this site, is amazingly flexible due to its plugin
+architecture. But one aspect of its behavior is not customizable
+through a plugin: it determines an article&amp;#8217;s date by the time of the
+last modification (&lt;code&gt;mtime&lt;/code&gt;) of the file containing it.&lt;/p&gt;
+
+&lt;p&gt;I wanted the ability to date files to arbitrary points in time, since
+I sometimes write up things I did or saw long after the fact. Also, I
+didn&amp;#8217;t like that editing a published article pushes it to the front
+again.&lt;/p&gt;
+
+&lt;p&gt;Instead, I wanted Blosxom to take an article&amp;#8217;s date from its file
+name. I follow a consistent naming scheme where each article is in a
+file named &lt;code&gt;year-month-day_title&lt;/code&gt;. After parsing the date at the
+beginning, we can use &lt;code&gt;DateTime&lt;/code&gt; to construct a fake &lt;code&gt;mtime&lt;/code&gt; based on
+the result. If the parsing fails, we fall back to Blosxom&amp;#8217;s standard
+routine. Here&amp;#8217;s the patch.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;--- blosxom.cgi.orig    2011-03-20 10:33:29.002204071 +0100
++++ blosxom.cgi.mtime   2011-03-20 10:41:30.718204071 +0100
+@@ -404,8 +404,35 @@
+                 )
+             {
+
++                # thomas11: save the regex matched groups in variables
++                # to preserve them from future regex matches and for
++                # readability.
++                my &amp;#036;path = &amp;#036;1;
++                my &amp;#036;file_basename = &amp;#036;2;
++
++                # thomas11: Use the date in the file name, as in
++                # 2011-03-13_title, rather than the actual file mtime. I
++                # sometimes publish articles long after writing the
++                # initial version.
++                my &amp;#036;mtime;
++                if (&amp;#036;File::Find::name =~ /(\d{4})-(\d{2})-(\d{2})_.+/) {
++                    my (&amp;#036;year, &amp;#036;month, &amp;#036;day) = (&amp;#036;1, &amp;#036;2, &amp;#036;3);
++                    use DateTime;
++                    my &amp;#036;dt = DateTime-&amp;gt;new(
++                        year       =&amp;gt; &amp;#036;year,
++                        month      =&amp;gt; &amp;#036;month,
++                        day        =&amp;gt; &amp;#036;day,
++                        hour       =&amp;gt; 0,
++                        minute     =&amp;gt; 0,
++                        second     =&amp;gt; 0,
++                        nanosecond =&amp;gt; 0,
++                        time_zone  =&amp;gt; &apos;Europe/Zurich&apos;,
++                      );
++                    &amp;#036;mtime = &amp;#036;dt-&amp;gt;epoch();
++                } else {
+                 # read modification time
+-                my &amp;#036;mtime = stat(&amp;#036;File::Find::name)-&amp;gt;mtime or return;
++                    &amp;#036;mtime = stat(&amp;#036;File::Find::name)-&amp;gt;mtime or return;
++                }
+
+                 # to show or not to show future entries
+                 return unless ( &amp;#036;show_future_entries or &amp;#036;mtime &amp;lt; time );
+@@ -415,15 +442,15 @@
+
+                 # static rendering bits
+                 my &amp;#036;static_file
+-                    = &quot;&amp;#036;static_dir/&amp;#036;1/index.&quot; . &amp;#036;static_flavours[0];
++                    = &quot;&amp;#036;static_dir/&amp;#036;path/index.&quot; . &amp;#036;static_flavours[0];
+                 if (   param(&apos;-all&apos;)
+                     or !-f &amp;#036;static_file
+                     or stat(&amp;#036;static_file)-&amp;gt;mtime &amp;lt; &amp;#036;mtime )
+                 {
+-                    &amp;#036;indexes{&amp;#036;1} = 1;
++                    &amp;#036;indexes{&amp;#036;path} = 1;
+                     &amp;#036;d = join( &apos;/&apos;, ( nice_date(&amp;#036;mtime) )[ 5, 2, 3 ] );
+                     &amp;#036;indexes{&amp;#036;d} = &amp;#036;d;
+-                    &amp;#036;indexes{ ( &amp;#036;1 ? &quot;&amp;#036;1/&quot; : &apos;&apos; ) . &quot;&amp;#036;2.&amp;#036;file_extension&quot; } = 1
++                    &amp;#036;indexes{ ( &amp;#036;path ? &quot;&amp;#036;path/&quot; : &apos;&apos; ) . &quot;&amp;#036;file_basename.&amp;#036;file_extension&quot; } = 1
+                         if &amp;#036;static_entries;
+                 }
+             }&lt;/code&gt;&lt;/pre&gt;
+</description>
+  </item>
+  </channel>
+</rss>

@@ -3,25 +3,21 @@
   <channel>
     <title>Thomas Kappler</title>
     <link>/categories</link>
-    <description>Thomas Kappler's personal/programming site.</description>
+    <description>Thomas Kappler.</description>
     <language>en</language>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <generator>blosxom/2.1.2</generator>
 
   <item>
     <title>Categories</title>
-    <link>/2011/02/15#foo</link>
+    <link>/2011/03/13#foo</link>
     <description>&lt;p&gt;This is sort of a table of contents or index by categories.&lt;/p&gt;
 
 &lt;p&gt;Perl:
-<ul><li><a href="../2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
-</a></li><li><a href="../2010-09-20-yapceu_talks.html">Watching some YAPC::EU 2010 presentations
-</a></li></ul>&lt;/p&gt;
+&lt;/p&gt;
 
 &lt;p&gt;Java:
-<ul><li><a href="../2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
-</a></li><li><a href="../2010-11-11-java_anon_classes_are_too_verbose.html">Java anonymous classes are too verbose
-</a></li></ul>&lt;/p&gt;
+&lt;/p&gt;
 </description>
   </item>
   <item>
@@ -29,9 +25,7 @@
     <link>/2011/02/12#The%20Perl%20Nature</link>
     <description>&lt;p&gt;I write about Perl sometimes.&lt;/p&gt;
 
-&lt;p&gt;<ul><li><a href="../2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
-</a></li><li><a href="../2010-09-20-yapceu_talks.html">Watching some YAPC::EU 2010 presentations
-</a></li></ul>&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 </description>
   </item>
   </channel>

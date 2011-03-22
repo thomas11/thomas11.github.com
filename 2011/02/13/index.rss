@@ -2,7 +2,7 @@
 <rss version="2.0">
   <channel>
     <title>Thomas Kappler</title>
-    <link>/2011-02-13_plack_static_howto.rss</link>
+    <link>/</link>
     <description>Thomas Kappler.</description>
     <language>en</language>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
@@ -10,10 +10,7 @@
 
   <item>
     <title>How to serve a static directory with Plack</title>
-    <pubDate>Sun, 13 Feb 2011 00:00:00 +0100</pubDate>
     <link>/2011/02/13#2011-02-13_plack_static_howto</link>
-    <category></category>
-    <guid isPermaLink="false">/2011-02-13_plack_static_howto</guid>
     <description>&lt;p&gt;You have a directory containing HTML files and would like to browse it
 locally. There are absolute links like &lt;code&gt;/static/site.css&lt;/code&gt; in the HTML,
 so just opening index.html would break those links.&lt;/p&gt;

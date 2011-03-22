@@ -9,11 +9,15 @@
     <generator>blosxom/2.1.2</generator>
 
   <item>
-    <title>The Perl Nature</title>
-    <link>/2011/02/12#The%20Perl%20Nature</link>
-    <description>&lt;p&gt;I write about Perl sometimes.&lt;/p&gt;
+    <title>Categories</title>
+    <link>/2011/03/13#foo</link>
+    <description>&lt;p&gt;This is sort of a table of contents or index by categories.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Perl:
+&lt;/p&gt;
+
+&lt;p&gt;Java:
+&lt;/p&gt;
 </description>
   </item>
   </channel>

@@ -2,18 +2,15 @@
 <rss version="2.0">
   <channel>
     <title>Thomas Kappler</title>
-    <link>/2011-02-06_review talent is overrated.rss</link>
-    <description>Thomas Kappler's personal/programming site.</description>
+    <link>/</link>
+    <description>Thomas Kappler.</description>
     <language>en</language>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <generator>blosxom/2.1.2</generator>
 
   <item>
     <title>Book: Talent is Overrated by Geoff Colvin</title>
-    <pubDate>Sun, 06 Mar 2011 18:40:00 +0100</pubDate>
-    <link>/2011/03/06#2011-02-06_review%20talent%20is%20overrated</link>
-    <category></category>
-    <guid isPermaLink="false">/2011-02-06_review%20talent%20is%20overrated</guid>
+    <link>/2011/02/06#2011-02-06_review_talent_is_overrated</link>
     <description>&lt;p&gt;Geoff Colvin&amp;#8217;s
 &lt;a href=&quot;http://www.amazon.com/Talent-Overrated-Separates-World-Class-Performers/dp/1591842948/ref=sr_1_1?ie=UTF8&amp;amp;qid=1297014218&amp;amp;sr=8-1&quot;&gt;Talent is Overrated&lt;/a&gt;
 opens with presenting new research findings showing that top

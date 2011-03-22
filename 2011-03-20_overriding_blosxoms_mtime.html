@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Thomas Kappler</title>
+
+<meta charset="utf-8" />
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/index.rss" />
+<link rel="author" type="text/html" title="About" href="/about.html" />
+<link rel="stylesheet" href="/static/site.css" type="text/css" />
+
+<!-- http://softwaremaniacs.org/soft/highlight/en/description/ -->
+<link rel="stylesheet" href="/static/highlight/styles/magula.css">
+<script src="/static/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+
+<div class="site">
+
+<div class="header meta">
+   <a href="/index.html">Thomas Kappler</a>
+   <a href="/index.html" class="nav">Home</a>
+   <a href="/about.html" class="nav">About</a>
+</div>
+
+<!--
+<div>
+Welcome! You find the latest writings below. To navigate around, see
+the <a href="/toc.html">table of contents</a>,
+the <a href="/2011/index.html">archives</a>, or read
+something <a href="/about.html">about the author</a>.
+</div>
+-->
+<h1>Overriding Blosxom&#8217;s Time Stamping</h1>
+
+<div class="abstract">
+  <span class="published">Blosxom sorts articles by the input file's mtime. Here's a patch to override that.</span>
+  <br /><span class="published">2011-03-20<!--, in <a href="" class="nav">The Perl Nature</a> --></span>
+</div>
+
+
+<p><a href="http://blosxom.sourceforge.net/">Blosxom</a>, the Perl blog engine
+powering this site, is amazingly flexible due to its plugin
+architecture. But one aspect of its behavior is not customizable
+through a plugin: it determines an article&#8217;s date by the time of the
+last modification (<code>mtime</code>) of the file containing it.</p>
+
+<p>I wanted the ability to date files to arbitrary points in time, since
+I sometimes write up things I did or saw long after the fact. Also, I
+didn&#8217;t like that editing a published article pushes it to the front
+again.</p>
+
+<p>Instead, I wanted Blosxom to take an article&#8217;s date from its file
+name. I follow a consistent naming scheme where each article is in a
+file named <code>year-month-day_title</code>. After parsing the date at the
+beginning, we can use <code>DateTime</code> to construct a fake <code>mtime</code> based on
+the result. If the parsing fails, we fall back to Blosxom&#8217;s standard
+routine. Here&#8217;s the patch.</p>
+
+<pre><code>--- blosxom.cgi.orig    2011-03-20 10:33:29.002204071 +0100
++++ blosxom.cgi.mtime   2011-03-20 10:41:30.718204071 +0100
+@@ -404,8 +404,35 @@
+                 )
+             {
+
++                # thomas11: save the regex matched groups in variables
++                # to preserve them from future regex matches and for
++                # readability.
++                my &#036;path = &#036;1;
++                my &#036;file_basename = &#036;2;
++
++                # thomas11: Use the date in the file name, as in
++                # 2011-03-13_title, rather than the actual file mtime. I
++                # sometimes publish articles long after writing the
++                # initial version.
++                my &#036;mtime;
++                if (&#036;File::Find::name =~ /(\d{4})-(\d{2})-(\d{2})_.+/) {
++                    my (&#036;year, &#036;month, &#036;day) = (&#036;1, &#036;2, &#036;3);
++                    use DateTime;
++                    my &#036;dt = DateTime-&gt;new(
++                        year       =&gt; &#036;year,
++                        month      =&gt; &#036;month,
++                        day        =&gt; &#036;day,
++                        hour       =&gt; 0,
++                        minute     =&gt; 0,
++                        second     =&gt; 0,
++                        nanosecond =&gt; 0,
++                        time_zone  =&gt; 'Europe/Zurich',
++                      );
++                    &#036;mtime = &#036;dt-&gt;epoch();
++                } else {
+                 # read modification time
+-                my &#036;mtime = stat(&#036;File::Find::name)-&gt;mtime or return;
++                    &#036;mtime = stat(&#036;File::Find::name)-&gt;mtime or return;
++                }
+
+                 # to show or not to show future entries
+                 return unless ( &#036;show_future_entries or &#036;mtime &lt; time );
+@@ -415,15 +442,15 @@
+
+                 # static rendering bits
+                 my &#036;static_file
+-                    = "&#036;static_dir/&#036;1/index." . &#036;static_flavours[0];
++                    = "&#036;static_dir/&#036;path/index." . &#036;static_flavours[0];
+                 if (   param('-all')
+                     or !-f &#036;static_file
+                     or stat(&#036;static_file)-&gt;mtime &lt; &#036;mtime )
+                 {
+-                    &#036;indexes{&#036;1} = 1;
++                    &#036;indexes{&#036;path} = 1;
+                     &#036;d = join( '/', ( nice_date(&#036;mtime) )[ 5, 2, 3 ] );
+                     &#036;indexes{&#036;d} = &#036;d;
+-                    &#036;indexes{ ( &#036;1 ? "&#036;1/" : '' ) . "&#036;2.&#036;file_extension" } = 1
++                    &#036;indexes{ ( &#036;path ? "&#036;path/" : '' ) . "&#036;file_basename.&#036;file_extension" } = 1
+                         if &#036;static_entries;
+                 }
+             }</code></pre>
+
+
+<!--
+<div class="related meta">
+  More <span class="zine">The Perl Nature</span> articles: TODO
+</div>
+-->
+
+</div>
+</body>
+</html>
