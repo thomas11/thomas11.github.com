@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Thomas Kappler</title>
+    <link>/categories/Publications.rss</link>
+    <description>Thomas Kappler.</description>
+    <language>en</language>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>blosxom/2.1.2</generator>
+
+  <item>
+    <title>Publications</title>
+    <pubDate>Fri, 13 May 2011 23:10:00 +0200</pubDate>
+    <link>/2011/05/13#Publications</link>
+    <category>/categories</category>
+    <guid isPermaLink="false">/categories/Publications</guid>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2008-02-04</span>&nbsp;&raquo; <a href="/2008-02-04_Towards_Automatic_Construction.html">Towards Automatic Construction of Reusable Prediction Models for Component-Based Performance Engineering
+</a><br />
+The paper about my Master's Thesis, doing static code analysis for Java.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  </channel>
+</rss>

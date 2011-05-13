@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Thomas Kappler</title>
+    <link>/</link>
+    <description>Thomas Kappler.</description>
+    <language>en</language>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>blosxom/2.1.2</generator>
+
+  <item>
+    <title>Welcome</title>
+    <link>/2011/05/13#about</link>
+    <description>&lt;p&gt;&lt;img src=&quot;/static/me.jpg&quot; style=&quot;float:right; padding-left: 1em;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Welcome! I&amp;#8217;m Thomas Kappler, sometimes known as thomas11 on the web.
+I write about programming and other things
+&lt;a href=&quot;http://news.ycombinator.com/&quot;&gt;hackers&lt;/a&gt; might find interesting.&lt;/p&gt;
+
+&lt;p&gt;Drop me a line at tkappler@gmail.com.&lt;/p&gt;
+
+&lt;p&gt;Some &lt;a href=&quot;https://github.com/thomas11&quot;&gt;code is on Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;mini-bio&quot;&gt;Mini-Bio&lt;/h2&gt;
+
+&lt;p&gt;I studied Computer Science at &lt;a href=&quot;&quot;&gt;KIT&lt;/a&gt;, Karlsruhe, Germany. Prof. Ralf
+Reussner, Prof. Pankaj Jalote, and Dr. Heiko Koziolek have made
+possible a fantastic experience writing
+&lt;a href=&quot;publications/2008-02-04_Towards_Automatic_Construction.html&quot;&gt;my thesis&lt;/a&gt;
+at IIT Delhi, India. &lt;a href=&quot;http://www.rene-witte.net/&quot;&gt;Dr. René Witte&lt;/a&gt;
+initiated me to the strange world of academic research and writing and
+let me do some cool stuff and write about it. Thanks!&lt;/p&gt;
+
+&lt;p&gt;Until April 2011 I was at the
+&lt;a href=&quot;http://www.isb-sib.ch&quot;&gt;Swiss Institute of Bioinformatics&lt;/a&gt; in Geneva,
+Switzerland, developing tools for biologists, from web apps to storage
+backends to RDF to Perl hacks.&lt;/p&gt;
+
+&lt;p&gt;Now I&amp;#8217;m developing medical applications at
+&lt;a href=&quot;http://www.nhumi.com&quot;&gt;Nhumi Technologies&lt;/a&gt; in Zurich.&lt;/p&gt;
+
+&lt;p&gt;You can find more business-y info
+&lt;a href=&quot;http://www.linkedin.com/in/thomaskappler&quot;&gt;on LinkedIn&lt;/a&gt;.&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Scala</title>
+    <link>/2011/05/13#Scala</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-01-18</span>&nbsp;&raquo; <a href="/2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
+</a><br />
+Iulian Dragos on Scala & Jonas Bonér on Akka.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Publications</title>
+    <link>/2011/05/13#Publications</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2008-02-04</span>&nbsp;&raquo; <a href="/2008-02-04_Towards_Automatic_Construction.html">Towards Automatic Construction of Reusable Prediction Models for Component-Based Performance Engineering
+</a><br />
+The paper about my Master's Thesis, doing static code analysis for Java.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Presenting</title>
+    <link>/2011/05/13#Presenting</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-03-20</span>&nbsp;&raquo; <a href="/2011-03-20_review_confessions_of_a_public_speaker.html">Book: Confessions of a Public Speaker by Scott Berkun
+</a><br />
+Excellent. A must-read if you want to improve your public speaking.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Personal Development</title>
+    <link>/2011/05/13#Personal%20Development</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-02-06</span>&nbsp;&raquo; <a href="/2011-02-06_review_talent_is_overrated.html">Book: Talent is Overrated by Geoff Colvin
+</a><br />
+Fascinating and important. How top performers really get to be so great. Don't let a false notion of innate talent stop you.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Perl</title>
+    <link>/2011/05/13#Perl</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-03-20</span>&nbsp;&raquo; <a href="/2011-03-20_overriding_blosxoms_mtime.html">Overriding Blosxom's Time Stamping
+</a><br />
+Blosxom sorts articles by the input file's mtime. Here's a patch to override that.
+</div>
+<div class="articlesummary">
+  <span class="date">2010-09-20</span>&nbsp;&raquo; <a href="/2010-09-20-yapceu_talks.html">Watching some YAPC::EU 2010 presentations
+</a><br />
+Where Plack is the new black. And recording talks is difficult.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-02-13</span>&nbsp;&raquo; <a href="/2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
+</a><br />
+From directory to http://localhost:5001/page.html as simply as possible.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Nitty Gritty</title>
+    <link>/2011/05/13#Nitty%20Gritty</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-02-13</span>&nbsp;&raquo; <a href="/2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
+</a><br />
+From directory to http://localhost:5001/page.html as simply as possible.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Java</title>
+    <link>/2011/05/13#Java</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2010-11-11</span>&nbsp;&raquo; <a href="/2010-11-11-java_anon_classes_are_too_verbose.html">Java anonymous classes are too verbose
+</a><br />
+No fun emulating closures.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-01-18</span>&nbsp;&raquo; <a href="/2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
+</a><br />
+Iulian Dragos on Scala & Jonas Bonér on Akka.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Hackers</title>
+    <link>/2011/05/13#Hackers</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-01-18</span>&nbsp;&raquo; <a href="/2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
+</a><br />
+Iulian Dragos on Scala & Jonas Bonér on Akka.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Functional Programming</title>
+    <link>/2011/05/13#Functional%20Programming</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2010-11-11</span>&nbsp;&raquo; <a href="/2010-11-11-java_anon_classes_are_too_verbose.html">Java anonymous classes are too verbose
+</a><br />
+No fun emulating closures.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Business</title>
+    <link>/2011/05/13#Business</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-01-05</span>&nbsp;&raquo; <a href="/2011-01-05_review_leading_lean_software_development.html">Book: Leading Lean Software Development by Mary and Tom Poppendieck
+</a><br />
+Insightful, clear and thought-provoking; though not a comprehensive hands-on guide.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Books</title>
+    <link>/2011/05/13#Books</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-03-20</span>&nbsp;&raquo; <a href="/2011-03-20_review_confessions_of_a_public_speaker.html">Book: Confessions of a Public Speaker by Scott Berkun
+</a><br />
+Excellent. A must-read if you want to improve your public speaking.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-01-05</span>&nbsp;&raquo; <a href="/2011-01-05_review_leading_lean_software_development.html">Book: Leading Lean Software Development by Mary and Tom Poppendieck
+</a><br />
+Insightful, clear and thought-provoking; though not a comprehensive hands-on guide.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-02-06</span>&nbsp;&raquo; <a href="/2011-02-06_review_talent_is_overrated.html">Book: Talent is Overrated by Geoff Colvin
+</a><br />
+Fascinating and important. How top performers really get to be so great. Don't let a false notion of innate talent stop you.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Java anonymous classes are too verbose</title>
+    <link>/2011/05/13#2010-11-11-java_anon_classes_are_too_verbose</link>
+    <description>&lt;p&gt;Java doesn&amp;#8217;t have first-class functions or closures, but you can
+emulate some of that with anonymous classes. Alas, they are just too
+cumbersome and verbose&amp;#8212;it&amp;#8217;s not elegant anymore if you need more LoC
+than with the iterative loop.&lt;/p&gt;
+
+&lt;p&gt;Recently at work, I wanted to execute some code for each member of a
+List, and I needed to know which iteration step I was at. A
+straightforward solution is, obviously, the classic for loop:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;for (int i = 0; i &lt; keyword.getSynonyms(); i++) {
+    String synonym = keyword.getSynonyms().get(i);
+    // do something
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;#8217;s fine in many cases, but it has two problems. The extra line to
+get at the List element is annoying. More importantly, depending on
+the List implementation the &lt;code&gt;get(i)&lt;/code&gt; operation might be in O(n),
+requiring another scan of the list each time.&lt;/p&gt;
+
+&lt;p&gt;So we could iterate normally and count ourselves:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;int order = 0;
+for (String synonym : keyword.getSynonyms()) {
+    // do something
+    order++;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;#8217;s better, but I needed several such loops, and I wondered if I
+couldn&amp;#8217;t write all that plumbing just once. I came up with this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;public abstract class Counting&lt;T, E extends Throwable&gt;
+{        
+    public void loop(Iterable&lt;T&gt; things) throws E
+    {
+        int step = 0;
+        for (T t : things)
+        {
+            iteration(t, step);
+            step++;
+        }
+    }
+
+    public abstract void iteration(T thing, int step) throws E;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As the loop body can throw exceptions, and we might want to declare
+the specific kind of exception, this needs to be an additional generic
+type. This breaks if you need more than one exception type.&lt;/p&gt;
+
+&lt;p&gt;The above loop then becomes&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;new Counting&lt;String, SQLException&gt;()
+{
+    @Override public void iteration(String synonym, int step)
+    throws SQLException
+    {
+        // do something
+    }
+}.loop( keyword.getSynonyms() );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hmmm. Even after writing an abstract class to extract the repeated
+parts, and not counting my preference for opening-brace-on-new-line, I
+still haven&amp;#8217;t saved a single line. Can I have &lt;code&gt;map&lt;/code&gt; and first-class
+functions, please? Time for Scala?&lt;/p&gt;
+</description>
+  </item>
+  </channel>
+</rss>

@@ -15,9 +15,8 @@
 locally. There are absolute links like &lt;code&gt;/static/site.css&lt;/code&gt; in the HTML,
 so just opening index.html would break those links.&lt;/p&gt;
 
-&lt;p&gt;Perl&amp;#8217;s recent web superstar module
-&lt;a href=&quot;wordpress-local/docroot/wp-content/themes/ub_swiss/&quot;&gt;Plack&lt;/a&gt; can do it
-easily.&lt;/p&gt;
+&lt;p&gt;Perl&amp;#8217;s recent web superstar module &lt;a href=&quot;http://plackperl.org/&quot;&gt;Plack&lt;/a&gt; can
+do it easily.&lt;/p&gt;
 
 &lt;p&gt;Create a file named &lt;code&gt;plack.psgi&lt;/code&gt; with the following content:&lt;/p&gt;
 

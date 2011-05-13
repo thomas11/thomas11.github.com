@@ -2,23 +2,10 @@
 <rss version="2.0">
   <channel>
     <title>Thomas Kappler</title>
-    <link>/</link>
+    <link>/categories/.rss</link>
     <description>Thomas Kappler.</description>
     <language>en</language>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <generator>blosxom/2.1.2</generator>
-
-  <item>
-    <title>Categories</title>
-    <link>/2011/03/13#foo</link>
-    <description>&lt;p&gt;This is sort of a table of contents or index by categories.&lt;/p&gt;
-
-&lt;p&gt;Perl:
-&lt;/p&gt;
-
-&lt;p&gt;Java:
-&lt;/p&gt;
-</description>
-  </item>
   </channel>
 </rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Thomas Kappler</title>
+    <link>/categories/Java.rss</link>
+    <description>Thomas Kappler.</description>
+    <language>en</language>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>blosxom/2.1.2</generator>
+
+  <item>
+    <title>Java</title>
+    <pubDate>Fri, 13 May 2011 23:10:00 +0200</pubDate>
+    <link>/2011/05/13#Java</link>
+    <category>/categories</category>
+    <guid isPermaLink="false">/categories/Java</guid>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2010-11-11</span>&nbsp;&raquo; <a href="/2010-11-11-java_anon_classes_are_too_verbose.html">Java anonymous classes are too verbose
+</a><br />
+No fun emulating closures.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-01-18</span>&nbsp;&raquo; <a href="/2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
+</a><br />
+Iulian Dragos on Scala & Jonas Bonér on Akka.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  </channel>
+</rss>

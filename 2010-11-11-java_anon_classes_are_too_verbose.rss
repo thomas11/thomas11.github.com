@@ -10,8 +10,8 @@
 
   <item>
     <title>Java anonymous classes are too verbose</title>
-    <pubDate>Sun, 20 Mar 2011 22:35:00 +0100</pubDate>
-    <link>/2011/03/20#2010-11-11-java_anon_classes_are_too_verbose</link>
+    <pubDate>Fri, 13 May 2011 22:46:00 +0200</pubDate>
+    <link>/2011/05/13#2010-11-11-java_anon_classes_are_too_verbose</link>
     <category></category>
     <guid isPermaLink="false">/2010-11-11-java_anon_classes_are_too_verbose</guid>
     <description>&lt;p&gt;Java doesn&amp;#8217;t have first-class functions or closures, but you can

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Thomas Kappler</title>
+    <link>/categories/Presenting.rss</link>
+    <description>Thomas Kappler.</description>
+    <language>en</language>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>blosxom/2.1.2</generator>
+
+  <item>
+    <title>Presenting</title>
+    <pubDate>Fri, 13 May 2011 23:10:00 +0200</pubDate>
+    <link>/2011/05/13#Presenting</link>
+    <category>/categories</category>
+    <guid isPermaLink="false">/categories/Presenting</guid>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-03-20</span>&nbsp;&raquo; <a href="/2011-03-20_review_confessions_of_a_public_speaker.html">Book: Confessions of a Public Speaker by Scott Berkun
+</a><br />
+Excellent. A must-read if you want to improve your public speaking.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  </channel>
+</rss>

@@ -20,8 +20,12 @@ body {
   margin-top: 2em;
 }
 .site h2,h3,h4 {
-  font-size: 110%;
+  font-size: 100%;
   /* margin-top: 2em; */
+}
+
+h3.archiveyear {
+    margin-bottom: -0.5em;
 }
 
 .site .abstract {
@@ -80,6 +84,15 @@ a:visited {
 
 .header a:visited {
   color: #444;
+}
+
+.header_categories {
+  font-style: italic;
+  font-size: 80%;
+}
+
+.header_categories a {
+  padding-left: 0.7em;
 }
 
 a.nav {

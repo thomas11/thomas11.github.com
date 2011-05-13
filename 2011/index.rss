@@ -9,25 +9,23 @@
     <generator>blosxom/2.1.2</generator>
 
   <item>
-    <title>Categories</title>
-    <link>/2011/03/13#foo</link>
-    <description>&lt;p&gt;This is sort of a table of contents or index by categories.&lt;/p&gt;
-
-&lt;p&gt;Perl:
-&lt;/p&gt;
-
-&lt;p&gt;Java:
-&lt;/p&gt;
+    <title>Archives</title>
+    <link>/2011/05/07#archives</link>
+    <description>&lt;p&gt;&lt;/p&gt;
 </description>
   </item>
   <item>
     <title>Welcome</title>
-    <link>/2011/03/20#about</link>
-    <description>&lt;p&gt;Welcome! I&amp;#8217;m Thomas Kappler, sometimes known as thomas11 on the web.
+    <link>/2011/05/13#about</link>
+    <description>&lt;p&gt;&lt;img src=&quot;/static/me.jpg&quot; style=&quot;float:right; padding-left: 1em;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Welcome! I&amp;#8217;m Thomas Kappler, sometimes known as thomas11 on the web.
 I write about programming and other things
 &lt;a href=&quot;http://news.ycombinator.com/&quot;&gt;hackers&lt;/a&gt; might find interesting.&lt;/p&gt;
 
 &lt;p&gt;Drop me a line at tkappler@gmail.com.&lt;/p&gt;
+
+&lt;p&gt;Some &lt;a href=&quot;https://github.com/thomas11&quot;&gt;code is on Github&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;mini-bio&quot;&gt;Mini-Bio&lt;/h2&gt;
 
@@ -52,11 +50,149 @@ backends to RDF to Perl hacks.&lt;/p&gt;
 </description>
   </item>
   <item>
-    <title>The Perl Nature</title>
-    <link>/2011/02/12#The%20Perl%20Nature</link>
-    <description>&lt;p&gt;I write about Perl sometimes.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
+    <title>Scala</title>
+    <link>/2011/05/13#Scala</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-01-18</span>&nbsp;&raquo; <a href="/2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
+</a><br />
+Iulian Dragos on Scala & Jonas Bonér on Akka.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Publications</title>
+    <link>/2011/05/13#Publications</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2008-02-04</span>&nbsp;&raquo; <a href="/2008-02-04_Towards_Automatic_Construction.html">Towards Automatic Construction of Reusable Prediction Models for Component-Based Performance Engineering
+</a><br />
+The paper about my Master's Thesis, doing static code analysis for Java.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Presenting</title>
+    <link>/2011/05/13#Presenting</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-03-20</span>&nbsp;&raquo; <a href="/2011-03-20_review_confessions_of_a_public_speaker.html">Book: Confessions of a Public Speaker by Scott Berkun
+</a><br />
+Excellent. A must-read if you want to improve your public speaking.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Personal Development</title>
+    <link>/2011/05/13#Personal%20Development</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-02-06</span>&nbsp;&raquo; <a href="/2011-02-06_review_talent_is_overrated.html">Book: Talent is Overrated by Geoff Colvin
+</a><br />
+Fascinating and important. How top performers really get to be so great. Don't let a false notion of innate talent stop you.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Perl</title>
+    <link>/2011/05/13#Perl</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-03-20</span>&nbsp;&raquo; <a href="/2011-03-20_overriding_blosxoms_mtime.html">Overriding Blosxom's Time Stamping
+</a><br />
+Blosxom sorts articles by the input file's mtime. Here's a patch to override that.
+</div>
+<div class="articlesummary">
+  <span class="date">2010-09-20</span>&nbsp;&raquo; <a href="/2010-09-20-yapceu_talks.html">Watching some YAPC::EU 2010 presentations
+</a><br />
+Where Plack is the new black. And recording talks is difficult.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-02-13</span>&nbsp;&raquo; <a href="/2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
+</a><br />
+From directory to http://localhost:5001/page.html as simply as possible.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Nitty Gritty</title>
+    <link>/2011/05/13#Nitty%20Gritty</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-02-13</span>&nbsp;&raquo; <a href="/2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
+</a><br />
+From directory to http://localhost:5001/page.html as simply as possible.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Java</title>
+    <link>/2011/05/13#Java</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2010-11-11</span>&nbsp;&raquo; <a href="/2010-11-11-java_anon_classes_are_too_verbose.html">Java anonymous classes are too verbose
+</a><br />
+No fun emulating closures.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-01-18</span>&nbsp;&raquo; <a href="/2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
+</a><br />
+Iulian Dragos on Scala & Jonas Bonér on Akka.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Hackers</title>
+    <link>/2011/05/13#Hackers</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-01-18</span>&nbsp;&raquo; <a href="/2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
+</a><br />
+Iulian Dragos on Scala & Jonas Bonér on Akka.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Functional Programming</title>
+    <link>/2011/05/13#Functional%20Programming</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2010-11-11</span>&nbsp;&raquo; <a href="/2010-11-11-java_anon_classes_are_too_verbose.html">Java anonymous classes are too verbose
+</a><br />
+No fun emulating closures.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Business</title>
+    <link>/2011/05/13#Business</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-01-05</span>&nbsp;&raquo; <a href="/2011-01-05_review_leading_lean_software_development.html">Book: Leading Lean Software Development by Mary and Tom Poppendieck
+</a><br />
+Insightful, clear and thought-provoking; though not a comprehensive hands-on guide.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Books</title>
+    <link>/2011/05/13#Books</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-03-20</span>&nbsp;&raquo; <a href="/2011-03-20_review_confessions_of_a_public_speaker.html">Book: Confessions of a Public Speaker by Scott Berkun
+</a><br />
+Excellent. A must-read if you want to improve your public speaking.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-01-05</span>&nbsp;&raquo; <a href="/2011-01-05_review_leading_lean_software_development.html">Book: Leading Lean Software Development by Mary and Tom Poppendieck
+</a><br />
+Insightful, clear and thought-provoking; though not a comprehensive hands-on guide.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-02-06</span>&nbsp;&raquo; <a href="/2011-02-06_review_talent_is_overrated.html">Book: Talent is Overrated by Geoff Colvin
+</a><br />
+Fascinating and important. How top performers really get to be so great. Don't let a false notion of innate talent stop you.
+</div>
+&lt;/p&gt;
 </description>
   </item>
   <item>
@@ -258,9 +394,8 @@ routine. Here&amp;#8217;s the patch.&lt;/p&gt;
 locally. There are absolute links like &lt;code&gt;/static/site.css&lt;/code&gt; in the HTML,
 so just opening index.html would break those links.&lt;/p&gt;
 
-&lt;p&gt;Perl&amp;#8217;s recent web superstar module
-&lt;a href=&quot;wordpress-local/docroot/wp-content/themes/ub_swiss/&quot;&gt;Plack&lt;/a&gt; can do it
-easily.&lt;/p&gt;
+&lt;p&gt;Perl&amp;#8217;s recent web superstar module &lt;a href=&quot;http://plackperl.org/&quot;&gt;Plack&lt;/a&gt; can
+do it easily.&lt;/p&gt;
 
 &lt;p&gt;Create a file named &lt;code&gt;plack.psgi&lt;/code&gt; with the following content:&lt;/p&gt;
 
@@ -481,9 +616,9 @@ years of practice, once they started to become really good.&lt;/p&gt;
   <item>
     <title>Geneva JUG New Year&amp;#8217;s meeting 2011</title>
     <link>/2011/01/18#2011-01-18_geneva_jug_akka_scala</link>
-    <description>&lt;p&gt;The &lt;a href=&quot;&quot;&gt;Geneva Java User&amp;#8217;s Group&lt;/a&gt; had their annual New Year&amp;#8217;s meeting
-yesterday, with two invited speakers. Iulian Dragos gave an Intro to
-Scala, and Jonas Bonér presented his actor library
+    <description>&lt;p&gt;The &lt;a href=&quot;http://genevajug.ch/&quot;&gt;Geneva Java User&amp;#8217;s Group&lt;/a&gt; had their annual
+New Year&amp;#8217;s meeting yesterday, with two invited speakers. Iulian Dragos
+gave an Intro to Scala, and Jonas Bonér presented his actor library
 &lt;a href=&quot;http://akka.io&quot;&gt;Akka&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Iulian works on Scala and with Scala with Martin Odersky at EPFL
@@ -628,7 +763,7 @@ Poppendieck. Addison-Wesley, 2010.&lt;/p&gt;
   </item>
   <item>
     <title>Java anonymous classes are too verbose</title>
-    <link>/2011/03/20#2010-11-11-java_anon_classes_are_too_verbose</link>
+    <link>/2011/05/13#2010-11-11-java_anon_classes_are_too_verbose</link>
     <description>&lt;p&gt;Java doesn&amp;#8217;t have first-class functions or closures, but you can
 emulate some of that with anonymous classes. Alas, they are just too
 cumbersome and verbose&amp;#8212;it&amp;#8217;s not elegant anymore if you need more LoC
@@ -701,7 +836,7 @@ functions, please? Time for Scala?&lt;/p&gt;
   </item>
   <item>
     <title>Watching some YAPC::EU 2010 presentations</title>
-    <link>/2011/03/09#2010-09-20-yapceu_talks</link>
+    <link>/2011/05/07#2010-09-20-yapceu_talks</link>
     <description>&lt;p&gt;In August, Perl mongers gathered in Pisa for the annual
 &lt;a href=&quot;http://conferences.yapceurope.org/ye2010/&quot;&gt;YAPC::EU&lt;/a&gt;, one of the
 biggest Perl meetings. I couldn&amp;#8217;t make it there, but at least I

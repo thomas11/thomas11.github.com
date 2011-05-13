@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Thomas Kappler</title>
+    <link>/categories/Business.rss</link>
+    <description>Thomas Kappler.</description>
+    <language>en</language>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>blosxom/2.1.2</generator>
+
+  <item>
+    <title>Business</title>
+    <pubDate>Fri, 13 May 2011 23:10:00 +0200</pubDate>
+    <link>/2011/05/13#Business</link>
+    <category>/categories</category>
+    <guid isPermaLink="false">/categories/Business</guid>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-01-05</span>&nbsp;&raquo; <a href="/2011-01-05_review_leading_lean_software_development.html">Book: Leading Lean Software Development by Mary and Tom Poppendieck
+</a><br />
+Insightful, clear and thought-provoking; though not a comprehensive hands-on guide.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  </channel>
+</rss>

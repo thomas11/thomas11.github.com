@@ -10,15 +10,19 @@
 
   <item>
     <title>Welcome</title>
-    <pubDate>Sun, 20 Mar 2011 10:34:00 +0100</pubDate>
-    <link>/2011/03/20#about</link>
+    <pubDate>Fri, 13 May 2011 07:34:00 +0200</pubDate>
+    <link>/2011/05/13#about</link>
     <category></category>
     <guid isPermaLink="false">/about</guid>
-    <description>&lt;p&gt;Welcome! I&amp;#8217;m Thomas Kappler, sometimes known as thomas11 on the web.
+    <description>&lt;p&gt;&lt;img src=&quot;/static/me.jpg&quot; style=&quot;float:right; padding-left: 1em;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Welcome! I&amp;#8217;m Thomas Kappler, sometimes known as thomas11 on the web.
 I write about programming and other things
 &lt;a href=&quot;http://news.ycombinator.com/&quot;&gt;hackers&lt;/a&gt; might find interesting.&lt;/p&gt;
 
 &lt;p&gt;Drop me a line at tkappler@gmail.com.&lt;/p&gt;
+
+&lt;p&gt;Some &lt;a href=&quot;https://github.com/thomas11&quot;&gt;code is on Github&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;mini-bio&quot;&gt;Mini-Bio&lt;/h2&gt;
 

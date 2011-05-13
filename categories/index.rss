@@ -9,23 +9,149 @@
     <generator>blosxom/2.1.2</generator>
 
   <item>
-    <title>Categories</title>
-    <link>/2011/03/13#foo</link>
-    <description>&lt;p&gt;This is sort of a table of contents or index by categories.&lt;/p&gt;
-
-&lt;p&gt;Perl:
-&lt;/p&gt;
-
-&lt;p&gt;Java:
+    <title>Scala</title>
+    <link>/2011/05/13#Scala</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-01-18</span>&nbsp;&raquo; <a href="/2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
+</a><br />
+Iulian Dragos on Scala & Jonas Bonér on Akka.
+</div>
 &lt;/p&gt;
 </description>
   </item>
   <item>
-    <title>The Perl Nature</title>
-    <link>/2011/02/12#The%20Perl%20Nature</link>
-    <description>&lt;p&gt;I write about Perl sometimes.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
+    <title>Publications</title>
+    <link>/2011/05/13#Publications</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2008-02-04</span>&nbsp;&raquo; <a href="/2008-02-04_Towards_Automatic_Construction.html">Towards Automatic Construction of Reusable Prediction Models for Component-Based Performance Engineering
+</a><br />
+The paper about my Master's Thesis, doing static code analysis for Java.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Presenting</title>
+    <link>/2011/05/13#Presenting</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-03-20</span>&nbsp;&raquo; <a href="/2011-03-20_review_confessions_of_a_public_speaker.html">Book: Confessions of a Public Speaker by Scott Berkun
+</a><br />
+Excellent. A must-read if you want to improve your public speaking.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Personal Development</title>
+    <link>/2011/05/13#Personal%20Development</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-02-06</span>&nbsp;&raquo; <a href="/2011-02-06_review_talent_is_overrated.html">Book: Talent is Overrated by Geoff Colvin
+</a><br />
+Fascinating and important. How top performers really get to be so great. Don't let a false notion of innate talent stop you.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Perl</title>
+    <link>/2011/05/13#Perl</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-03-20</span>&nbsp;&raquo; <a href="/2011-03-20_overriding_blosxoms_mtime.html">Overriding Blosxom's Time Stamping
+</a><br />
+Blosxom sorts articles by the input file's mtime. Here's a patch to override that.
+</div>
+<div class="articlesummary">
+  <span class="date">2010-09-20</span>&nbsp;&raquo; <a href="/2010-09-20-yapceu_talks.html">Watching some YAPC::EU 2010 presentations
+</a><br />
+Where Plack is the new black. And recording talks is difficult.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-02-13</span>&nbsp;&raquo; <a href="/2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
+</a><br />
+From directory to http://localhost:5001/page.html as simply as possible.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Nitty Gritty</title>
+    <link>/2011/05/13#Nitty%20Gritty</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-02-13</span>&nbsp;&raquo; <a href="/2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
+</a><br />
+From directory to http://localhost:5001/page.html as simply as possible.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Java</title>
+    <link>/2011/05/13#Java</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2010-11-11</span>&nbsp;&raquo; <a href="/2010-11-11-java_anon_classes_are_too_verbose.html">Java anonymous classes are too verbose
+</a><br />
+No fun emulating closures.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-01-18</span>&nbsp;&raquo; <a href="/2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
+</a><br />
+Iulian Dragos on Scala & Jonas Bonér on Akka.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Hackers</title>
+    <link>/2011/05/13#Hackers</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-01-18</span>&nbsp;&raquo; <a href="/2011-01-18_geneva_jug_akka_scala.html">Geneva JUG New Year's meeting 2011
+</a><br />
+Iulian Dragos on Scala & Jonas Bonér on Akka.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Functional Programming</title>
+    <link>/2011/05/13#Functional%20Programming</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2010-11-11</span>&nbsp;&raquo; <a href="/2010-11-11-java_anon_classes_are_too_verbose.html">Java anonymous classes are too verbose
+</a><br />
+No fun emulating closures.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Business</title>
+    <link>/2011/05/13#Business</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-01-05</span>&nbsp;&raquo; <a href="/2011-01-05_review_leading_lean_software_development.html">Book: Leading Lean Software Development by Mary and Tom Poppendieck
+</a><br />
+Insightful, clear and thought-provoking; though not a comprehensive hands-on guide.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  <item>
+    <title>Books</title>
+    <link>/2011/05/13#Books</link>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-03-20</span>&nbsp;&raquo; <a href="/2011-03-20_review_confessions_of_a_public_speaker.html">Book: Confessions of a Public Speaker by Scott Berkun
+</a><br />
+Excellent. A must-read if you want to improve your public speaking.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-01-05</span>&nbsp;&raquo; <a href="/2011-01-05_review_leading_lean_software_development.html">Book: Leading Lean Software Development by Mary and Tom Poppendieck
+</a><br />
+Insightful, clear and thought-provoking; though not a comprehensive hands-on guide.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-02-06</span>&nbsp;&raquo; <a href="/2011-02-06_review_talent_is_overrated.html">Book: Talent is Overrated by Geoff Colvin
+</a><br />
+Fascinating and important. How top performers really get to be so great. Don't let a false notion of innate talent stop you.
+</div>
+&lt;/p&gt;
 </description>
   </item>
   </channel>

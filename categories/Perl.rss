@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Thomas Kappler</title>
+    <link>/categories/Perl.rss</link>
+    <description>Thomas Kappler.</description>
+    <language>en</language>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>blosxom/2.1.2</generator>
+
+  <item>
+    <title>Perl</title>
+    <pubDate>Fri, 13 May 2011 23:10:00 +0200</pubDate>
+    <link>/2011/05/13#Perl</link>
+    <category>/categories</category>
+    <guid isPermaLink="false">/categories/Perl</guid>
+    <description>&lt;p&gt;<div class="articlesummary">
+  <span class="date">2011-03-20</span>&nbsp;&raquo; <a href="/2011-03-20_overriding_blosxoms_mtime.html">Overriding Blosxom's Time Stamping
+</a><br />
+Blosxom sorts articles by the input file's mtime. Here's a patch to override that.
+</div>
+<div class="articlesummary">
+  <span class="date">2010-09-20</span>&nbsp;&raquo; <a href="/2010-09-20-yapceu_talks.html">Watching some YAPC::EU 2010 presentations
+</a><br />
+Where Plack is the new black. And recording talks is difficult.
+</div>
+<div class="articlesummary">
+  <span class="date">2011-02-13</span>&nbsp;&raquo; <a href="/2011-02-13_plack_static_howto.html">How to serve a static directory with Plack
+</a><br />
+From directory to http://localhost:5001/page.html as simply as possible.
+</div>
+&lt;/p&gt;
+</description>
+  </item>
+  </channel>
+</rss>
