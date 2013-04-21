@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> <feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Thomas Kappler&#39;s site. Mostly programming and books. Category &#34;Go.&#34;</title>
+  <link href="http://www.thomaskappler.net/categories/Go/" rel="alternate"></link>
+  <id>http://www.thomaskappler.net/categories/Go/</id>
+  <updated>2013-04-21T16:08:34+02:00</updated>
+  <author>
+   <name>Thomas Kappler</name>
+   <uri>http://www.thomaskappler.net/</uri>
+  </author>
+  <entry>
+   <title>GDG DevFest Zurich with an intro to Go</title>
+   <link href="http://www.thomaskappler.net/2012-12-10_gdg_devfest_zurich.html" rel="alternate"></link>
+   <updated>2012-12-10T00:00:00Z</updated>
+   <id>tag:www.thomaskappler.net,2012-12-10:/2012-12-10_gdg_devfest_zurich.html</id>
+   <summary type="html">The Google Developers Group Zurich organized a great weekend of talks, hacking and networking in October. Unexpectedly, I got to present Go in an hour-long hands-on tutorial.</summary>
+   <content type="html">&lt;p&gt;Before October, I had never made it to a&#xA;&lt;a href=&#34;http://www.gdgzh.ch/&#34;&gt;GDG Zurich&lt;/a&gt; event, but the&#xA;&lt;a href=&#34;https://sites.google.com/site/gdgdevfestzurich/&#34;&gt;DevFest 2012&lt;/a&gt; they&#xA;announced sounded too interesting to pass it up. I don&amp;rsquo;t want to bore&#xA;you with the minutiae of how it went down, so let me just say it was a&#xA;great and very well organized weekend. By my rough guess about 100&#xA;hackers showed up, which I found quite impressive. After casual&#xA;introductions and drinks on Friday night we spent Saturday and Sunday&#xA;in the Zurich youth hostel for talks and hacking. Big thanks to the&#xA;organizers Vadim, Michel, Corsin and Robert (see&#xA;&lt;a href=&#34;https://sites.google.com/site/gdgdevfestzurich/home/orga&#34;&gt;here&lt;/a&gt;), you&#xA;did a great job.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;I really enjoyed the presentations about AppEngine by Jerome Mouton&#xA;and about the new Google Drive SDK by Nicolas Garnier. Would love to&#xA;play with these at some point.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;The rest of Saturday was spent chatting and getting to know people,&#xA;until at some point I mentioned working with &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt;&#xA;at &lt;a href=&#34;http://nhumi.com/&#34;&gt;Nhumi&lt;/a&gt; and people got very interested. Almost&#xA;everyone had read about it, but no one had used it. There happened to&#xA;be a free slot left for a codelab on Sunday morning, so I soon found&#xA;myself with a job to do.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Since I didn&amp;rsquo;t have much time I just roughly followed the&#xA;&lt;a href=&#34;http://tour.golang.org/&#34;&gt;Tour of Go&lt;/a&gt;, skipping ahead a little&#xA;sometimes. This was a good decision as the Go devs have put a lot of&#xA;thought into its structure. In addition, I made just six&#xA;&lt;a href=&#34;https://docs.google.com/presentation/d/1ZOgBTvAoveph4NneI05dV20qn7YUbQeioaEP0D8_4uU/edit?usp=sharing&#34;&gt;slides summarizing some Go essentials from my point of view&lt;/a&gt;.&#xA;This was my &amp;ldquo;main points about Go&amp;rdquo; slide:&lt;/p&gt;&#xA;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Fun and productive&lt;/li&gt;&#xA;&lt;li&gt;Interfaces&lt;/li&gt;&#xA;&lt;li&gt;Different &amp;ldquo;OO&amp;rdquo;: embedded structs, methods&lt;/li&gt;&#xA;&lt;li&gt;Concurrency&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;p&gt;I gave a code example for each of the latter three points. The&#xA;audience of about 20 seemed to follow along easily and there were&#xA;plenty of questions. It was neat to respond to questions and remarks&#xA;directly by demonstrating things live in the&#xA;&lt;a href=&#34;http://play.golang.org/&#34;&gt;Go Playground&lt;/a&gt;.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Thanks everyone for coming, and have fun with Go!&lt;/p&gt;&#xA;</content>
+   <category term="Go"></category>
+   <category term="Presenting"></category>
+   <category term="Meetup"></category>
+  </entry>
+ </feed>

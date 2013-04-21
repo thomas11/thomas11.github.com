@@ -1,55 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-<title>Thomas Kappler</title>
+  <head>
+	<title>Geneva JUG New Year&#39;s meeting 2011</title>
 
-<meta charset="utf-8" />
+	<meta charset="utf-8" />
 
+	<link rel="alternate" type="application/atom+xml" title="RSS" href="index.xml" />
+	<link rel="author" type="text/html" title="About" href="/about.html" />
+	<link rel="stylesheet" href="/static/site.css" type="text/css" />
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="/index.rss" />
-<link rel="author" type="text/html" title="About" href="/about.html" />
-<link rel="stylesheet" href="/static/site.css" type="text/css" />
+	
+	
+	
+	
+  </head>
 
-<!-- http://softwaremaniacs.org/soft/highlight/en/description/ -->
-<link rel="stylesheet" href="/static/highlight/styles/magula.css">
-<script src="/static/highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+  <body>
 
-</head>
+	<div class="site" itemscope itemtype="http://schema.org/WebPage">
 
-<body>
+	  <div class="header meta">
+		<a href="/index.html" itemprop="author">Thomas Kappler</a>
+        &nbsp;&raquo;
+		<a href="/index.html" class="nav">Home</a>
+		<a href="/about.html" class="nav">About</a>
 
-<div class="site">
+		<div class="header_categories">
+		  
+		  
+          <a href="/categories/Books.html">Books</a>
+		  
+		  <span class="category_sep"> &middot; </span>
+          <a href="/categories/Perl.html">Perl</a>
+		  
+		  <span class="category_sep"> &middot; </span>
+          <a href="/categories/Presenting.html">Presenting</a>
+		  
+		  <span class="category_sep"> &middot; </span>
+          <a href="/categories/Java.html">Java</a>
+		  
+		</div>
+	  </div>
 
-<div class="header meta">
-   <a href="/index.html">Thomas Kappler</a>
-   <a href="/index.html" class="nav">Home</a>
-   <a href="/about.html" class="nav">About</a>
-   <a href="mailto:tkappler@gmail.com" class="nav">tkappler@gmail.com</a>
-   <div class="header_categories">
-     Topics: <a href="/categories/Perl.html">Perl</a> <a href="/categories/Books.html">Books</a> <a href="/categories/Java.html">Java</a> 
-   </div>
-</div>
-<h1>Geneva JUG New Year&#8217;s meeting 2011</h1>
+	  
+
+<h1 itemprop="headline">Geneva JUG New Year&#39;s meeting 2011</h1>
 
 <div class="abstract">
-  <span class="published">Iulian Dragos on Scala & Jonas Bonér on Akka.</span>
-  <br /><span class="published">2011-01-18<!--,  --></span>
+  <span itemprop="description">Iulian Dragos on Scala &amp; Jonas Bonér on Akka.</span>
+  
+  <div class="date">Published <span itemprop="datePublished">January 18, 2011</span>.</div>
+  
 </div>
 
-
-<p>The <a href="http://genevajug.ch/">Geneva Java User&#8217;s Group</a> had their annual
-New Year&#8217;s meeting yesterday, with two invited speakers. Iulian Dragos
+<div class="article" itemprop="mainContentOfPage"><p>The <a href="http://genevajug.ch/">Geneva Java User&rsquo;s Group</a> had their annual
+New Year&rsquo;s meeting yesterday, with two invited speakers. Iulian Dragos
 gave an Intro to Scala, and Jonas Bonér presented his actor library
 <a href="http://akka.io">Akka</a>.</p>
 
 <p>Iulian works on Scala and with Scala with Martin Odersky at EPFL
-Lausanne and Odersky&#8217;s consulting company Scala Solutions. For initial
+Lausanne and Odersky&rsquo;s consulting company Scala Solutions. For initial
 motivation, he listed some companies already using Scala in
 production. Apart from the ones known in the anglophone hacker web
 like Twitter and Foursquare, some big European enterprises such as
-Credit Suisse, UBS, and Siemens were on the list. Iulian&#8217;s
+Credit Suisse, UBS, and Siemens were on the list. Iulian&rsquo;s
 presentation was then a straightforward intro to Scala. Up to slide
 13, I noted, it was all Perl in a different syntax :-) He then moved
 on to more advanced features such as mix-ins. Their sensitivity to the
@@ -58,8 +73,8 @@ parallel collections of the upcoming Scala 2.9, on the other hand,
 looked great.</p>
 
 <p>Overall a nice intro to Scala. It suffered a bit from lack of
-practical examples for the advanced language features, but that&#8217;s
-unavoidable given the time constraints. Speaker&#8217;s note: a laser
+practical examples for the advanced language features, but that&rsquo;s
+unavoidable given the time constraints. Speaker&rsquo;s note: a laser
 pointer would have been very helpful for going through sample code.</p>
 
 <p><a href="http://jonasboner.com">Jonas Bonér</a> is the principal author of Akka,
@@ -85,7 +100,8 @@ atomic {
         // Atomic blocks are composable, so they don't break
         // encapsulation like locks.
     }
-}</code></pre>
+}
+</code></pre>
 
 <p>If you, for instance, send a message to an actor a1, which updates its
 state atomically, messages another actor a2, which then also tries to
@@ -96,8 +112,8 @@ asynchronous. Powerful indeed.</p>
 <p>Jonas presented a fascinating integration example towards the end of
 this talk. He likes the Apache Camel integration framework. Akka comes
 with a Camel module. One can define an actor with, for example,
-<code>endpoint "file://foo"</code>. Any change to <code>foo</code> will then be send as a
-message to the actor. The other way round works, too, of course&#8212;think
+<code>endpoint &quot;file://foo&quot;</code>. Any change to <code>foo</code> will then be send as a
+message to the actor. The other way round works, too, of course&ndash;think
 websockets.</p>
 
 <p>Almost as an aside, Jonas mentioned that Akka supports code hot-swap
@@ -108,15 +124,11 @@ like Erlang.</p>
 <p>Jonas presented in a great, buddy-like way, like a fellow hacker
 chatting over a beer. Some ranting and rambling only added to the
 impact of the presentation. His slides were minimal and well
-done&#8212;great talk overall.</p>
-
-
-<!--
-<div class="related meta">
-  More <span class="zine"></span> articles: TODO
+done&ndash;great talk overall.</p>
 </div>
--->
 
-</div>
-</body>
+
+	  
+	</div>
+  </body>
 </html>

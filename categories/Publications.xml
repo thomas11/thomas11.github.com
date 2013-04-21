@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?> <feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Thomas Kappler&#39;s site. Mostly programming and books. Category &#34;Publications.&#34;</title>
+  <link href="http://www.thomaskappler.net/categories/Publications/" rel="alternate"></link>
+  <id>http://www.thomaskappler.net/categories/Publications/</id>
+  <updated>2013-04-21T16:08:34+02:00</updated>
+  <author>
+   <name>Thomas Kappler</name>
+   <uri>http://www.thomaskappler.net/</uri>
+  </author>
+  <entry>
+   <title>Towards Automatic Construction of Reusable Prediction Models for Component-Based Performance Engineering</title>
+   <link href="http://www.thomaskappler.net/2008-02-04_Towards_Automatic_Construction.html" rel="alternate"></link>
+   <updated>2008-02-04T00:00:00Z</updated>
+   <id>tag:www.thomaskappler.net,2008-02-04:/2008-02-04_Towards_Automatic_Construction.html</id>
+   <summary type="html">The paper about my Master&#39;s Thesis, doing static code analysis for Java.</summary>
+   <content type="html">&lt;p&gt;T. Kappler, H. Koziolek, K. Krogmann, and R. H. Reussner. &lt;em&gt;Towards&#xA;Automatic Construction of Reusable Prediction Models for&#xA;Component-Based Performance Engineering&lt;/em&gt;. In Proc. Software&#xA;Engineering 2008, ser. LNI, K. Herrmann and B. Brügge, editors,&#xA;vol. 121, Munich, Germany, Feb. 18-22, 2008, pp. 140–154.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Accepted for the Software Engineering Conference Munich 2008 (SE08).&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Many thanks to my co-authors for making that happen, and especially to&#xA;Prof. Dr. Reussner and Dr. Heiko Koziolek for the great mentoring, and&#xA;for letting me write the thesis at IIT Delhi.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;BibTeX:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;@STRING{SE2008 = &amp;quot;Software Engineering 2008&amp;quot;}&#xA;&#xA;@inproceedings{Kappler2008a,&#xA;  author = &amp;quot;Kappler, Thomas and Koziolek, Heiko and Krogmann,&#xA;            Klaus and Reussner, Ralf H.&amp;quot;,&#xA;  editor = &amp;quot;Herrmann, Korbinian and Br{\&amp;quot;u}gge, Bernd&amp;quot;,&#xA;  title = &amp;quot;Towards Automatic Construction of Reusable Prediction&#xA;           Models for Component-Based Performance Engineering&amp;quot;,&#xA;  publisher = &amp;quot;Bonner K{\&amp;quot;o}llen Verlag&amp;quot;,&#xA;  series = &amp;quot;LNI&amp;quot;,&#xA;  number = &amp;quot;121&amp;quot;,&#xA;  volume = &amp;quot;121&amp;quot;,&#xA;  year = &amp;quot;2008&amp;quot;,&#xA;  address = &amp;quot;Munich, Germany&amp;quot;,&#xA;  booktitle = SE2008,&#xA;  pages = &amp;quot;140--154&amp;quot;,&#xA;  month = &amp;quot;February&amp;quot; # &amp;quot;18--22&amp;quot;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;</content>
+   <category term="Publications"></category>
+  </entry>
+ </feed>
