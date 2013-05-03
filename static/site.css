@@ -1,5 +1,5 @@
 body {
-  background-color: #FAFAFA;
+  background-color: #FFFFFB;
   font-family: "Open Sans", opensans, sans-serif;
   font-size: 100%;
   text-align: center;
@@ -15,16 +15,25 @@ a:visited {
   color: #070707;
 }
 a:hover {
-    color: #;
+    color: #1C95D6;
 }
 
 .site {
-  background-color: #FAFAFA;
   max-width: 42em;
   margin: 0 auto 0 auto;
   line-height: 1.8em;
   text-align: left;
   padding: 0 1.5em 2em 1.5em;
+}
+
+@media
+only screen and (max-device-width: 8in)
+{
+    .site {
+        padding: 1em;
+        margin: 0;
+        max-width: 100em;
+    }
 }
 
 .site h3,h4 {
@@ -33,7 +42,6 @@ a:hover {
 
 .site h1,h2,h3 {
   color: #1C95D6;
-  font-weight: 400;
   line-height: 1.4em;
   margin-top: 1em;
   padding-bottom: 0;
@@ -56,16 +64,12 @@ a:hover {
     border-left: 2px solid #C72409;
 }
 
-.site .date {
-    margin: 0.5em 0 0 0;
-}
-
 .site .article {
     font-size: 1.1em;
 }
 
 code {
-    font-size: 1.1em;
+    font-size: larger;
     border: 1px solid #ddd;
     padding: 0 .2em;
 }
@@ -91,7 +95,7 @@ pre code {
   line-height: 2em;
   color: #555;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: 300;
   letter-spacing: 0.15em;
 }
 
@@ -120,8 +124,17 @@ pre code {
 .date {
     color: #666;
     text-transform: uppercase;
+    font-size: smaller;
 }
 .articlesummary h3 {
     padding-bottom: 0;
     margin-bottom: 0;
+}
+
+.elsewhere li {
+    list-style-type: none;
+}
+.elsewhere img {
+    vertical-align: bottom;
+    padding: 0.5em 1em 0.5em 0;
 }
