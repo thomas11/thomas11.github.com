@@ -111,8 +111,8 @@ without knowing anything about it:</p>
 
 <pre><code>type GenTitleFunc func(now time.Time, b *bytes.Buffer)
 ...
-// Start the process of updating the status bar. genTitle will be called
-// repeatedly in the given interval.
+// Start the process of updating the status bar. genTitle will
+// be called repeatedly in the given interval.
 func Run(interval time.Duration, genTitle GenTitleFunc) {
     // ...
 }

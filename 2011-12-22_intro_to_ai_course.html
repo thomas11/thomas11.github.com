@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+	<title>Intro to Artificial Intelligence Online Course</title>
+
+	<meta charset="utf-8" />
+
+	<link rel="alternate" type="application/atom+xml" title="RSS" href="index.xml" />
+	<link rel="author" type="text/html" title="About" href="/about.html" />
+	<link rel="stylesheet" href="/static/site.css" type="text/css" />
+
+	
+	
+	
+	
+  </head>
+
+  <body>
+
+	<div class="site" itemscope itemtype="http://schema.org/WebPage">
+
+	  <div class="header meta">
+        <div>
+		<a href="/index.html" itemprop="author">Thomas Kappler</a>
+        <span class="sep">&raquo;</span>&nbsp;
+		<a href="/index.html" class="nav">Home</a>
+		<span class="sep"> &middot; </span>
+        <a href="/about.html" class="nav">About</a>
+        </div>
+
+		<div class="header_categories">
+          Topics <span class="sep">&raquo;</span>&nbsp; 
+		  
+		  
+          <a href="/categories/Books.html">Books</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Perl.html">Perl</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Presenting.html">Presenting</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Go.html">Go</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Java.html">Java</a>
+		  
+		</div>
+	  </div>
+
+	  
+
+<h1 itemprop="headline">Intro to Artificial Intelligence Online Course</h1>
+
+<div class="abstract">
+  
+    <span class="date">Dec 22, 2011</span>&nbsp;&middot;&nbsp; 
+  
+  <span itemprop="description">The online class was a bold experiment, bringing Stanford teaching by Sebastian Thun and Peter Norvig to over 100,000 students. I loved the experience and got a lot out of it. Here are some thoughts and selected notes.</span>
+  
+</div>
+
+<div class="article" itemprop="mainContentOfPage"><p>I had always been interested in AI but ended up choosing different
+majors in college. Naturally, this class couldn&rsquo;t make up for that by
+itself given the time constraints, but I feel it did a great job on
+bringing the students up to speed in the important basics of the
+field. The range of topics was wide enough to serve as a solid
+foundation for further reading:</p>
+
+<ul>
+<li>How to think of environments</li>
+<li>Searching through state spaces, A* search</li>
+<li>Probability and Bayes Rule</li>
+<li>Bayes Networks, D-Separation and probabilistic inference</li>
+<li>Sampling methods</li>
+<li>Machine Learning basics and k-nearest neighbors</li>
+<li>Planning under uncertainty, Markov Decision Processes</li>
+</ul>
+
+<p>The online format worked great. I enjoyed the little quizzes during
+the course of each lecture because they made me pay more attention and
+helped retention.</p>
+
+<p>Due to work and other constraints I couldn&rsquo;t give the class as much
+time as I wanted, but I still finished with a score of 88%. Nothing
+special given that I have a CS degree, but not too bad either.</p>
+
+<p>Below are some of my class notes. They are not complete and you&rsquo;d be
+better off taking the class yourself&mdash;it&rsquo;s
+<a href="http://www.udacity.com/overview/Course/cs271">available on udacity</a>
+now.</p>
+
+<hr />
+
+<h2>1 Welcome to AI</h2>
+
+<p>AI in a nutshell: an agent observes its environments through sensors,
+and can influence it through actuators. The <em>control plan</em> mapping
+sensor input to activator output is the focus of AI. The repeated
+cycle of input and output is the <em>Perception Action Cycle</em>.</p>
+
+<p>Classifying environments:</p>
+
+<ul>
+<li>An environment is <em>fully observable</em> if an agent can, at all
+times, make all observations to make the optimal choice, i.e., see
+the entire state of the environment (chess). If this is not
+possible and the agent has to memorize previous observations
+(poker), it is <em>partially observable</em>.</li>
+<li>It can be deterministic (chess) or stochastic (dice games).</li>
+<li>The agent&rsquo;s actuators can be discrete or continuous (e.g. throwing
+darts: infinite possibilities of angles and acceleration).</li>
+<li>It can be benign or adversarial.</li>
+</ul>
+
+<h2>2 Problem Solving</h2>
+
+<p>Definition of a problem:</p>
+
+<ul>
+<li>initial state</li>
+<li>actions(s) = {a1, a2, &hellip;}</li>
+<li>result(s, a) = s&rsquo;</li>
+<li>goaltest(s) = T|F</li>
+<li>pathcost(s-a-&gt;s-a-&gt;s-&hellip;) -&gt; n</li>
+<li>stepcost(s, a, s&rsquo;) -&gt; n</li>
+</ul>
+
+<p><em>State space</em> = explored + frontier + unexplored</p>
+
+<p><em>Tree search</em>: until the goal is reached, take a choice from the
+frontier and apply all actions to it. This is a whole family of
+algorithms, since the removal of the choice is critical.</p>
+
+<p>In breadth-first tree search, the three sections of the state space
+correspond to three vertical regions of the tree.</p>
+
+<p>Tree search backtracks, since for each tree node, the one we came from
+is just another frontier node.</p>
+
+<p>We can turn the tree search into a graph search by remembering which
+nodes we&rsquo;ve seen already.</p>
+
+<p>In <em>uniform cost search</em> we pick the cheapest choice first.</p>
+
+<p>For finding the goal in the shortest route as in hops, breadth-first
+is optimal while depth-first is not. For finding the goal via the
+cheapest route, uniform cost is optimal.</p>
+
+<p>Uniform cost search is related to topological maps: we fan out from a
+starting point, in circles of increasing distance from the starting
+point.</p>
+
+<h3>A* search</h3>
+
+<p><code>f = g + h</code> where g(p) is the path cost and h(p) = h(final state of p)
+is the estimated distance to the goal.</p>
+
+<p>A* search does not end when the goal is reached&mdash;there might be
+other, shorter paths. The goal test happens after selecting the next
+path to be taken off the frontier.</p>
+
+<p>A* finds the lowest cost path if, for all s, h(s) &lt;= true cost. In
+other words, h is <em>optimistic</em> or <em>admissible</em>, it never overestimates.</p>
+
+<p>Problem solving works when:</p>
+
+<ul>
+<li>the domain is fully observable,</li>
+<li>the domain is known (available actions),</li>
+<li>the domain is discrete (finite number of actions),</li>
+<li>the domain is deterministic, and</li>
+<li>the domain is static.</li>
+</ul>
+
+<p>For the implementation of paths and state spaces the core data
+structure is the <em>node</em>, with four fields: state, action (it took to
+get there), cost (total), parent (preceding state). A linked list of
+nodes represents a path. The two main data structures dealing with
+nodes are the frontier and the explored list. The frontier is a
+priority queue with an additional set for membership test. The
+explored list can be a simple set.</p>
+
+<h2>3 Probability in AI</h2>
+
+<p><em>Bayes Networks</em>: nodes are random variables. Edges signify
+probabilistic influence. It&rsquo;s a compact representation of a
+probability distribution over a very large joint distribution of all
+involved variables. The state space has the size 2^n even if the
+variables were all binary.</p>
+
+<p>If X and Y are independent, <code>P(X,Y) = P(X)*P(Y)</code>. The P(X) and P(Y)
+are called <em>marginals</em>.</p>
+
+<p>First, some simple probability review:</p>
+
+<ul>
+<li>Total probability: <code>P(Y) = P(Y|X=i)*P(X=i)</code> summed over all i.</li>
+<li>Negation: <code>P(-X|Y) = 1 - P(X|Y)</code>.</li>
+<li>Joint probabilities: <code>P(X,Y) = P(Y=y|X=x) * P(X=x)</code> and vice
+versa.</li>
+</ul>
+
+<h3>Bayes Rule</h3>
+
+<p><code>P(A|B) = P(B|A)\*P(A) / P(B)</code>. In this formula, P(B|A) is the
+<em>likelihood</em>, P(A) the <em>prior</em>, P(B) the <em>marginal likelihood</em>, and
+P(A|B) the <em>posterior</em>. The marginal likelihood can be replaced by the
+total probability.</p>
+
+<p>Drawing Bayes Rule with two nodes A and B is a Bayesian network with
+two nodes A-&gt;B!</p>
+
+<p>How many parameters do we need to specify a Bayes Network of two
+variables? Three: P(A) (from which we derive P(-A)), P(B|A), and
+P(B|-A).</p>
+
+<p>Observe that using Bayes Rule, the normalizer is the same for both
+P(A|B) and P(-A|B). The two cases sum to 1. So we can compute Bayes
+Rule in a different way, effectively ignoring the normalizer:</p>
+
+<pre><code>P'(A|B)  = P(B|A)  P(A)
+P'(-A|B) = P(B|-A) P(-A)
+
+P(A|B)  = &lt;eta&gt;P'(A|B)
+P(-A|B) = &lt;eta&gt;P'(-A|B)
+
+&lt;eta&gt; = 1 / (P'(A|B) + P'(-A|B))
+</code></pre>
+
+<p>We defer the calculation of the normalizer.</p>
+
+<p>Exploiting <em>conditional independence</em>: if T1 and T2 with values x and
+y depend on A, what is P(t1|t2), given P(A), P(x|A) and P(y|A)? Using
+total probability, it is <code>P(t2|t1,A) * P(A|t1) + P(t2|t1,-A) *
+P(-A|t1)</code>. But if we know A and T1 and T2 are independent, knowledge
+of the first test gives me no more information about the second test.
+So we can simplify this to <code>P(t2|A)P(A|t1) + P(t2|-A)P(-A|t1)</code>.</p>
+
+<p>Absolute independence does not imply conditional independence, and
+vice versa.</p>
+
+<p><em>Confounding causes</em>: two (unobservable) nodes influence one output
+variable. There&rsquo;s no connection between the two influencing
+variables&mdash;if P(A) = x, then P(A|B=b) = x.</p>
+
+<p><em>Explaining away</em>: independence does not imply conditional
+ independence. If we have</p>
+
+<pre><code>S   R
+ \ /
+  H
+</code></pre>
+
+<p>then S and R are independent. But if we observe H, they are not
+independent anymore&mdash;its value gives us a clue which one is more
+likely.</p>
+
+<h2>Bayes Networks</h2>
+
+<p>The joint probability of a BN is the product of the probabilities of
+its nodes, conditioned on their incoming arcs.</p>
+
+<p>How many parameters define a BN? If the above product is <code>P(A) P(B)
+P(C|A,B) P(D|C) P(E|C)</code>, it&rsquo;s ten. P(A) and P(B) are one each. P(D|C)
+and P(E|C) are two each, for each possible value of C. P(C|A,B) is 4:
+all combinations of A and B.</p>
+
+<h3>D-Separation</h3>
+
+<p>This is about <em>conditional independence</em> in BNs, also called
+<em>reachability</em>.</p>
+
+<p>To determine independence of variables in a graph (like a BN), think
+about &ldquo;would knowing X help me to know more about Y?&rdquo; More formally,
+variables are dependent if they are connected by a path of <em>unknown</em>
+variables.</p>
+
+<p><code>A -&gt; UNKNOWN -&gt; B</code> is an <em>active triplet</em>, <code>A -&gt; KNOWN -&gt; B</code> is
+<em>inactive</em>.</p>
+
+<p>This also goes for upstream relations&mdash;this is the &ldquo;explaining away&rdquo;
+case.</p>
+
+<p>See <a href="http://www.cs.ubc.ca/~murphyk/Bayes/bnintro.html">Bayes Ball</a> for
+an easy test of conditional independence in BNs.</p>
+
+<h2>4 Probabilistic Inference</h2>
+
+<p>Given a BN, we can ask &ldquo;for these inputs, what are the outputs?&rdquo; We
+call the input <em>evidence</em>, the output <em>query</em>, and the interior nodes
+<em>hidden variables</em>. The answer is a complete probability distribution
+over the query variables, called the <em>posterior distribution</em>: P(Q1,
+Q2, &hellip;|E1=e1, &hellip;).</p>
+
+<p>Evidence nodes whose value we don&rsquo;t know, and query nodes we don&rsquo;t
+care about are hidden!</p>
+
+<p>The obvious question is which evidence has the most likely result,
+i.e., the argmax over the above P(&hellip;).</p>
+
+<h3>Enumeration</h3>
+
+<p><em>Conditional probability</em>: <code>P(Q|E) = P(Q,E) / P(E)</code>.</p>
+
+<p>Enumerating a BN, here for the burglary/earthquake -&gt; alarm -&gt;
+John/Mary calls network. We sum over the probability product for all
+combinations of the hidden variables (&ldquo;Se&rdquo; = sum over e).</p>
+
+<pre><code>Se(Sa( P(+b) P(e) P(A|+b,e)P(+j|a)P(+m,a) ))
+</code></pre>
+
+<p>Moving invariants out of inner loops:</p>
+
+<pre><code>P(+b) S( P(e) S(P(A|+b,e)P(+j|a)P(+m,a)) )
+</code></pre>
+
+<p>That&rsquo;s still not good enough. The next step is to <em>maximize
+independence</em>.</p>
+
+<p>A &ldquo;linear&rdquo; BN where each node points to one other node will take O(n),
+while one where each node is connected to all other nodes will take
+(2^n).</p>
+
+<p>The next optimization is <em>variable elimination</em> (4.8). First, joining
+factors. Let&rsquo;s say we have P&reg; and P(T|R). We combine them into
+P(R,T) by multiplying their tables together, through all combinations
+of r and t. Then, elimination (also called marginalization): turn
+P(R,T) into P(T) by summing up the P(R,T) table over r.</p>
+
+<h2>Approximate Inference Sampling</h2>
+
+<p>Flip coin repeatedly, count outcomes to estimate the joint probability
+distribution. In a BN</p>
+
+<p>If the count of each sampled variable is chosen according to the probability
+tables, the sampling approaches the true probability distribution with
+infinite samples, then the sampling method is <em>consistent</em>.</p>
+
+<p><em>Rejection sampling</em>: to estimate the distribution for a conditional
+variable, we go through the samples and reject all those that don&rsquo;t
+match the condition (evidence). The problem is that if the evidence is
+unlikely we need to reject most samples.</p>
+
+<p><em>Likelihood weighting</em> fixes this problem. We fix the evidence
+variables and sample the rest, so we can keep all samples. However,
+the distribution is inconsistent. To make it consistent, we attach a
+probabilistic weight to each sample. For instance, if rain has a
+probability of 0.4 and we&rsquo;re sampling P(grass wet|rain), we are forced
+to choose the 0.4 probability entry for rain in its table, so we
+weight the sample with 0.4.</p>
+
+<p><em>Gibb&rsquo;s Sampling</em> takes all evidence into account. It&rsquo;s based on
+Markov Chain Monte Carlo (MCMC). The idea is to sample one variable at
+a time, conditioned on all the others. We initialize all variables for
+the first sample. In each following iteration, we choose one variable
+at random and resample it. So we randomly walk the space of variable
+assignments. Even though each iteration depends on the previous one,
+the method is consistent.</p>
+
+<h3>Approximate Inference Sampling</h3>
+
+<p>We can Flip a coin repeatedly and count the outcomes to estimate the
+joint probability distribution. If the count of each sampled variable
+is chosen according to the probability tables, the sampling approaches
+the true probability distribution with infinite samples, then the
+sampling method is <em>consistent</em>.</p>
+
+<p><em>Rejection sampling</em>: to estimate the distribution for a conditional
+variable, we go through the samples and reject all those that don&rsquo;t
+match the condition (evidence). The problem is that if the evidence is
+unlikely we need to reject most samples.</p>
+
+<p><em>Likelihood weighting</em> fixes this problem. We fix the evidence
+variables and sample the rest, so we can keep all samples. However,
+the distribution is inconsistent. To make it consistent, we attach a
+probabilistic weight to each sample. For instance, if rain has a
+probability of 0.4 and we&rsquo;re sampling P(grass wet|rain), we are forced
+to choose the 0.4 probability entry for rain in its table, so we
+weight the sample with 0.4.</p>
+
+<p><em>Gibb&rsquo;s Sampling</em> takes all evidence into account. It&rsquo;s based on
+Markov Chain Monte Carlo (MCMC). The idea is to sample one variable at
+a time, conditioned on all the others. We initialize all variables for
+the first sample. In each following iteration, we choose one variable
+at random and resample it. So we randomly walk the space of variable
+assignments. Even though each iteration depends on the previous one,
+the method is consistent.</p>
+
+<h2>5 Machine Learning</h2>
+
+<p><em>Machine learning</em> is learning models from data. (Later note: it&rsquo;s
+interesting to compare this definition with Andrew Ng&rsquo;s from the
+Stanford Machine Learning class on coursera: giving computers the
+ability to learn without being explicitly programmed.)</p>
+
+<h3>Supervised Learning</h3>
+
+<p>Given a <em>feature vector</em> <code>x1, ..., xn -&gt; y</code>, y is the <em>target label</em> or
+<em>predictor</em>. A set of feature vectors with their target labels is
+called the data.</p>
+
+<p><em>Occam&rsquo;s Razor</em>: prefer the simpler hypothesis. There is a conflict
+between generalization error and training data error. Minimizing the
+latter leads to overfitting.</p>
+
+<p><em>Maximum Likelihood</em>: given a number of discrete data points y_i, find
+the P(x) that maximizes the likelihood of x in the data. With two
+discrete outcomes H and S: <code>p(S) = q</code>, <code>p(y_i) = q</code> if y_i=S, 1-q
+otherwise. Then <code>p(data) = multover(p(y_i) = q^(count(y_i=H) *
+(1-q)^(count(Y_i=S))</code>.</p>
+
+<p>We can do the counts, now we have to determine q. Maximizing p(data)
+is equivalent to maximizing log(p(data)).</p>
+
+<p>We can construct a BN modeling the problem. If we have a dictionary
+with 12 words, the BN will have 23 parameters: 1 for P(spam), and 12
+each for the spam and ham distributions. The parameters are estimated
+by supervised learning using an ML estimator with training data.</p>
+
+<p>To determine whether a message is spam, given the prior P(S), we
+multiply the prior with the probabilities of each word of occuring in
+a spam message, and divide by this expression plus the equivalent one
+for ham (total probability). Normal Bayes Theorem.</p>
+
+<p>When determing the p(w) that a word is spam by counting its occurences
+in the test data spam, we risk overfitting. When a word does not occur
+in the test data, the P(S) of a message containing that word will
+always be 0.</p>
+
+<p><em>Laplace smoothing</em> addresses this. Instead of p(x) = count(x)/N, we
+add a smoothing factor: <code>p(x) = count(x)+k / count(x) + N</code>, where N is
+the number of total different values.</p>
+
+<p>Cross-validation: find the Laplacian k by cross-validating repeatedly.</p>
+
+<p>Supervised learning can be classification (what we&rsquo;ve done until now),
+and regression: make continuous predictions, such as for tomorrow&rsquo;s
+temperature.</p>
+
+<p>Suggestively: what&rsquo;s the best curve through the data points? The one
+that hits each point would be good, but it&rsquo;s overfit of course.</p>
+
+<p>Linear regression formally: Given x11, &hellip;, x1n -&gt; y1 to xm1, &hellip;, xmn
+-&gt; ym, we want f(x) = y. In two dimensions: f(x) = w1*x + w0.</p>
+
+<p>We minimize the loss function modeling the residual error.</p>
+
+<ul>
+<li>LOSS = sum_j(yj - w1*xj - w0)^2.</li>
+<li>w1* = argmin_w(L)</li>
+</ul>
+
+<p>Because we minimize quadratic error, outliers penalize
+disproportionately.</p>
+
+<p>Logistic regression: if f(x) is a linear regression, z = 1 / 1 +
+e^(-f(x)).</p>
+
+<p>Gradient descent: iterative method. The i+1 guess is the ith guess
+minus its gradient times a small alpha (0.01). Gradient descent gets
+trapped in local minima.</p>
+
+<p>Which linear separator (if there is one) is preferrable? The one that
+maximizes the margin, i.e., the distance to the closer data
+points. This ensures that future real data will probably be on the
+right side. SVMs and Boosting are popular to find this separator.</p>
+
+<p>SVMs work with kernels to enable linear separation. For instance, if
+points are circular around the origin, and class + is closer than
+class -, there is no linear separator. But if we map the points to
+their distance from origin, there is.</p>
+
+<p>So far, all methods of supervised learning were parametric. The number
+of parameters was independent of the data.</p>
+
+<p>In non-parametric methods, the number of params can grow over time.</p>
+
+<p><em>Conformate</em> plans are plans that are guaranteed to reach a goal
+without sensing the world.</p>
+
+<h2>9 Planning under uncertainty</h2>
+
+<p>We&rsquo;ve covered planning, uncertainty, and learning before, but not in
+combination. Where planning and uncertainty intersect, we will look at
+<em>(Partially observable) Markov Decision Processes</em> (MDPs). In
+combination with learning, we&rsquo;ll look at <em>Reinforcement Learning</em>.</p>
+
+<h3>MDPs</h3>
+
+<p>We have states, actions, and a state transition matrix where
+<code>T(s,a,s') = P(s'|a,s)</code>. A reward function R(s) defines the goal to
+achieve. For now, the rewards are simply attached to states. The
+problem is then to attach an action to each state so that R(s) is
+maximized.</p>
+
+<p>A <em>policy</em> assigns actions to any state (except absorbing states).</p>
+
+<p>In a stochastic environment, what&rsquo;s the problem with the tree approach
+of conventional planning? Large branching factor, deep trees, many
+states visited more than once.</p>
+</div>
+
+
+	  
+	</div>
+  </body>
+</html>
