@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+	<title>dwmstatus in Go</title>
+
+	<meta charset="utf-8" />
+
+	<link rel="alternate" type="application/atom+xml" title="RSS" href="index.xml" />
+	<link rel="author" type="text/html" title="About" href="/about.html" />
+	<link rel="stylesheet" href="/static/site.css" type="text/css" />
+
+	
+	
+	
+	
+  </head>
+
+  <body>
+
+	<div class="site" itemscope itemtype="http://schema.org/WebPage">
+
+	  <div class="header meta">
+        <div>
+		<a href="/index.html" itemprop="author">Thomas Kappler</a>
+        <span class="sep">&raquo;</span>&nbsp;
+		<a href="/index.html" class="nav">Home</a>
+		<span class="sep"> &middot; </span>
+        <a href="/about.html" class="nav">About</a>
+        </div>
+
+		<div class="header_categories">
+          Topics <span class="sep">&raquo;</span>&nbsp; 
+		  
+		  
+          <a href="/categories/Books.html">Books</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Perl.html">Perl</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Presenting.html">Presenting</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Go.html">Go</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Java.html">Java</a>
+		  
+		</div>
+	  </div>
+
+	  
+
+<h1 itemprop="headline">dwmstatus in Go</h1>
+
+<div class="abstract">
+  
+    <span class="date">Feb 11, 2013</span>&nbsp;&middot;&nbsp; 
+  
+  <span itemprop="description">I ported dwmstatus to Go, a utility to set the title of the X root window, which dwm uses to set the content of the status bar.</span>
+  
+</div>
+
+<div class="article" itemprop="mainContentOfPage"><p>Recently I tried out the minimalist <a href="http://dwm.suckless.org/">dwm</a>
+window manager. I don&rsquo;t know yet if I&rsquo;ll stick with it, but it gave me
+a nice excuse to hack a bit of Go.</p>
+
+<p>Like most window managers, dwm has a status bar that can show useful
+information like time and date, battery status etc. It uses a simple
+and clever approach to set the contents of the status bar: it&rsquo;s simply
+the title of the normally invisible X root window. So all we need is a
+simple utility that periodically generates a string and sets it as the
+root window title.</p>
+
+<p>dwm comes with a little C program that does just that,
+<a href="http://dwm.suckless.org/dwmstatus/">dwmstatus</a>. I thought it&rsquo;d be a
+fun little exercise to do the same in Go, using Andrew Gallant&rsquo;s
+<a href="http://godoc.org/github.com/BurntSushi/xgb">xgb</a> package. It was a
+pleasure to use, works as advertised and closely follows the XGB
+protocol so that all the documentation out there still applies.</p>
+
+<p>The result is
+<a href="https://github.com/thomas11/dwmstatus">github.com/thomas11/dwmstatus</a>,
+with a whopping 54 lines of code. That&rsquo;s a lot shorter than the 128
+lines of the C version, although that one also displays some default
+content which mine does not. Two things stood out to me that made the
+Go implementation clear and easy to write.</p>
+
+<p>The <code>time</code> package has a great API that uses channels where
+appropriate. The <code>Tick</code> function returns a channel that keeps sending
+the current time in the given interval. That let&rsquo;s us write the
+periodic updates to the status bar like this:</p>
+
+<pre><code>c := time.Tick(interval)
+for now := range c {
+    genTitle(now, &amp;status)
+    // ...
+}
+</code></pre>
+
+<p>Functions are first-class values in Go. That offers a simple and
+convenient way of separating the core functionality of dwmstatus,
+periodically updating the root window title, from generating the
+actual status bar content, where each user might wish to show
+different things. In the Go version I defined a type that&rsquo;s simply a
+function that, given the current time and a buffer, writes the new
+status bar content into the buffer. The main entry function of
+dwmstatus accepts such a function and calls it for each update,
+without knowing anything about it:</p>
+
+<pre><code>type GenTitleFunc func(now time.Time, b *bytes.Buffer)
+...
+// Start the process of updating the status bar. genTitle will be called
+// repeatedly in the given interval.
+func Run(interval time.Duration, genTitle GenTitleFunc) {
+    // ...
+}
+</code></pre>
+
+<p>There&rsquo;s a sample implementation of <code>GenTitleFunc</code> in dwmstatus/main.go
+that I use on my Linux system to show time and date and the battery
+status.</p>
+</div>
+
+
+	  
+	</div>
+  </body>
+</html>
