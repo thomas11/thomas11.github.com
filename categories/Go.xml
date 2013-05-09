@@ -2,7 +2,7 @@
   <title>Thomas Kappler&#39;s site. Mostly programming and books. Category &#34;Go.&#34;</title>
   <link href="http://www.thomaskappler.net/categories/Go/" rel="alternate"></link>
   <id>http://www.thomaskappler.net/categories/Go/</id>
-  <updated>2013-05-09T16:49:43+02:00</updated>
+  <updated>2013-05-09T16:59:18+02:00</updated>
   <author>
    <name>Thomas Kappler</name>
    <uri>http://www.thomaskappler.net/</uri>
@@ -13,7 +13,7 @@
    <updated>2013-05-09T00:00:00Z</updated>
    <id>tag:www.thomaskappler.net,2013-05-09:/2013-05-09_hoares_csp_in_go.html</id>
    <summary type="html">Tony Hoare&#39;s &#34;Communicating sequential processes&#34; is not only a very influential Computer Science paper, but it was also a main inspiration for Go. It is full of examples written in a pseudo-code designed for the paper. I translated all these examples to Go, with unit tests.</summary>
-   <content type="html">&lt;p&gt;&lt;a href=&#34;https://github.com/thomas11/csp&#34;&gt;The code is on github&lt;/a&gt; as usual. I&#xA;documented it pretty extensively, and you can&#xA;&lt;a href=&#34;http://godoc.org/github.com/thomas11/csp&#34;&gt;read the documentation&lt;/a&gt;&#xA;nicely formatted on godoc.org, so there&amp;rsquo;s not much left to say here.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;The point of this exercise was not to produce something usable in&#xA;production code, but to fully understand Hoare&amp;rsquo;s paper. It&amp;rsquo;s easy to&#xA;convince yourself you understood something after reading it, but only&#xA;doing or teaching makes you fully grasp it. It was an enlightening&#xA;experience, and it&amp;rsquo;s impressive to see how far ahead of his time Hoare&#xA;was when writing this. Concurrency became a big topic outside of&#xA;academia only in the last few years.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;This little project was submitted to&#xA;&lt;a href=&#34;https://news.ycombinator.com/item?id=5512600&#34;&gt;Hacker News&lt;/a&gt; and&#xA;&lt;a href=&#34;http://www.reddit.com/r/golang/comments/1bv65p/the_examples_from_tony_hoares_seminal_1978_paper/&#34;&gt;Reddit&lt;/a&gt;&#xA;(not by me), and attracted some good comments.&lt;/p&gt;&#xA;</content>
+   <content type="html">&lt;p&gt;&lt;a href=&#34;https://github.com/thomas11/csp&#34;&gt;The code is on github&lt;/a&gt; as usual. I&#xA;documented it pretty extensively, and you can&#xA;&lt;a href=&#34;http://godoc.org/github.com/thomas11/csp&#34;&gt;read the documentation&lt;/a&gt;&#xA;nicely formatted on godoc.org, so there&amp;rsquo;s not much left to say here.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;The point of this exercise was not to produce something usable in&#xA;production code, but to fully understand Hoare&amp;rsquo;s paper. It&amp;rsquo;s easy to&#xA;convince yourself you understood something after reading it, but only&#xA;doing or teaching makes you fully grasp it. It was an enlightening&#xA;experience, and it&amp;rsquo;s impressive to see how far ahead of his time Hoare&#xA;was when writing this. Concurrency became a big topic outside of&#xA;academia only in the last few years.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;This little project was submitted to&#xA;&lt;a href=&#34;https://news.ycombinator.com/item?id=5512600&#34;&gt;Hacker News&lt;/a&gt; and&#xA;&lt;a href=&#34;http://www.reddit.com/r/golang/comments/1bv65p/the_examples_from_tony_hoares_seminal_1978_paper/&#34;&gt;Reddit&lt;/a&gt;&#xA;(not by me) and attracted some good comments.&lt;/p&gt;&#xA;</content>
    <category term="Go"></category>
    <category term="Books"></category>
   </entry>
