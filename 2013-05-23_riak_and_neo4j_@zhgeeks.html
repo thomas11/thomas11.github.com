@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+	<title>Riak and Neo4j @zhgeeks</title>
+
+	<meta charset="utf-8" />
+
+	<link rel="alternate" type="application/atom+xml" title="RSS" href="index.xml" />
+	<link rel="author" type="text/html" title="About" href="/about.html" />
+	<link rel="stylesheet" href="/static/site.css" type="text/css" />
+
+	
+	
+	
+	
+  </head>
+
+  <body>
+
+	<div class="site" itemscope itemtype="http://schema.org/WebPage">
+
+	  <div class="header meta">
+        <div>
+		<a href="/index.html" itemprop="author">Thomas Kappler</a>
+        <span class="sep">&raquo;</span>&nbsp;
+		<a href="/index.html" class="nav">Home</a>
+		<span class="sep"> &middot; </span>
+        <a href="/about.html" class="nav">About</a>
+        </div>
+
+		<div class="header_categories">
+          <a href="/topics.html">Topics</a> <span class="sep">&raquo;</span>&nbsp; 
+		  
+		  
+          <a href="/categories/Books.html">Books</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Perl.html">Perl</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Meetups.html">Meetups</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Go.html">Go</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Presenting.html">Presenting</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Java.html">Java</a>
+		  
+		</div>
+	  </div>
+
+	  
+
+<h1 itemprop="headline">Riak and Neo4j @zhgeeks</h1>
+
+<div class="abstract">
+  
+    <span class="date">May 23, 2013</span>&nbsp;&middot;&nbsp; 
+  
+  <span itemprop="description">We had two great zhgeeks meetups recently: Sean Cribbs spoke about Riak and eventual consistency, and Jim Webber presented Neo4j. Sean&#39;s talk was also an intro to distributed systems with a list of foundational papers that I list in this post.</span>
+  
+</div>
+
+<div class="article" itemprop="mainContentOfPage"><p>This past April we at <a href="http://www.meetup.com/zhgeeks/">zhgeeks</a> had
+the opportunity to host two great database-centric meetups.</p>
+
+<p>As an aside, I can now say &ldquo;we&rdquo; because <a href="Muharem
+Hrnjadovic">Muharem Hrnjadovic</a>, founder and organizer of zhgeeks, added me as a
+co-organizer. Make no mistake, I didn&rsquo;t do much so far and all credit
+for zhgeeks goes to Muharem. I will get more involved in organizing
+future meetups, though. We have a couple of good ideas, by the way, so
+stay tuned!</p>
+
+<p>First, <a href="http://jimwebber.org/">Jim Webber</a>, Chief Scientist at
+<a href="http://www.neotechnology.com/">Neo Technology</a>, presented
+<a href="http://www.meetup.com/zhgeeks/events/97436192/">Neo4j and connected data</a>.
+This was a relatively high-level talk where Jim spent the first half
+or so on pointing out use cases for graph databases and the problem
+domains for which they are best suited&mdash;not surprisingly, domains
+with highly interconnected data. Later on Jim showed Neo4J&rsquo;s new query
+language Cypher, which is a very expressive textual query language for
+graphs.</p>
+
+<p><img src="/static/posts/jim webber zhgeeks.jpg" /></p>
+
+<p>Jim&rsquo;s a great speaker with lots of wit and plenty of humorous slides.
+The audience&mdash;one of the largest we had so far at zhgeeks&mdash;was
+captured. I can&rsquo;t help mentioning the one thing I didn&rsquo;t like at all,
+the public cheering of Margaret Thatcher&rsquo;s death. I feel that no
+matter what political opinions you hold, that&rsquo;s a distasteful and
+out-of-place thing to do as a technical presenter.</p>
+
+<p>After Jim&rsquo;s presentation we had a brief talk by Florian Müller,
+co-founder of <a href="http://jooik.com/">jooik</a>, about how they use Neo4j in
+their startup. It&rsquo;s always a pleasure to hear of that kind of
+real-world experience.</p>
+
+<p>Later in April we had <a href="http://seancribbs.com/">Sean Cribbs</a> from
+<a href="http://basho.com/">Basho</a>, makers of the
+<a href="http://basho.com/riak/">Riak</a> distributed database, presenting
+<a href="http://www.meetup.com/zhgeeks/events/107680222/">Understanding Eventual Consistency and Riak</a>.
+This was again an awesome talk. Sean wasn&rsquo;t afraid to go into some
+technical details of distributed systems which I appreciated very
+much. He structured the talk as a tour of some of the most influential
+papers in distributed systems, pointing out how Riak implements each
+technique and deals with the trade-offs involved. I found this to be a
+great overview of the field, so I made a list of the papers and
+resources Sean mentioned.</p>
+
+<ul>
+<li>Sean recommends the
+<a href="http://the-paper-trail.org/blog/">Paper Trail</a> blog by Henry
+Robinson that has great write-ups on important topics in
+distributed systems.</li>
+<li>Fischer, Lynn, Patterson 1985:
+<a href="http://cs-www.cs.yale.edu/homes/arvind/cs425/doc/fischer.pdf">Impossibility of Distributed Consensus with One Faulty Process (pdf)</a>
+introduces the &ldquo;FLP impossiblity&rdquo;: in an asynchronous setting
+there is no distributed algorithm that solves the consensus
+problem of several nodes agreeing on a common value. Paper Trail
+has a
+<a href="http://the-paper-trail.org/blog/a-brief-tour-of-flp-impossibility/">good post</a>
+on this paper.</li>
+<li>Fox, Brewer 1999:
+<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.24.3690&amp;rep=rep1&amp;type=pdf">Harvest, yield, and scalable tolerant systems (pdf)</a>
+focuses on what kind of compromises a distributed system can make
+in case of node failures or partitions. Yield is the probability
+of completing a request and harvest is a measure of the accuracy
+of the response, defined as the fraction of the existing data the
+system used to come up with the response. Coda Hale wrote a great
+<a href="http://codahale.com/you-cant-sacrifice-partition-tolerance/">overview article on Harvest, yield and the CAP theorem</a>.</li>
+<li>Finally, Sean touched on Leslie Lamport&rsquo;s work on safety and
+liveness of distributed systems in his 1977 paper
+<a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.137.9454">Proving the Correctness of Multiprocess Programs</a>.
+Sean did a great job of relating Lamport&rsquo;s results to currently
+existing algorithms and systems. The basic question is, if you
+have F failures, how many nodes that are still up do you need to
+respond? If you need F + 1 (at least one), it is an eventually
+consistent system. A majority of nodes, 2F + 1, corresponds to
+<a href="http://research.microsoft.com/users/lamport/pubs/pubs.html#paxos-simple">Paxos</a>
+and two-phase-commit. A super majority, 3F + 1, is called
+<a href="http://en.wikipedia.org/wiki/Byzantine_fault_tolerance">Byzantine fault tolerance</a>.</li>
+<li>Riak itself is heavily based on the
+<a href="http://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf">Amazon dynamo paper (pdf)</a>.</li>
+</ul>
+
+<p>Finally, Sean recommended the talk
+<a href="http://vimeo.com/52414903">data structures in Riak</a>.</p>
+
+<p>A question from the audience was what other solutions in the
+bewildering space of distributed systems and databases were similar to
+Riak. Among the open source ones Sean thought
+<a href="http://www.project-voldemort.com/voldemort/">Voldemort</a> to be the
+closest, followed by <a href="http://cassandra.apache.org/">Cassandra</a>.</p>
+</div>
+
+
+	  
+	</div>
+  </body>
+</html>
