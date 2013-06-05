@@ -108,6 +108,10 @@ pre code {
   color: #555;
 }
 
+.header a.cur {
+    color: #C72409;
+}
+
 .sep {
     padding: 0;
     font-size: x-large;
