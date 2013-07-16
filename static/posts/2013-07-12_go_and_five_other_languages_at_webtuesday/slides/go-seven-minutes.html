@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Go in 7 minutes</title>
+    <meta charset='utf-8'>
+    <script src='static/slides.js'></script>
+  </head>
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen'>
+      
+      <article>
+        <h1>Go in 7 minutes</h1>
+        <h3>11 June 2013</h3>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    Thomas Kappler
+  </p>
+  
+
+  
+  <p>
+    www.thomaskappler.net
+  </p>
+  
+
+          </div>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    
+  </p>
+  
+
+          </div>
+        
+      </article>
+      
+  
+  
+      <article>
+      
+        <h3>Go</h3>
+        <div class="image"><img src="boxer.jpg" ></div>
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Hello world</h3>
+        
+  
+  <div class="code" contenteditable="true"><pre>package main
+
+import (
+    &#34;fmt&#34;
+)
+
+func main() {
+    fmt.Println(&#34;Hello, λ!&#34;)
+}</pre></div>
+  
+
+  
+  <p>
+    Plus some awesomeness!
+  </p>
+  
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Concurrency</h3>
+        
+  
+  <p>
+    Lightweight pseudo-threads passing data.
+  </p>
+  
+
+  
+  <p>
+    Goroutines &amp; channels.
+  </p>
+  
+
+  
+  <p>
+    &#34;Don&#39;t communicate by sharing memory, share memory by communicating.&#34;<br>
+    ― Rob Pike
+  </p>
+  
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Concurrency example</h3>
+        
+  
+  <div class="code" contenteditable="true"><pre>ch := make(chan int)
+
+go func() {
+    for i := 0; i &lt; 10; i&#43;&#43; {
+        ch &lt;- i
+    }
+    close(ch)
+}()
+
+for num := range ch {
+    fmt.Println(num)
+}</pre></div>
+  
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Concurrency example</h3>
+        
+  
+  <div class="code" contenteditable="true"><pre>ch := make(chan int)
+
+go func() {
+    for i := 0; i &lt; 10; i&#43;&#43; {
+        time.Sleep(time.Duration(rand.Intn(3)) * time.Second)
+        ch &lt;- i
+    }
+    close(ch)
+}()
+
+for {
+    select {
+    case num := &lt;-ch:
+        fmt.Println(num)
+    case &lt;-time.After(1 * time.Second):
+        fmt.Println(&#34;Timeout!&#34;)
+        break
+    }
+}</pre></div>
+  
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Types, Structs and Composition</h3>
+        
+  
+  <p>
+    Make anything typesafe.
+  </p>
+  
+
+  
+  <div class="code" contenteditable="true"><pre>type Lang string
+
+type Foo struct { ... }</pre></div>
+  
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Types, Structs and Composition</h3>
+        
+  
+  <p>
+    Make anything typesafe.
+  </p>
+  
+
+  
+  <div class="code" contenteditable="true"><pre>type Lang string
+
+type Foo struct { ... }</pre></div>
+  
+
+  
+  <p>
+    Put methods on anything.
+  </p>
+  
+
+  
+  <div class="code" contenteditable="true"><pre>func (l Lang) Awesome() bool { return l == &#34;Go&#34; }</pre></div>
+  
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Types, Structs and Composition</h3>
+        
+  
+  <p>
+    Make anything typesafe.
+  </p>
+  
+
+  
+  <div class="code" contenteditable="true"><pre>type Lang string
+
+type Foo struct { ... }</pre></div>
+  
+
+  
+  <p>
+    Put methods on anything.
+  </p>
+  
+
+  
+  <div class="code" contenteditable="true"><pre>func (l Lang) Awesome() bool { return l == &#34;Go&#34; }</pre></div>
+  
+
+  
+  <p>
+    Compose without annoying delegates.
+  </p>
+  
+
+  
+  <div class="code" contenteditable="true"><pre>type WebTuesdayTalk struct {
+    Lang
+    presenter string
+}</pre></div>
+  
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Program composition: interfaces</h3>
+        
+  
+  <p>
+    Structural typing = &#34;static duck typing&#34;.
+  </p>
+  
+
+  
+  <div class="code" contenteditable="true"><pre>func (f *File) Read(b []byte) (n int, err...)</pre></div>
+  
+
+  
+  <p>
+    implements
+  </p>
+  
+
+  
+  <div class="code" contenteditable="true"><pre>type Reader interface {
+    Read(p []byte) (n int, err error)
+}</pre></div>
+  
+
+  
+  <p>
+    -&gt; Implement interfaces without creating a dependency.
+  </p>
+  
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Practical</h3>
+        
+  <ul>
+  
+    <li>Toolchain</li>
+  
+    <li>Documentation</li>
+  
+    <li>Testing</li>
+  
+    <li>Reflection</li>
+  
+    <li>Fast</li>
+  
+  </ul>
+
+      
+      </article>
+  
+  
+  
+      <article>
+      
+        <h3>Resources</h3>
+        <p class="link"><a href="http://tour.golang.org/">The Go programming language tour</a></p><p class="link"><a href="https://gobyexample.com/">Go by example</a></p><p class="link"><a href="http://golang.org/doc/effective_go.html">Effective Go</a></p><p class="link"><a href="http://golang.org/doc/code.html">How to Write Go Code</a></p><p class="link"><a href="http://research.swtch.com/gotour">A Tour of Go by Russ Cox (video)</a></p><p class="link"><a href="http://www.youtube.com/watch?v=f6kdp27TYZs">Go Concurrency Patterns by Rob Pike (video)</a></p>
+      
+      </article>
+  
+  
+
+      <article>
+        <h3>Thank you</h1>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    Thomas Kappler
+  </p>
+  
+
+  
+  <p>
+    www.thomaskappler.net
+  </p>
+  
+<p class="link"><a href="http://twitter.com/jugglingbits">twitter.com/jugglingbits</a></p>
+          </div>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    
+  </p>
+  
+
+          </div>
+        
+      </article>
+
+  </body>
+  <script src='static/playground.js'></script>
+</html>

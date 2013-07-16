@@ -2,11 +2,22 @@
   <title>Thomas Kappler&#39;s site. Mostly programming and books. Category &#34;Go.&#34;</title>
   <link href="http://www.thomaskappler.net/categories/Go/" rel="alternate"></link>
   <id>http://www.thomaskappler.net/categories/Go/</id>
-  <updated>2013-06-05T17:51:41+02:00</updated>
+  <updated>2013-07-16T07:36:08+02:00</updated>
   <author>
    <name>Thomas Kappler</name>
    <uri>http://www.thomaskappler.net/</uri>
   </author>
+  <entry>
+   <title>Go and five other languages at WebTuesday Zurich</title>
+   <link href="http://www.thomaskappler.net/2013-07-12_go_and_five_other_languages_at_webtuesday.html" rel="alternate"></link>
+   <updated>2013-07-12T00:00:00Z</updated>
+   <id>tag:www.thomaskappler.net,2013-07-12:/2013-07-12_go_and_five_other_languages_at_webtuesday.html</id>
+   <summary type="html">The last Zurich WebTuesday was fun. Six speakers presented six languages in seven minutes each. I did Go.</summary>
+   <content type="html">&lt;p&gt;This past June, fellow Zurich hacker &lt;a href=&#34;http://ivanjovanovic.com/&#34;&gt;Ivan&lt;/a&gt;&#xA;organized a cool &lt;a href=&#34;http://www.webtuesday.ch&#34;&gt;WebTuesday&lt;/a&gt;:&#xA;&lt;a href=&#34;http://webtuesday.ch/meetings/20130611/&#34;&gt;seven languages in seven minutes each&lt;/a&gt;.&#xA;We ended up with six languages due to a last-minute cancellation, but&#xA;that doesn&amp;rsquo;t detract from the idea: exposing people to different&#xA;programming paradigms, styles, and tool chains in rapid succession to&#xA;expand their horizons and to foster discussion. I think it worked out&#xA;very well.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Please see &lt;a href=&#34;http://webtuesday.ch/meetings/20130611/&#34;&gt;the announcement&lt;/a&gt;&#xA;for the speaker list and the full program.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;All the presentations were great. Thanks to the speakers who put in the&#xA;effort to make them fun!&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;img src=&#34;/static/posts/2013-07-12_go_and_five_other_languages_at_webtuesday/impression.jpg&#34; /&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;For my Go presentation, I made a&#xA;&lt;a href=&#34;/static/posts/2013-07-12_go_and_five_other_languages_at_webtuesday/slides/go-seven-minutes.html&#34;&gt;few simple slides&lt;/a&gt;.&#xA;The vintage boxer pic refers to Ivan&amp;rsquo;s characterization of Go that I&#xA;can agree with: somewhat old-fashioned but packing a good punch.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;The structure of my presentation is simple. After exposing the&#xA;audience to the syntax with a Hello World, I address concurrency&#xA;through goroutines, channels, and select. Then I give some quick&#xA;examples of how Go makes program design easy with its clever types,&#xA;interfaces and embedded structs.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;I think people liked it and I had some good conversations afterwards.&#xA;The interest in Go as well as other lesser-known languages has&#xA;definitely developed in the Zurich tech scene, and I think we&amp;rsquo;ll see&#xA;interesting stuff in the months to come.&lt;/p&gt;&#xA;</content>
+   <category term="Meetups"></category>
+   <category term="Go"></category>
+   <category term="Presenting"></category>
+  </entry>
   <entry>
    <title>The examples from Tony Hoare&#39;s 1978 paper &#34;Communicating sequential processes&#34; in Go</title>
    <link href="http://www.thomaskappler.net/2013-05-09_hoares_csp_in_go.html" rel="alternate"></link>
