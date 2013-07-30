@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+	<title>Coursera Machine Learning with Andrew Ng</title>
+
+	<meta charset="utf-8" />
+
+	<link rel="alternate" type="application/atom+xml" title="RSS" href="index.xml" />
+	<link rel="author" type="text/html" title="About" href="/about.html" />
+	<link rel="stylesheet" href="/static/site.css" type="text/css" />
+
+	
+	
+	
+	
+  </head>
+
+  <body>
+
+	<div class="site" itemscope itemtype="http://schema.org/WebPage">
+
+	  <div class="header meta">
+        <div>
+		<a href="/index.html" itemprop="author">Thomas Kappler</a>
+        <span class="sep">&raquo;</span>&nbsp;
+		<a href="/index.html" class="nav">Home</a>
+		<span class="sep"> &middot; </span>
+        <a href="/about.html" class="nav">About</a>
+        </div>
+
+		<div class="header_categories">
+          <a href="/topics.html">topics</a>
+          <span class="sep">&raquo;</span>&nbsp; 
+		  
+		    
+            <a href="/categories/Go.html">Go</a>
+		  
+		    <span class="sep"> &middot; </span>
+            <a href="/categories/Meetups.html">Meetups</a>
+		  
+		    <span class="sep"> &middot; </span>
+            <a href="/categories/Books.html">Books</a>
+		  
+		    <span class="sep"> &middot; </span>
+            <a href="/categories/Courses.html">Courses</a>
+		  
+		    <span class="sep"> &middot; </span>
+            <a href="/categories/AI&amp;ML.html">AI&amp;ML</a>
+		  
+		</div>
+	  </div>
+
+	  
+
+<h1 itemprop="headline">Coursera Machine Learning with Andrew Ng</h1>
+
+<div class="abstract">
+  
+    <span class="date">Jul 23, 2013</span>&nbsp;&middot;&nbsp; 
+  
+  <span itemprop="description">I took the recent online machine learning class with Coursera. It was a good experience and I learned a lot. Here are some notes and observations.</span>
+  
+</div>
+
+<div class="article" itemprop="mainContentOfPage"><p>Machine Learning is on my radar of things to learn since a long time.
+After all, I&rsquo;m already kind of a data guy in software development, but
+I&rsquo;m not very strong on the analysis and classification side.</p>
+
+<p>Professor
+<a href="http://ai.stanford.edu/~ang/">Andrew Ng of the Stanford AI lab</a>
+offers a
+<a href="https://class.coursera.org/ml-003/class/index">Coursera class in Machine Learning</a>.
+I took the recent class from April to June 2013.</p>
+
+<p>The class was a great experience. I found the lectures to be clear and
+the content made perfect sense as an intro to machine learning. The
+pace was often a bit slow for my taste, since I already knew the
+required math, but this was easily fixed by watching the lectures at a
+higher speed. The Coursera online video player offers this convenient
+feature including resampling so the voice doesn&rsquo;t sound funny.</p>
+
+<p>This was the syllabus:</p>
+
+<ul>
+<li>Linear Regression with One Variable</li>
+<li>Linear Regression with Multiple Variables</li>
+<li>Logistic Regression</li>
+<li>Regularization</li>
+<li>Neural Networks: Representation</li>
+<li>Neural Networks: Learning</li>
+<li>Advice for Applying Machine Learning</li>
+<li>Machine Learning System Design</li>
+<li>Support Vector Machines (SVMs)</li>
+<li>Clustering</li>
+<li>Dimensionality Reduction</li>
+<li>Anomaly Detection</li>
+<li>Recommender Systems</li>
+<li>Large-Scale Machine Learning</li>
+<li>Example of an application of machine learning</li>
+</ul>
+
+<p>Each lecture had a homework assignment to go with it, where we
+implemented the algorithms in Octave. This was crucial to properly
+understand them, and to remember at least the gist of everything. It&rsquo;s
+too easy to zone out when watching a lecture and to convince yourself
+afterward that you got it. In addition, I had never used Octave (or
+Matlab) before and I now realize how useful it is for quick
+development of mathematical code.</p>
+
+<p>Below are some of my class notes. They are neither complete nor
+formatted well or checked for correctness, so you’d be better off
+taking the class yourself! The last two lectures are missing because I
+had too much other things going on.</p>
+
+<hr />
+
+<p>Really nice intro lectures with lots of motivation and an accessible
+explanation of supervised vs. unsupervised learning.</p>
+
+<h3>Notation</h3>
+
+<pre><code>m := number of training examples
+x's := input variables
+y's := output variables
+h := hypothesis := learning algorithm. h(x) = y.
+</code></pre>
+
+<h3>Linear regression with one variable</h3>
+
+<p><code>h(x) = t0 + t1*x</code> &mdash; univariate linear regression, straight line.</p>
+
+<p>Fitting h is a minimization problem over the sum of all x&rsquo;s. For each
+x, minimize the square of the difference between y and h(x). We divide
+that sum by 2m to average. This cost function is called square error
+and is written J(t0, t1).</p>
+
+<p><em>Gradient descent</em> solves linear regression. Repeat until convergence:</p>
+
+<pre><code>t_j := t_j - alpha( (delta/delta*t_j) * J(t0, t1) )
+</code></pre>
+
+<p>Alpha is a learning rate. t0 and t1 must be updated simultaneously,
+assigning to temp variables.</p>
+
+<p><em>Batch gradient descent</em> means we look at all training examples for
+each step.</p>
+
+<h3>Linear regression with more than one variable</h3>
+
+<p>Generalized gradient descent: <code>h(x) = theta' * x = t0x0 + t1x1 + ...</code>.
+We set x0 to 1 always. The parameters t0, t1, &hellip; form a vector theta.</p>
+
+<p>The cost function is then <code>J(theta) = 1/2m * sum_m( (h(x_i)-y_i)^2 )</code>.</p>
+
+<p>The update step is <code>t_j = t_j - alpha * der(t_j) * J(theta)</code>.</p>
+
+<p>Scaling gradient descent to make it converge much faster: scale the
+x_i by doing <code>(x_i - avg(x))/range(x)</code> where range is max - min.</p>
+
+<p>If gradient descent runs correctly, J(theta), the cost function,
+should decrease after every step. If it&rsquo;s increasing or oscillating
+it&rsquo;s usually a too large alpha. Plotting the cost function over the
+number of iterations helps debugging.</p>
+
+<p>Ng recommends starting with 0.001 and increasing threefold to 0.003,
+0.01 and so on.</p>
+
+<h3>Solving linear regression with the normal equation</h3>
+
+<p>Solving theta analytically. Construct a matrix X (<em>design matrix</em>)
+that is the table of feature values in the training data, with the
+columns being x0 (=1), x1, etc. X is an m x (n+1) matrix (n for n
+features, +1 for x0). Correspondingly, take y to be the vector of
+targets in the training data.</p>
+
+<p>Theta is then <code>(X' X)^-1 X' y</code>. In Octave: <code>pinv(X'*X) * X' * y</code>.</p>
+
+<h3>Classification with logistic regression</h3>
+
+<p>Result variable y of {0, 1}, <em>negative class</em> and <em>positive class</em>.</p>
+
+<p>Linear regression could be used by setting a threshold for the
+classifier h_theta. But outliers will greatly influence the
+classifier.</p>
+
+<p>In logistic regression (which is actually a classification algorithm),
+the prediction h_theta is always between 0 and 1. We call it
+hypothesis and interpret it as the probability that y=1 on input x:
+<code>h_theta(x) = P(y=1 | x; theta)</code>.</p>
+
+<p>Where in linear regression h_theta(x) was <code>theta'*x</code>, it is now
+<code>g(theta'*x)</code>. g is called the <em>sigmoid function</em> or <em>logistic
+function</em> and is defined as <code>g(z) = 1 / 1+e^-z</code>. It asymptotes at 0 on
+the left and 1 at the right and is 0.5 at zero.</p>
+
+<p>We predict the hypothesis to be true when g(z) &gt;= 0.5, which happens
+when z &gt;= 0, where z is theta&rsquo;*x.</p>
+
+<p>The <em>decision boundary</em> is the line drawn by <code>theta'*x &gt;= 0</code>. It is a
+property of the hypothesis, not of the data set, so we need to fit the
+parameters to the training set.</p>
+
+<p>For non-linear decision boundaries, we can introduce polynomial
+features such as x2^2 (and possibly delete the linear ones by setting
+their parameter in theta to 0). For example, <code>x1^2 + x2^2 = 1</code> is a
+circle of radius 1.</p>
+
+<p>The cost function we used for linear regression, half of the squared
+error, is not convex when used with logistic regression. That means
+gradient descent will get stuck in local minima. Instead, we use the
+convex function <code>Cost(h_theta(x), y) = -log(h_theta(x)) if y=1,
+-log(1-h_theta(x)) if y=0</code>. This is equivalent to <code>-y*log(h(x)) -
+(1-y)*log(1-h(x))</code>.</p>
+
+<p>The overall cost J(theta) is then <code>1/m sum_i_m Cost(h_theta(x_i),
+y_i)</code>. It can be derived statistically through maximum likelihood
+estimation.</p>
+
+<p>For gradient descent, we take the derivative of J as usual, ending up
+with <code>theta_j = theta_j - alpha * sum_i_m((h(x_i) - y_i) * xj_i)</code>.
+This is identical to linear regression!</p>
+
+<p>Feature scaling applies to logistic regression just as it does to
+linear regression.</p>
+
+<h3>More sophisticated algorithms than gradient descent</h3>
+
+<ul>
+<li>conjugate gradient</li>
+<li>BFGS</li>
+<li>L-BFGS</li>
+</ul>
+
+<p>They figure out the learning rate on their own and converge faster,
+but are more complex.</p>
+
+<p>In Octave xthere&rsquo;s <code>fminunc</code>&mdash;function minimization unconstrained.</p>
+
+<h3>Regularization</h3>
+
+<p>Underfitting = high bias. Polynomial of too low degree in logistic
+regression.</p>
+
+<p>Overfitting = high variance. Polynomial of too high degree in logistic
+regression. Happens with too many features.</p>
+
+<p>When we have a lot of features, plotting the classifier is impossible
+and it becomes hard to detect overfitting. Later we&rsquo;ll see <em>model
+selection</em> to decide which features to discard.</p>
+
+<p>Discarding features loses information. Instead, we can employ
+<em>regularization</em>. The idea is to penalize the features (thetas):
+multiply them with a big factor in the cost function forces the
+minimization to make them really small. J(theta) becomes <code>1/2m
+sum_i_m(h(xi)-yi)^2 + lambda sum_j_n(theta_j^2)</code>. Lambda is the
+regularization factor. The derivative of the added lambda term used in
+the update step is <code>lambda/m * theta_j</code>. It doesn&rsquo;t depend on the i in
+the sum, so it can be pulled out.</p>
+
+<p>Using the normal equation, lambda is simply applied to the feature
+matrix.</p>
+
+<h2>Neural networks</h2>
+
+<p>Logistic regression blows up with lots of features. There are about
+O(n²) terms if we include only the second-order terms x1x2, x1x3 etc.,
+and O(n³) terms if we include the cubic terms.</p>
+
+<p>Some terminology:</p>
+
+<ul>
+<li><em>neuron</em> or <em>bias unit</em></li>
+<li>input wires x1, &hellip;, xn, plus x0 = 1.</li>
+<li>output is h_theta(x) = 1 / (1+e^(-theta&rsquo;<em>x)), the sigmoid function,
+here *activation function</em>.</li>
+<li>theta are the parameters or <em>weights</em></li>
+<li>input layer, hidden layers (neither x nor y), output layers</li>
+</ul>
+
+<p>Theta is a matrix since the neural network has a matrix structure (one
+column per layer). If layer j has sj units, and layer k has sk
+units, then theta_j is of dimension sk x sj+1. For example, with
+j=k=2, <code>activation(i, k) = g(theta(i,0)*x0 + theta(i,1)*x1 +
+theta(i,2)*x2)</code>.</p>
+
+<p>Neural networks are basically several layers of logistic regression.
+It learns the features from the basic input features x1, x2, &hellip;.</p>
+
+<p>The layers, their size etc. are called the architecture of a neural
+network.</p>
+
+<p>To learn theta, we first need a cost function. The cost function is a
+generalization of the one for logistic regression. For K output units,
+we compute h_theta(x) for k = 1,&hellip;,K. We&rsquo;re taking the kth output
+unit and compare it to y_k.</p>
+
+<p>Back propagation: let delta_j_l be the error of node j in layer l. For
+the output layer L, <code>delta_L = a_L - y</code> (vectorized for all nodes in
+the layer). For the previous layers l, <code>delta_l = (Theta_l' *
+delta_l+1) .* g'(z_l)</code>. The derivative of the sigmoid at z_l is <code>a_l
+.* (1-a_l)</code>. There is no delta_1 since this is the input. We start at
+L and go back to 2.</p>
+
+<p>The back propagation algorithm is then: for each training example (xi,
+yi) do</p>
+
+<ol>
+<li>Set a1 = xi</li>
+<li>Perform forward propagation to compute a_l for l = 2,&hellip;,L.</li>
+<li>Compute the error delta_L = a_L - y_i.</li>
+<li>Compute delta_(L-1), &hellip;, delta_2. <code>DELTA_ij_l = DELTA_ij_l +
+ a_j_l*delta_i_(l+1)</code>. The latter expression is vectorized as
+ <code>DELTA_l = DELTA_l + delta_(l+1)*a_l'</code>.</li>
+</ol>
+
+<p>Then, <code>DELTA/m</code> is the partial derivative of the cost function.</p>
+
+<h2>Machine Learning Diagnostics</h2>
+
+<p>Your ML approach isn&rsquo;t working so well. What&rsquo;s wrong?</p>
+
+<p>Split data into training and test set, approx. 70 to 30. After
+learning, calculate the average square error on the test set (linear
+regression).</p>
+
+<p>To choose between different models, such as different order
+polynomials for regression, we can learn using each candidate model on
+the training set and choose the one performing best on the test set.
+However, our error will now be optimistic because we picked the best
+model for the test set. To avoid this, we use a third data set for
+cross-validation. We test the model hypotheses on the validation set
+and then estimate the generalization error using the test set.</p>
+
+<p>If performance is not good enough, we need to distinguish between
+underfitting (high bias) and overfitting (high variance). In case of a
+bias problem, both the training and the cross-validation error are
+high. In case of high variance, the training error is low (because the
+training set fits very well), but the cv error is high.</p>
+
+<p>Large learning parameters (lambda) will lead to high bias (underfit),
+small ones to high variance.</p>
+
+<h2>How to approach an ML problem</h2>
+
+<ol>
+<li>Partition the data into training, test, cv.</li>
+<li>Start with a simple algorithm and validate it.</li>
+<li>Plot learning curves (comparing average squared error of test and
+cv set) to see whether there is high variance or high bias and
+therefore whether more examples, more features etc. are going to
+help.</li>
+<li>Error analysis: manually examine the erroneous examples in the cv
+set to spot any systematic errors.</li>
+</ol>
+</div>
+
+
+	  
+	</div>
+  </body>
+</html>
