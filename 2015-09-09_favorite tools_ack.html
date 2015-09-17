@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+	<title>Ack is awesome</title>
+
+	<meta charset="utf-8" />
+
+	<link rel="alternate" type="application/atom+xml" title="RSS" href="index.xml" />
+	<link rel="author" type="text/html" title="About" href="/about.html" />
+	<link rel="stylesheet" href="/static/site.css" type="text/css" />
+
+	
+	
+	
+	
+  </head>
+
+  <body>
+
+	<div class="site" itemscope itemtype="http://schema.org/WebPage">
+
+	  <div class="header meta">
+        <div>
+		<a href="/index.html" itemprop="author">Thomas Kappler</a>
+        <span class="sep">&raquo;</span>&nbsp;
+		<a href="/index.html" class="nav">Home</a>
+		<span class="sep"> &middot; </span>
+        <a href="/about.html" class="nav">About</a>
+        </div>
+
+		<div class="header_categories">
+          <a href="/topics.html">Topics</a> <span class="sep">&raquo;</span>&nbsp; 
+		  
+		  
+          <a href="/categories/Go.html">Go</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Meetups.html">Meetups</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Books.html">Books</a>
+		  
+		  <span class="sep"> &middot; </span>
+          <a href="/categories/Presenting.html">Presenting</a>
+		  
+		</div>
+	  </div>
+
+	  
+
+<h1 itemprop="headline">Ack is awesome</h1>
+
+<div class="abstract">
+  
+    <span class="date">Sep 9, 2015</span>&nbsp;&middot;&nbsp; 
+  
+  <span itemprop="description">The grep replacement ack is an invaluable part of my toolbox. I&#39;ll explain why and show some examples and some tipps.</span>
+  
+</div>
+
+<div class="article" itemprop="mainContentOfPage"><p>This is the second time I highlight <a href="http://petdance.com/">Andy Lester&rsquo;s</a> work
+on my blog. Back in 2013 I reviewed his book
+<a href="2015-09-09_favorite tools_ack.html">Land the Tech Job You Love</a> which is my
+favorite tech career guide. Now I want to highlight his open-source tool
+<a href="http://beyondgrep.com/">ack</a> which is &ldquo;a tool like grep, optimized for
+programmers&rdquo;. I use it every day and I have observed many times that people who
+don&rsquo;t use it are slower at tasks that require locating files.</p>
+
+<p>The ack website has a page
+<a href="http://beyondgrep.com/why-ack/">&ldquo;Top 10 reasons to use ack for source code&rdquo;</a>
+which I don&rsquo;t want to repeat here. All of these reasons are true in my
+experience. I&rsquo;ll just go through my personal main reasons to use ack.</p>
+
+<h3>It&rsquo;s easy to search only the right files</h3>
+
+<p>Grep can search in explicitly listed files, or in all files in a directory
+tree. Ack can search in files <em>of certain types</em> under a directory tree.</p>
+
+<p>I used to do <code>find . -name &quot;*.xml&quot; -exec grep -H foo '{}' \;</code>. I guess <code>grep foo
+$(find ...)</code> would have been a bit easier, I learned this later.</p>
+
+<p>Now I just do <code>ack --xml foo</code>.</p>
+
+<p>And it&rsquo;s even better than the find version because it doesn&rsquo;t search in <code>.git</code>
+and similar directories. This unclutters the output and makes it run
+faster. Perl&rsquo;s optimized regex engine is pretty fast anyways.</p>
+
+<p>For every file type <code>--foo</code> you can also request <code>--nofoo</code> to exclude it.</p>
+
+<p>For certain types such as <code>--shell</code> ack will even check the shebang line of
+files that don&rsquo;t have an extension.</p>
+
+<p>What&rsquo;s more, while there are many predefined file types, you can define your
+own, and they are not limited to a single extension.</p>
+
+<p>You can also use this functionality to simple list all files of a type, for
+example to pipe them into another command. Simply add <code>-f</code>: <code>ack -f --java
+--xml</code>.</p>
+
+<p>If you&rsquo;d like to only consider files in subdirectories matching a certain
+pattern, ack has you covered as well. <code>ack -g 'src/main'</code> searches only in
+src/main folders.</p>
+
+<p>These are just the main ways to tell ack which files you&rsquo;re interested
+in. Combined, they save me a lot of time when locating files.</p>
+
+<h3>Java example</h3>
+
+<p>I mainly work in Java these days. My project root has a bunch of Maven modules
+in it, each in its own subdirectory. Inside each of those is a <code>src/main</code>, a
+<code>src/test</code>, and a <code>target</code> folder for build artefacts.</p>
+
+<p>First, I don&rsquo;t want to grep through the build artefacts ever. So I added
+<code>--ignore-dir=target</code> to my <code>.ackrc</code>. I also want to ignore IntelliJ&rsquo;s internal
+project files, ending in .iml, which I ignore with <code>--ignore-file=match:\.iml$</code>.</p>
+
+<p>Second, I tend to search a limited number of sets of files. Usually it&rsquo;s either
+all files, or only Java files, or only XML files (Spring configuration). And
+sometimes I want to search either of those only in main code, or only in test
+code. I addressed this with a number of bash aliases that allow me to do all
+that in two or three keystrokes. (Yes, IntelliJ can do this as well, but I have
+other issues with it, and for many tasks the command line is superior.)</p>
+
+<pre><code>alias aj='ack --java'
+alias am='ack -v -g '\''src/test'\'' | ack -x'
+alias ajm='ack --java -v -g '\''src/test'\'' | ack -x'
+</code></pre>
+
+<p>The first one searches only Java files, the second one ignores src/test, and the
+third one combines those two. The aliases for XML and src/test are equivalent. I
+don&rsquo;t use <code>-g src/main</code> for non-test code, but <code>-v -g src/test</code> which means
+&ldquo;everything but src/test`. That way it also searches top-level files that are
+neither in main nor in test.</p>
+
+<p>So, for example, <code>axm FooFactory</code> gives me all occurrences of FooFactory in XML
+and related files, in src/main of any Maven module.</p>
+
+<p>We do need a small clutch here because ack can only either select files by path
+(<code>-g</code>), or search in files, but not both together. So we invoke it twice, once
+to select the files and once to search in them.</p>
+
+<h3>It&rsquo;s fast and ergonomic</h3>
+
+<p>The ack website already lists this: ack is fast. But I&rsquo;d like to emphasize that
+it&rsquo;s fast not just in terms of runtime, but in interaction time. Instead of
+typing &ldquo;grep -R&rdquo; you type &ldquo;ack&rdquo;, many times a day. And with its ways of
+narrowing down the search as shown above, it obsoletes a whole bunch of piped
+shell expressions involving <code>find</code> and friends. I simply get to hit return
+sooner, saving time and mental effort.</p>
+
+<p>Another point that doesn&rsquo;t immediately seem related to speed is ack&rsquo;s formatting
+of its output. When piped to another process, it&rsquo;s mostly like grep&rsquo;s. But when
+ack writes to the console, it formats for readability, intelligently using line
+breaks, colors, and highlighting. That makes it faster for me to scan the
+results of my search.</p>
+
+<h3>(Almost) great documentation</h3>
+
+<p>ack&rsquo;s documentation is great, which allows everyone to get the most out of
+it. The &ldquo;almost&rdquo; is because it&rsquo;s a bit scattered. There&rsquo;s <code>ack --help</code> which
+lists the main options, useful as a quick reference. Then there&rsquo;s the man page,
+also available via <code>ack --man</code> (useful on Windows). That distinction makes
+sense, but there&rsquo;s a third place, the full documentation on the ack
+website. That&rsquo;s something to be aware of when looking for info. It helps,
+though, that Stackoverflow has a large number of ack questions, many answered by
+Andy himself.</p>
+
+<h3>It&rsquo;s mostly like grep</h3>
+
+<p>ack mostly uses the same flags than grep, and it behaves like grep. So all the
+flags you&rsquo;re used to, like <code>-i</code> and <code>-v</code>, are there. I never had an issue
+switching between the two.</p>
+
+<h3>Conclusion</h3>
+
+<p>ack is one of those tools that may not sound all that impressive at first. After
+all, it&rsquo;s a glorified grep. But, in my experience, with ack the sum is greater
+than its parts. The different improvements over grep work together and
+accumulate to make a significant difference. I think and type less than with
+grep and have more brainpower available for my actual task.</p>
+</div>
+
+
+	  
+	</div>
+  </body>
+</html>

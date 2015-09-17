@@ -2,7 +2,7 @@
   <title>Thomas Kappler&#39;s site. Mostly programming and books. Category &#34;Perl.&#34;</title>
   <link href="http://www.thomaskappler.net/categories/Perl/" rel="alternate"></link>
   <id>http://www.thomaskappler.net/categories/Perl/</id>
-  <updated>2013-07-30T20:45:42+02:00</updated>
+  <updated>2015-09-17T21:15:50+02:00</updated>
   <author>
    <name>Thomas Kappler</name>
    <uri>http://www.thomaskappler.net/</uri>
@@ -24,7 +24,7 @@
    <summary type="html">From directory to http://localhost:5001/page.html as simply as possible.</summary>
    <content type="html">&lt;p&gt;You have a directory containing HTML files and would like to browse it&#xA;locally. There are absolute links like &lt;code&gt;/static/site.css&lt;/code&gt; in the HTML,&#xA;so just opening index.html would break those links.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Perl&amp;rsquo;s recent web superstar module &lt;a href=&#34;http://plackperl.org/&#34;&gt;Plack&lt;/a&gt; can&#xA;do it easily.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Create a file named &lt;code&gt;plack.psgi&lt;/code&gt; with the following content:&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;#!/usr/bin/env perl&#xA;&#xA;use Plack::App::File;&#xA;&#xA;my $root = &amp;quot;/path/to/dir;&#xA;my $app = Plack::App::File-&amp;gt;new(root =&amp;gt; $root)-&amp;gt;to_app;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&#xA;&lt;p&gt;Then launch the &lt;code&gt;plackup&lt;/code&gt; utility by &lt;code&gt;plackup -a plack.psgi --port&#xA;5001&lt;/code&gt;&amp;ndash;that&amp;rsquo;s it!&lt;/p&gt;&#xA;</content>
    <category term="Perl"></category>
-   <category term="Nitty Gritty"></category>
+   <category term="Tools"></category>
   </entry>
   <entry>
    <title>Watching some YAPC::EU 2010 presentations</title>
