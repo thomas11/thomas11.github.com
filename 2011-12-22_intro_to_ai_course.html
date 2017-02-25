@@ -1,53 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 	<title>Intro to Artificial Intelligence Online Course</title>
 
-	<meta charset="utf-8" />
-
+	<meta charset="utf-8" /> 
 	<link rel="alternate" type="application/atom+xml" title="RSS" href="index.xml" />
 	<link rel="author" type="text/html" title="About" href="/about.html" />
 	<link rel="stylesheet" href="/static/site.css" type="text/css" />
+</head>
 
-	
-	
-	
-	
-  </head>
-
-  <body>
+<body>
 
 	<div class="site" itemscope itemtype="http://schema.org/WebPage">
 
-	  <div class="header meta">
-        <div>
-		<a href="/index.html" itemprop="author">Thomas Kappler</a>
-        <span class="sep">&raquo;</span>&nbsp;
-		<a href="/index.html" class="nav">Home</a>
-		<span class="sep"> &middot; </span>
-        <a href="/about.html" class="nav">About</a>
-        </div>
+		<div class="header meta">
+			<div>
+				<a href="/index.html" itemprop="author">Thomas Kappler</a>
+				<span class="sep">&raquo;</span>&nbsp;
+				<a href="/index.html" class="nav">Home</a>
+				<span class="sep"> &middot; </span>
+				<a href="/about.html" class="nav">About</a>
+				<span class="sep"> &middot; </span>
+				<a href="/topics.html" class="nav">Posts by Topic</a>
+			</div>
 
-		<div class="header_categories">
-          <a href="/topics.html">Topics</a> <span class="sep">&raquo;</span>&nbsp; 
-		  
-		  
-          <a href="/categories/Go.html">Go</a>
-		  
-		  <span class="sep"> &middot; </span>
-          <a href="/categories/Meetups.html">Meetups</a>
-		  
-		  <span class="sep"> &middot; </span>
-          <a href="/categories/Books.html">Books</a>
-		  
-		  <span class="sep"> &middot; </span>
-          <a href="/categories/Presenting.html">Presenting</a>
-		  
+			
 		</div>
-	  </div>
 
-	  
+		
 
 <h1 itemprop="headline">Intro to Artificial Intelligence Online Course</h1>
 
@@ -56,7 +37,6 @@
     <span class="date">Dec 22, 2011</span>&nbsp;&middot;&nbsp; 
   
   <span itemprop="description">The online class was a bold experiment, bringing Stanford teaching by Sebastian Thun and Peter Norvig to over 100,000 students. I loved the experience and got a lot out of it. Here are some thoughts and selected notes.</span>
-  
 </div>
 
 <div class="article" itemprop="mainContentOfPage"><p>I had always been interested in AI but ended up choosing different
@@ -74,7 +54,8 @@ foundation for further reading:</p>
 <li>Bayes Networks, D-Separation and probabilistic inference</li>
 <li>Sampling methods</li>
 <li>Machine Learning basics and k-nearest neighbors</li>
-<li>Planning under uncertainty, Markov Decision Processes</li>
+<li>Planning under uncertainty, Markov Decision Processes
+<br /></li>
 </ul>
 
 <p>The online format worked great. I enjoyed the little quizzes during
@@ -89,7 +70,7 @@ this, and of having been part of this huge experiment that will
 probably shape the future of learning.</p>
 
 <p>Below are some of my class notes. They are not complete and you&rsquo;d be
-better off taking the class yourself&mdash;it&rsquo;s
+better off taking the class yourself---it&rsquo;s
 <a href="http://www.udacity.com/overview/Course/cs271">available on udacity</a>
 now.</p>
 
@@ -159,7 +140,7 @@ point.</p>
 <p><code>f = g + h</code> where g(p) is the path cost and h(p) = h(final state of p)
 is the estimated distance to the goal.</p>
 
-<p>A* search does not end when the goal is reached&mdash;there might be
+<p>A* search does not end when the goal is reached---there might be
 other, shorter paths. The goal test happens after selecting the next
 path to be taken off the frontier.</p>
 
@@ -245,7 +226,7 @@ vice versa.</p>
 
 <p><em>Confounding causes</em>: two (unobservable) nodes influence one output
 variable. There&rsquo;s no connection between the two influencing
-variables&mdash;if P(A) = x, then P(A|B=b) = x.</p>
+variables---if P(A) = x, then P(A|B=b) = x.</p>
 
 <p><em>Explaining away</em>: independence does not imply conditional
  independence. If we have</p>
@@ -256,7 +237,7 @@ variables&mdash;if P(A) = x, then P(A|B=b) = x.</p>
 </code></pre>
 
 <p>then S and R are independent. But if we observe H, they are not
-independent anymore&mdash;its value gives us a clue which one is more
+independent anymore---its value gives us a clue which one is more
 likely.</p>
 
 <h2>Bayes Networks</h2>
@@ -282,7 +263,7 @@ variables.</p>
 <p><code>A -&gt; UNKNOWN -&gt; B</code> is an <em>active triplet</em>, <code>A -&gt; KNOWN -&gt; B</code> is
 <em>inactive</em>.</p>
 
-<p>This also goes for upstream relations&mdash;this is the &ldquo;explaining away&rdquo;
+<p>This also goes for upstream relations---this is the &ldquo;explaining away&rdquo;
 case.</p>
 
 <p>See <a href="http://www.cs.ubc.ca/~murphyk/Bayes/bnintro.html">Bayes Ball</a> for
@@ -451,7 +432,8 @@ that hits each point would be good, but it&rsquo;s overfit of course.</p>
 
 <ul>
 <li>LOSS = sum_j(yj - w1*xj - w0)^2.</li>
-<li>w1* = argmin_w(L)</li>
+<li>w1* = argmin_w(L)
+<br /></li>
 </ul>
 
 <p>Because we minimize quadratic error, outliers penalize
@@ -505,7 +487,8 @@ states visited more than once.</p>
 </div>
 
 
-	  
+
 	</div>
-  </body>
+</body>
+
 </html>

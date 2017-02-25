@@ -1,53 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 	<title>How to serve a static directory with Plack</title>
 
-	<meta charset="utf-8" />
-
+	<meta charset="utf-8" /> 
 	<link rel="alternate" type="application/atom+xml" title="RSS" href="index.xml" />
 	<link rel="author" type="text/html" title="About" href="/about.html" />
 	<link rel="stylesheet" href="/static/site.css" type="text/css" />
+</head>
 
-	
-	
-	
-	
-  </head>
-
-  <body>
+<body>
 
 	<div class="site" itemscope itemtype="http://schema.org/WebPage">
 
-	  <div class="header meta">
-        <div>
-		<a href="/index.html" itemprop="author">Thomas Kappler</a>
-        <span class="sep">&raquo;</span>&nbsp;
-		<a href="/index.html" class="nav">Home</a>
-		<span class="sep"> &middot; </span>
-        <a href="/about.html" class="nav">About</a>
-        </div>
+		<div class="header meta">
+			<div>
+				<a href="/index.html" itemprop="author">Thomas Kappler</a>
+				<span class="sep">&raquo;</span>&nbsp;
+				<a href="/index.html" class="nav">Home</a>
+				<span class="sep"> &middot; </span>
+				<a href="/about.html" class="nav">About</a>
+				<span class="sep"> &middot; </span>
+				<a href="/topics.html" class="nav">Posts by Topic</a>
+			</div>
 
-		<div class="header_categories">
-          <a href="/topics.html">Topics</a> <span class="sep">&raquo;</span>&nbsp; 
-		  
-		  
-          <a href="/categories/Go.html">Go</a>
-		  
-		  <span class="sep"> &middot; </span>
-          <a href="/categories/Meetups.html">Meetups</a>
-		  
-		  <span class="sep"> &middot; </span>
-          <a href="/categories/Books.html">Books</a>
-		  
-		  <span class="sep"> &middot; </span>
-          <a href="/categories/Presenting.html">Presenting</a>
-		  
+			
 		</div>
-	  </div>
 
-	  
+		
 
 <h1 itemprop="headline">How to serve a static directory with Plack</h1>
 
@@ -56,7 +37,6 @@
     <span class="date">Feb 13, 2011</span>&nbsp;&middot;&nbsp; 
   
   <span itemprop="description">From directory to http://localhost:5001/page.html as simply as possible.</span>
-  
 </div>
 
 <div class="article" itemprop="mainContentOfPage"><p>You have a directory containing HTML files and would like to browse it
@@ -77,11 +57,12 @@ my $app = Plack::App::File-&gt;new(root =&gt; $root)-&gt;to_app;
 </code></pre>
 
 <p>Then launch the <code>plackup</code> utility by <code>plackup -a plack.psgi --port
-5001</code>&ndash;that&rsquo;s it!</p>
+5001</code>--that&rsquo;s it!</p>
 </div>
 
 
-	  
+
 	</div>
-  </body>
+</body>
+
 </html>

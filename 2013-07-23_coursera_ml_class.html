@@ -1,53 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 	<title>Coursera Machine Learning with Andrew Ng</title>
 
-	<meta charset="utf-8" />
-
+	<meta charset="utf-8" /> 
 	<link rel="alternate" type="application/atom+xml" title="RSS" href="index.xml" />
 	<link rel="author" type="text/html" title="About" href="/about.html" />
 	<link rel="stylesheet" href="/static/site.css" type="text/css" />
+</head>
 
-	
-	
-	
-	
-  </head>
-
-  <body>
+<body>
 
 	<div class="site" itemscope itemtype="http://schema.org/WebPage">
 
-	  <div class="header meta">
-        <div>
-		<a href="/index.html" itemprop="author">Thomas Kappler</a>
-        <span class="sep">&raquo;</span>&nbsp;
-		<a href="/index.html" class="nav">Home</a>
-		<span class="sep"> &middot; </span>
-        <a href="/about.html" class="nav">About</a>
-        </div>
+		<div class="header meta">
+			<div>
+				<a href="/index.html" itemprop="author">Thomas Kappler</a>
+				<span class="sep">&raquo;</span>&nbsp;
+				<a href="/index.html" class="nav">Home</a>
+				<span class="sep"> &middot; </span>
+				<a href="/about.html" class="nav">About</a>
+				<span class="sep"> &middot; </span>
+				<a href="/topics.html" class="nav">Posts by Topic</a>
+			</div>
 
-		<div class="header_categories">
-          <a href="/topics.html">Topics</a> <span class="sep">&raquo;</span>&nbsp; 
-		  
-		  
-          <a href="/categories/Go.html">Go</a>
-		  
-		  <span class="sep"> &middot; </span>
-          <a href="/categories/Meetups.html">Meetups</a>
-		  
-		  <span class="sep"> &middot; </span>
-          <a href="/categories/Books.html">Books</a>
-		  
-		  <span class="sep"> &middot; </span>
-          <a href="/categories/Presenting.html">Presenting</a>
-		  
+			
 		</div>
-	  </div>
 
-	  
+		
 
 <h1 itemprop="headline">Coursera Machine Learning with Andrew Ng</h1>
 
@@ -56,7 +37,6 @@
     <span class="date">Jul 23, 2013</span>&nbsp;&middot;&nbsp; 
   
   <span itemprop="description">I took the recent online machine learning class with Coursera. It was a good experience and I learned a lot. Here are some notes and observations.</span>
-  
 </div>
 
 <div class="article" itemprop="mainContentOfPage"><p>Machine Learning is on my radar of things to learn since a long time.
@@ -124,7 +104,7 @@ h := hypothesis := learning algorithm. h(x) = y.
 
 <h3>Linear regression with one variable</h3>
 
-<p><code>h(x) = t0 + t1*x</code> &mdash; univariate linear regression, straight line.</p>
+<p><code>h(x) = t0 + t1*x</code> --- univariate linear regression, straight line.</p>
 
 <p>Fitting h is a minimization problem over the sum of all x&rsquo;s. For each
 x, minimize the square of the difference between y and h(x). We divide
@@ -225,13 +205,14 @@ linear regression.</p>
 <ul>
 <li>conjugate gradient</li>
 <li>BFGS</li>
-<li>L-BFGS</li>
+<li>L-BFGS
+<br /></li>
 </ul>
 
 <p>They figure out the learning rate on their own and converge faster,
 but are more complex.</p>
 
-<p>In Octave xthere&rsquo;s <code>fminunc</code>&mdash;function minimization unconstrained.</p>
+<p>In Octave xthere&rsquo;s <code>fminunc</code>---function minimization unconstrained.</p>
 
 <h3>Regularization</h3>
 
@@ -268,8 +249,8 @@ and O(n³) terms if we include the cubic terms.</p>
 <ul>
 <li><em>neuron</em> or <em>bias unit</em></li>
 <li>input wires x1, &hellip;, xn, plus x0 = 1.</li>
-<li>output is h_theta(x) = 1 / (1+e^(-theta&rsquo;<em>x)), the sigmoid function,
-here *activation function</em>.</li>
+<li>output is h_theta(x) = 1 / (1+e^(-theta&rsquo;*x)), the sigmoid function,
+here <em>activation function</em>.</li>
 <li>theta are the parameters or <em>weights</em></li>
 <li>input layer, hidden layers (neither x nor y), output layers</li>
 </ul>
@@ -352,7 +333,8 @@ set to spot any systematic errors.</li>
 </div>
 
 
-	  
+
 	</div>
-  </body>
+</body>
+
 </html>
