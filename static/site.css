@@ -58,14 +58,13 @@ only screen and (max-device-width: 8in)
 
 .site .abstract {
     font-size: 1.1em;
-    font-style: italic;
-    margin: 0 1em 2em 1.5em;
+    margin: 0 1em 2em 1em;
     padding-left: 0.8em;
     border-left: 2px solid #C72409;
 }
 
 .site .article {
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 code {
@@ -114,8 +113,6 @@ pre code {
 
 .sep {
     padding: 0;
-    font-size: x-large;
-    vertical-align: bottom;
     color: #C72409;
 }
 
