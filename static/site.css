@@ -58,13 +58,14 @@ only screen and (max-device-width: 8in)
 
 .site .abstract {
     font-size: 1.1em;
-    margin: 0 1em 2em 1em;
+    font-style: italic;
+    margin: 0 1em 2em 1.5em;
     padding-left: 0.8em;
     border-left: 2px solid #C72409;
 }
 
 .site .article {
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 code {
@@ -113,6 +114,8 @@ pre code {
 
 .sep {
     padding: 0;
+    font-size: x-large;
+    vertical-align: bottom;
     color: #C72409;
 }
 
@@ -138,4 +141,9 @@ pre code {
 .elsewhere img {
     vertical-align: bottom;
     padding: 0.5em 1em 0.5em 0;
+}
+
+table td {
+  padding-right: 3em;
+  vertical-align: top;
 }

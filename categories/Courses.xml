@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?> <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Thomas Kappler&#39;s site. Mostly programming and books. Category &#34;Courses.&#34;</title>
-  <link href="http://www.thomaskappler.net/categories/Courses/" rel="alternate"></link>
-  <id>http://www.thomaskappler.net/categories/Courses/</id>
-  <updated>2017-02-25T12:13:18-08:00</updated>
+  <link href="http://www.thomaskappler.net/..\thomas11.github.com\categories/Courses/" rel="alternate"></link>
+  <id>http://www.thomaskappler.net/..\thomas11.github.com\categories/Courses/</id>
+  <updated>2020-07-26T21:17:25-07:00</updated>
   <author>
    <name>Thomas Kappler</name>
    <uri>http://www.thomaskappler.net/</uri>
