@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Windows and Powershell for Unix nerds</title>
+
+	<meta charset="utf-8" /> 
+	<link rel="alternate" type="application/atom+xml" title="RSS" href="index.xml" />
+	<link rel="author" type="text/html" title="About" href="/about.html" />
+	<link rel="stylesheet" href="/static/site.css" type="text/css" />
+</head>
+
+<body>
+
+	<div class="site" itemscope itemtype="http://schema.org/WebPage">
+
+		<div class="header meta">
+			<div>
+				<a href="/index.html" itemprop="author">Thomas Kappler</a>
+				<span class="sep">&raquo;</span>&nbsp;
+				<a href="/index.html" class="nav">Home</a>
+				<span class="sep"> &middot; </span>
+				<a href="/about.html" class="nav">About</a>
+				<span class="sep"> &middot; </span>
+				<a href="/topics.html" class="nav">Posts by Topic</a>
+			</div>
+
+			
+		</div>
+
+		
+
+<h1 itemprop="headline">Windows and Powershell for Unix nerds</h1>
+
+<div class="abstract">
+  
+    <span class="date">Jul 25, 2020</span>&nbsp;&middot;&nbsp; 
+  
+  <span itemprop="description">A few years ago I joined Microsoft and started to work with .Net on Windows, coming from years of only using Linux. Here are some tips I learned along the way.</span>
+</div>
+
+<div class="article" itemprop="mainContentOfPage"><nav><ul><li><a href="#toc_0">Windows</a>
+<ul>
+<li><a href="#toc_1">Clipboard</a></li>
+<li><a href="#toc_2">Shortcuts</a></li>
+</ul></li>
+<li><a href="#toc_3">Tools</a>
+<ul>
+<li><a href="#toc_4">WSL</a></li>
+<li><a href="#toc_5">Ripgrep</a></li>
+</ul></li>
+<li><a href="#toc_6">Powershell</a>
+<ul>
+<li><a href="#toc_7">Basics</a></li>
+<li><a href="#toc_8">Bash commands/expressions and their equivalents</a></li>
+<li><a href="#toc_9">Iterating and querying</a></li>
+<li><a href="#toc_10">Various tidbits</a></li>
+<li><a href="#toc_11">PSDrives</a></li>
+<li><a href="#toc_12">Modules</a></li>
+<li><a href="#toc_13">Object properties</a></li>
+<li><a href="#toc_14">Pitfalls</a>
+<ul>
+<li><a href="#toc_15">VerbosePreference and other globals</a></li>
+<li><a href="#toc_16">Pretty-printing JSON</a></li>
+<li><a href="#toc_17">Null and the empty string</a></li>
+</ul></li>
+</ul></li>
+</ul></nav>
+
+<div style="padding-top: 1em">
+Looking back, it's funny how easily I've settled in to the Windows world. In college, I was the guy with the Linux shirts and a crush on GNU and the FSF. (I still think both have done lots of excellent work.) Thank you, Satya, for making Microsoft that much more appealing.
+</div>
+
+<h2 id="toc_0">Windows</h2>
+
+<p>Honestly, after years of using Windows almost exclusively I&rsquo;m still not a fan, whereas C# and Powershell have really impressed me.</p>
+
+<p>Mind you, Windows works fine. I don&rsquo;t think about it much. The hardware and screen resolution support is great as you&rsquo;d expect. Mandatory reboots used to be bad but are much reduced now.</p>
+
+<p>It&rsquo;s just too GUI-focused and full of obscure corners and inconsistencies (ok, not much different from Linux). I miss poking around internals and setting up everything the way I like and trying different window managers. Ah, Linux.</p>
+
+<p>My main actual issue is performance. (Don&rsquo;t even get me started on the ads but at least you can easily turn them off.). The kernel might be ok, but anti-malware and search indexing and a dozen other processes constantly blasting away in the background take a notable toll. Search can be turned off, of course. In general, it feels a little sluggish.</p>
+
+<p>You should <em>not</em> turn off the built-in Defender security scans. However, for developers it can be a huge pain because your project changes every time you edit and build, and the scanner scans the new files, over and over. If you feel confident that no baddies can sneak in there, you can exclude folders from the Defender scan.</p>
+
+<ul>
+<li>Launch &ldquo;Edit Group Policy&rdquo; from Start Menu</li>
+<li>Go To: Administrative Templates -&gt; Windows Components -&gt; Windows Defender -&gt; Exclusions</li>
+<li>Double Click Path Exclusions</li>
+<li>Click enable and add your paths, then click OK, OK, OK</li>
+</ul>
+
+<h3 id="toc_1">Clipboard</h3>
+
+<p>Without fail, people who watch me work ask me about this when it pops up. Clipboard history is a super power that saves you so much window switching and cognitive overhead (where was that string again?) when you&rsquo;re used to it.</p>
+
+<p>Windows has it built in. Hit Windows-V instead of Ctrl-V and a little window with the history pops up. Select an entry and Enter pastes it, Shift-Enter pastes it without formatting.</p>
+
+<h3 id="toc_2">Shortcuts</h3>
+
+<p>There are plenty, of course. The ones I use constantly are</p>
+
+<ul>
+<li>Windows-Tab: visual overview of open windows</li>
+<li>Alt-Tab: switch between windows</li>
+<li>Windows-Up: maximize/unmaximize window</li>
+<li>Windows-Left/Right: fit window to left/right half of the screen. This one is neat because it also pops up miniatures of other windows so you can select one to take up the other half of the screen. Just hit Esc if you don&rsquo;t want to. If you do, the two windows are paired and if you make one horizontally larger, the other one shrinks accordingly.</li>
+<li>Ctrl-Windows-left/right: switch between virtual desktops. Yes, Windows has them now! On the Windows-Tab window overview you can drag and drop windows between desktops.</li>
+</ul>
+
+<h2 id="toc_3">Tools</h2>
+
+<h3 id="toc_4">WSL</h3>
+
+<p>With version 2, the <a href="https://docs.microsoft.com/en-us/windows/wsl/about">Windows Subsystem for Linux</a> has become a gem. It&rsquo;s easy to use and powerful. I&rsquo;m not that experienced with it, so I&rsquo;ll leave it at that, but you should definitely install it and try it out.</p>
+
+<h3 id="toc_5">Ripgrep</h3>
+
+<p><a href="https://github.com/BurntSushi/ripgrep"><strong>ripgrep</strong></a> is a better grep on any system, but Windows doesn&rsquo;t even have grep, just the wonky <code>sls</code>, so ripgrep becomes a must have. Easy to install with a pre-built binary.</p>
+
+<p>I&rsquo;ve written about <a href="/2015-09-09_favorite tools_ack.html">Ack</a> before and how it&rsquo;s better than grep. Ripgrep is similar but faster and easier to install. Try it out!</p>
+
+<h2 id="toc_6">Powershell</h2>
+
+<p>Powershell is a funny beast when you&rsquo;re used to Bash. Believe it or not, though, I&rsquo;ve become a fan. What I love about it is that it&rsquo;s more of a &ldquo;real&rdquo; programming environment, while still being a very usable shell.</p>
+
+<p>What makes it real programming environment?</p>
+
+<ul>
+<li>Pipes transport typed objects, not just strings. This alone is huge.</li>
+<li>It has more handy built-ins, like for parsing JSON.</li>
+<li>It has built-in standard ways to implement common functionality like progress bars, <code>-Verbose</code>, <code>-WhatIf</code>.</li>
+<li>Function arguments can be typed and can be made mandatory or optional.</li>
+<li>Seamless interoperability with .Net. Load any DLL and call its static methods, instantiate its objects (as real typed objects in the shell), or access its constants.</li>
+<li>A module system to package, load, and unload functionality.</li>
+</ul>
+
+<p>By the way, just ignore the Windows command prompt (<code>cmd</code>). It&rsquo;s awful and pointless with Powershell being present by default. Sadly, it&rsquo;s still used in many docs and tutorials.</p>
+
+<p>Whole books have been written about Powershell, so below are simply my slighlty polished notes that I took when i learned something I wanted to remember or reference later. I hope the selection is useful to others coming from *Nix.</p>
+
+<h3 id="toc_7">Basics</h3>
+
+<p>If you come from *Nix, you can start by using most of the basic shell commands you know like <code>ls</code>. Their equivalents have a different name in PS, but PS comes with pre-defined aliases mapping the nix names to the PS names.</p>
+
+<p>Each Powershell function supports the &ldquo;common parameters&rdquo;, such as <code>-Verbose</code>. Full docs at <code>help about_CommonParameters</code>.</p>
+
+<p>Dash-parameters can be abbreviated as long as they are unique, e.g. <code>-re</code> for <code>-Recursive</code>.</p>
+
+<h3 id="toc_8">Bash commands/expressions and their equivalents</h3>
+
+<table>
+<thead>
+<tr>
+<th>Bash</th>
+<th>Powershell</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>cat</td>
+<td><code>gc</code> (alias of <code>Get-Content</code>)</td>
+</tr>
+
+<tr>
+<td>cut</td>
+<td>No direct equivalent, but because PS passes typed objects through pipes, it&rsquo;s rarely needed. See <a href="http://stackoverflow.com/questions/24634022/what-is-an-equivalent-of-nix-cut-command-in-powershell">What is an equivalent of *Nix &lsquo;cut&rsquo; command in Powershell?</a> for some options.</td>
+</tr>
+
+<tr>
+<td>find</td>
+<td><code>gci -Recurse</code> (alias of <code>Get-ChildItem</code>)</td>
+</tr>
+
+<tr>
+<td>head</td>
+<td><code>gc file \| select -first 10</code></td>
+</tr>
+
+<tr>
+<td>jq</td>
+<td>Yes, PS can do much of what jq provides out of the box. Parse the JSON first with <code>ConvertFrom-Json</code> which gives you an object with the JSON&rsquo;s structure. Then pipe that to whatever filter and transformation commands you need.</td>
+</tr>
+
+<tr>
+<td>M-</td>
+<td>Use <code>$$</code> as an argument, it evaluates to the last token of the previous command.</td>
+</tr>
+
+<tr>
+<td>.profile</td>
+<td>The path to the equivalent file is in <code>$profile</code>.</td>
+</tr>
+
+<tr>
+<td>sum</td>
+<td><code>measure -sum</code></td>
+</tr>
+
+<tr>
+<td>tail</td>
+<td><code>gc -tail 10</code></td>
+</tr>
+
+<tr>
+<td>time</td>
+<td><code>Measure-Command</code></td>
+</tr>
+
+<tr>
+<td>uniq</td>
+<td><code>Get-Unique</code></td>
+</tr>
+
+<tr>
+<td>wc -l</td>
+<td><code>measure -line</code></td>
+</tr>
+
+<tr>
+<td>which</td>
+<td><code>Get-Command</code> (no alias; <code>gc</code> is used for <code>Get-Content</code>)</td>
+</tr>
+
+<tr>
+<td>&amp;&amp;</td>
+<td>This one is annoying since it&rsquo;s verbose and modifies global state: <code>$ErrorActionPreference='Stop'; cmd1; cmd2</code></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_9">Iterating and querying</h3>
+
+<p>Pipe a collection to <code>?</code>, alias of <code>Where-Object</code>, to filter it.</p>
+
+<pre><code>$clusters | ? { $_.status -eq 'running' }
+</code></pre>
+
+<p>Note the automatically defined variable <code>$_</code> representing the current object.</p>
+
+<p>Similarly, pipe a collection to <code>%</code>, alias of <code>ForEach-Object</code>, to do something with each member.</p>
+
+<p>For the common case of iterating and selecting a property of each object, PS has a built-in shortcut: just access the property on the list. Super useful. That is, the two commands below are equivalent:</p>
+
+<pre><code>$clusters | % { $_.status }
+$clusters.status
+</code></pre>
+
+<h3 id="toc_10">Various tidbits</h3>
+
+<p><code>-contains</code> is for collections, <code>-like</code> is for strings. But <code>.Contains()</code> is often easier.</p>
+
+<p>POST or PUT the content of a file using Invoke-WebRequest: <code>-Body (gc file.json)</code></p>
+
+<p>Arrays:</p>
+
+<ul>
+<li><code>$docCounts = new-object int[] $indexes.Length</code></li>
+<li><code>@()</code> creates a new, empty, untyped one</li>
+<li><code>+=</code> adds, but internally creates a new array, so slow</li>
+</ul>
+
+<p>Splitting strings: <code>&quot;&quot;.Split(&quot;str&quot;)</code> splits by any character in the given string. To split by a whole string, use <code>-split</code>. It supports limiting the result size, too: <code>-split &quot;str&quot;, 2</code>.</p>
+
+<h3 id="toc_11">PSDrives</h3>
+
+<p>PSDrives is a file system provider similar to like Fuse.</p>
+
+<pre><code>get-psdrive
+dir alias:
+dir env:
+</code></pre>
+
+<p>New-PSDrive creates a new drive mapping.</p>
+
+<pre><code>New-PSDrive -name Foo -PSProvider FileSystem -Root c:\Demo
+</code></pre>
+
+<h3 id="toc_12">Modules</h3>
+
+<pre><code>Get-Module  # list loaded modules
+Get-Module -ListAvailable  # list all available modules
+</code></pre>
+
+<p>After loading one, see what commands it added:</p>
+
+<pre><code>Get-Command -Module &lt;module&gt;
+</code></pre>
+
+<h3 id="toc_13">Object properties</h3>
+
+<p>Usually, PS objects have more properties than the shell shows. Use <code>Get-Member</code>, alias <code>gm</code>, to see them. It will also show methods and events. This is my first step to inspect an object returned from somewhere.</p>
+
+<p>What if you want only one property of an object in a pipe expression? <code>select</code> pulls it out.</p>
+
+<pre><code>$addresses | select LastName
+</code></pre>
+
+<p>However, you&rsquo;ll notice that you don&rsquo;t get a string with the value of LastName, you get a new object with a single property LastName. This is so that you can <code>select</code> multiple properties. But often, you want a single property as a scalar, e.g., to pass it on to a command that takes string input, not object. <code>select -ExpandProperty</code> will do that:</p>
+
+<pre><code>&gt; ($StackTrace | select Length).GetType().Name
+PSCustomObject
+&gt; ($StackTrace | select -ExpandProperty Length).GetType().Name
+Int32
+</code></pre>
+
+<h3 id="toc_14">Pitfalls</h3>
+
+<h4 id="toc_15">VerbosePreference and other globals</h4>
+
+<p>At some point you will use the <code>-Verbose</code> switch but see no verbose output. Or you will not use the switch and see it. What&rsquo;s happening is there&rsquo;s a global variable <code>VerbosePreference</code>, and a few other similar ones, that controls this behavior. See <code>help about_Preference_Variables</code>.</p>
+
+<p>You have no way of knowing what it&rsquo;s set to without explicitly checking. Ugh. This is a really annoying example of global state.</p>
+
+<h4 id="toc_16">Pretty-printing JSON</h4>
+
+<pre><code>| ConvertFrom-Json | ConvertTo-Json -MaxDepth 20
+</code></pre>
+
+<p>Note the <code>-MaxDepth</code>: the default is only 3, meaning PS will skip all parts of the object structure that are more than three levels deep. That&rsquo;s bound to omit parts of your data, leaving you wondering where the hell it is.</p>
+
+<h4 id="toc_17">Null and the empty string</h4>
+
+<p>Generally, null is null and the empty string is the empty string. However, when function parameters or properties are annotated with types, like <code>[string]</code>, Powershell tries to auto-convert argument to the given type. For some strange reason, <code>$null</code> becomes the empty string for <code>[string]</code> parameters. See <a href="https://github.com/PowerShell/PowerShell/issues/4616">this issue</a> for details.
+You need to use <code>[NullString]</code> to be explicit.</p>
+
+<pre><code>$c.Nodes[0].DonorHostname = $null
+$c.Nodes[0].DonorHostname -eq $null
+False
+$c.Nodes[0].DonorHostname -eq ''
+True
+$c.Nodes[0].DonorHostname = [NullString]::Value
+$c.Nodes[0].DonorHostname -eq $null
+True
+</code></pre>
+</div>
+
+
+
+	</div>
+</body>
+
+</html>
