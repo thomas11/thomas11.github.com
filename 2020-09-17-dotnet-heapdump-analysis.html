@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>A short newbie guide to heap dump analysis for .Net</title>
+
+	<meta charset="utf-8" /> 
+	<link rel="alternate" type="application/atom+xml" title="RSS" href="index.xml" />
+	<link rel="author" type="text/html" title="About" href="/about.html" />
+	<link rel="stylesheet" href="/static/site.css" type="text/css" />
+</head>
+
+<body>
+
+	<div class="site" itemscope itemtype="http://schema.org/WebPage">
+
+		<div class="header meta">
+			<div>
+				<a href="/index.html" itemprop="author">Thomas Kappler</a>
+				<span class="sep">&raquo;</span>&nbsp;
+				<a href="/index.html" class="nav">Home</a>
+				<span class="sep"> &middot; </span>
+				<a href="/about.html" class="nav">About</a>
+				<span class="sep"> &middot; </span>
+				<a href="/topics.html" class="nav">Posts by Topic</a>
+			</div>
+
+			
+		</div>
+
+		
+
+<h1 itemprop="headline">A short newbie guide to heap dump analysis for .Net</h1>
+
+<div class="abstract">
+  
+    <span class="date">Sep 17, 2020</span>&nbsp;&middot;&nbsp; 
+  
+  <span itemprop="description">You have a CLR (.Net) process dump and need to investigate a memory leak or a hang. What now?</span>
+</div>
+
+<div class="article" itemprop="mainContentOfPage"><p>This article is not meant to be comprehensive. Digging deep into heap dumps is a science and an art. This is meant to get you started, particularly if you&rsquo;re new to .Net like I was not too long ago.</p>
+
+<p>First of all, how do you get a process dump? There are numerous ways, but here&rsquo;s the simplest one: open Task Manager and right-click the offending process and select &ldquo;Create dump file&rdquo;. You can search the web for the automated ways.</p>
+
+<h2>The shortcut: DebugDiag</h2>
+
+<p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=58210">DebugDiag</a> is a wonderful tool that runs a number of analyses for common issues on your dump and you don&rsquo;t need to lift a finger or understand how it works. That&rsquo;s why you should start with that. If it doesn&rsquo;t expose your issue, you go on to the more manual tools.</p>
+
+<p>Another neat thing about DebugDiag is that it produces a HTML report of the scans it ran and their results. This allows you to easily share findings with your team.</p>
+
+<p>It&rsquo;s a standalone tool with a standard Windows installer, so just install and run. It&rsquo;s pretty self-explanatory.</p>
+
+<ol>
+<li>Add your dump file with the &ldquo;Add Data Files&rdquo; button at the bottom.</li>
+<li>Check the analyses you want to run. When in doubt, check it.</li>
+<li>Click &ldquo;Start Analysis&rdquo; at the bottom.</li>
+</ol>
+
+<h2>The heavy hitter: WinDbg</h2>
+
+<p><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools">WinDbg</a> is a very comprehensive tool for debugging on Windows.</p>
+
+<p>There are actually two WindDbg&rsquo;s - the regular one and WinDbg Preview. If you don&rsquo;t know the regular one already, I recommend Preview. It has a much different and friendlier UI and will become the default at some point. I haven&rsquo;t had any issues with it.</p>
+
+<p>WinDbg is a rich tool with extensive documentation. <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/getting-started-with-windows-debugging">https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/getting-started-with-windows-debugging</a> can point you in the right direction. Stefan Geiger also has a neat <a href="https://www.stefangeiger.ch/2019/05/11/windbg-cheat-sheet.html">WinDbg Cheat Sheet for .NET Developers</a>.</p>
+
+<p>I&rsquo;ll just throw out a few commands here that&rsquo;ll help you get started and get a feel for it, and that helped me track down a tricky hang recently. If you&rsquo;re lucky, they might already reveal the issue you&rsquo;re debugging.</p>
+
+<pre><code>!dumpheap -stat
+</code></pre>
+
+<p>prints something like</p>
+
+<pre><code>00007ff89984fd10      511        57232 System.Runtime.Caching
+                                               .MemoryCacheEntry
+
+00007ff89f24b208    14640       351360 System.SizedReference
+00007ff899850930    14640       351360 System.Runtime.Caching
+                                    .MemoryCacheEqualityComparer
+00007ff89984fef8    14640       351360 System.Runtime.Caching.Sref
+
+00007ff89984f8f0    14640       468480 System.Runtime.Caching
+        .GCHandleRef`1[[System.Runtime.Caching.MemoryCacheStore,
+                        System.Runtime.Caching]]
+00007ff89984da50    14640       468480 System.Runtime.Caching
+                                                  .UsageBucket[]
+</code></pre>
+
+<p>Threads</p>
+
+<pre><code>!threads // show
+~2s      // show details of a particular one
+</code></pre>
+
+<h3>WinDbg extensions</h3>
+
+<p>WinDbg supports extensions to load additional functionality at runtime. There are three you probably want to try: SOS is a must for debugging managed code, SOSEX and MEX provide useful helpers.</p>
+
+<p><a href="https://docs.microsoft.com/en-us/dotnet/framework/tools/sos-dll-sos-debugging-extension">SOS</a> &ldquo;helps you debug managed programs in Visual Studio and in the Windows debugger (WinDbg.exe) by providing information about the internal Common Language Runtime (CLR) environment&rdquo;. It comes with .Net but you need to load it in WinDbg:</p>
+
+<pre><code>!load C:\Windows\Microsoft.NET\Framework64\v4.0.30319\SOS.dll)
+</code></pre>
+
+<p>It provides a number of essential commands whose names are mostly self-explanatory:</p>
+
+<pre><code>!sos.analyzeOOM
+!sos.gcroot
+!sos.finalizequeue
+!sos.threadpool
+!sos.threads
+!sos.threadstate
+</code></pre>
+
+<p>Next is <a href="http://www.stevestechspot.com/default.aspx#a9fdcf4a4-6e09-4807-bc31-ac1adf836f6c">SOSEX</a>. Download and run</p>
+
+<pre><code>!load …\sosex.dll
+</code></pre>
+
+<p>I liked the deadlock detection and the Finalizer queue analysis:</p>
+
+<pre><code>!dlk
+
+!finq -stat
+!finalizequeue
+</code></pre>
+
+<p>Finally, you might want to try Microsoft&rsquo;s <a href="https://www.microsoft.com/en-us/download/details.aspx?id=53304">MEX</a>.</p>
+
+<blockquote>
+<p>MEX Debugging Extension for WinDbg can help you simplify common debugger tasks, and provides powerful text filtering capabilities to the debugger.</p>
+</blockquote>
+
+<pre><code>!load mex.dll
+!mex help
+</code></pre>
+
+<p>will get you started.</p>
+</div>
+
+
+
+	</div>
+</body>
+
+</html>
