@@ -16,7 +16,7 @@
 
 		<div class="header meta">
 			<div>
-				<a href="/index.html" itemprop="author">Thomas Kappler</a>
+				<a href="/index.html" itemprop="author"><b>Thomas Kappler</b></a>
 				<span class="sep">&raquo;</span>&nbsp;
 				<a href="/index.html" class="nav">Home</a>
 				<span class="sep"> &middot; </span>
@@ -57,7 +57,7 @@
 
 <p>Honestly, I don&rsquo;t remember exactly how I created the project and set everything up, but it was fairly automated. Development on the Azure and F# tooling in VS code is very active anyway and things might be different from a year ago.</p>
 
-<p>I use <a href="https://ionide.io/">Ionide</a> for F# development and installed the &ldquo;Azure Functions&rdquo; extension, basically following <a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs-code?tabs=csharp">Develop Azure Functions by using Visual Studio Code</a> . These instructions are for C# but they worked for F# as well, except I ran into an issue with a missing host.json solved by <a href="https://stackoverflow.com/questions/60501474/why-host-json-not-being-copied-to-output-in-f-azure-functions-project">adding an explicit copy in the fsproj file</a>.</p>
+<p>I use <a href="https://ionide.io/">Ionide</a> for F# development and installed the &ldquo;Azure Functions&rdquo; extension, basically following <a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs-code?tabs=csharp">Develop Azure Functions by using Visual Studio Code</a>. These instructions are for C# but they worked for F# as well, except I ran into an issue with a missing host.json solved by <a href="https://stackoverflow.com/questions/60501474/why-host-json-not-being-copied-to-output-in-f-azure-functions-project">adding an explicit copy in the fsproj file</a>.</p>
 
 <p>The end result is a really nice and convenient integration into VS Code, where I can deploy the function and stream logs directly from a menu. Not exactly automated or reproducible or properly logged but just fine for a hobby project.</p>
 

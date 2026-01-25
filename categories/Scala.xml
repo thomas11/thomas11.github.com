@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?> <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Thomas Kappler&#39;s site. Mostly programming and books. Category &#34;Scala.&#34;</title>
-  <link href="http://www.thomaskappler.net/..\thomas11.github.com\categories/Scala/" rel="alternate"></link>
-  <id>http://www.thomaskappler.net/..\thomas11.github.com\categories/Scala/</id>
-  <updated>2020-09-20T13:01:57-07:00</updated>
+  <link href="http://www.thomaskappler.net/../thomas11.github.com/categories/Scala/" rel="alternate"></link>
+  <id>http://www.thomaskappler.net/../thomas11.github.com/categories/Scala/</id>
+  <updated>2026-01-25T19:47:44+01:00</updated>
   <author>
    <name>Thomas Kappler</name>
    <uri>http://www.thomaskappler.net/</uri>
