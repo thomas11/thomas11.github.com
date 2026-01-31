@@ -57,8 +57,8 @@ beginning, we can use <code>DateTime</code> to construct a fake <code>mtime</cod
 the result. If the parsing fails, we fall back to Blosxom&rsquo;s standard
 routine. Here&rsquo;s the patch.</p>
 
-<pre><code>--- blosxom.cgi.orig    2011-03-20 10:33:29.002204071 +0100
-+++ blosxom.cgi.mtime   2011-03-20 10:41:30.718204071 +0100
+<pre><code>--- blosxom.cgi.orig	2011-03-20 10:33:29.002204071 +0100
++++ blosxom.cgi.mtime	2011-03-20 10:41:30.718204071 +0100
 @@ -404,8 +404,35 @@
                  )
              {

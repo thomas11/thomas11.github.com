@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Completing the Hugging Face Agents Course</title>
+
+	<meta charset="utf-8" /> 
+	<link rel="alternate" type="application/atom+xml" title="RSS" href="index.xml" />
+	<link rel="author" type="text/html" title="About" href="/about.html" />
+	<link rel="stylesheet" href="/static/site.css" type="text/css" />
+</head>
+
+<body>
+
+	<div class="site" itemscope itemtype="http://schema.org/WebPage">
+
+		<div class="header meta">
+			<div>
+				<a href="/index.html" itemprop="author"><b>Thomas Kappler</b></a>
+				<span class="sep">&raquo;</span>&nbsp;
+				<a href="/index.html" class="nav">Home</a>
+				<span class="sep"> &middot; </span>
+				<a href="/about.html" class="nav">About</a>
+				<span class="sep"> &middot; </span>
+				<a href="/topics.html" class="nav">Posts by Topic</a>
+			</div>
+
+			
+		</div>
+
+		
+
+<h1 itemprop="headline">Completing the Hugging Face Agents Course</h1>
+
+<div class="abstract">
+  
+    <span class="date">Jan 10, 2026</span>&nbsp;&middot;&nbsp; 
+  
+  <span itemprop="description">Some fun hacking and a nice first exposure to this space</span>
+</div>
+
+<div class="article" itemprop="mainContentOfPage"><div style="text-align: center;">
+<img src="/static/posts/2026-02-01_hf_agents_course/cert.webp" />
+</div>
+
+<p>I don&rsquo;t know about &ldquo;excellence&rdquo; with my score of 70, but hey, I did it. It was my first AI-focused project, as opposed to using AI in software development. The final assignment was indeed an actual project: <a href="https://huggingface.co/learn/agents-course/unit4/introduction">build out a basic template into an agent that can answer questions</a> from the <a href="https://huggingface.co/spaces/gaia-benchmark/leaderboard">GAIA benchmark</a>.</p>
+
+<p>My <a href="https://huggingface.co/spaces/jugglingbits/Final_Assignment_Template/tree/main">submission is here</a>.</p>
+
+<p>The task was simple enough: your agent gets 20 questions in natural language, and needs to answer them with an exact (string-matching) factual answer. The first question, for instance, is</p>
+
+<blockquote>
+<p><em>How many studio albums were published by Mercedes Sosa between 2000 and 2009 (included)? You can use the latest 2022 version of english wikipedia.</em></p>
+</blockquote>
+
+<p>A side remark: while I think that&rsquo;s a really interesting and relevant challenge, one can debate how agentic it is. Answering questions is what LLMs do. This agent doesn&rsquo;t effect any changes in the real world. I&rsquo;m fine calling it an agent, though, because we need to use tools to be successful in this challenge, and the AI decides which ones to use. The agent can also interpret the LLM&rsquo;s output and decide to ask follow-up questions, or try a different approach. That&rsquo;s the autonomy it has. Anyway, &ldquo;agent&rdquo; is the hot term of the season, so let&rsquo;s accept it and move on.</p>
+
+<p>The Hugging Face template is a Python program that can retrieve the questions, give them to the agent, and submit the results, so the boilerplate is mostly taken care of. I added the option to answer only the first N questions so we don&rsquo;t need to wait for all of them while the baby agent can&rsquo;t answer any yet.</p>
+
+<p>For the agent framework, I went with <a href="https://huggingface.co/docs/smolagents/index">smolagents</a>. <a href="https://github.com/langchain-ai/langgraph">LangGraph</a> seems to be the industry standard but I liked the idea of sticking with something small and simple. Both are covered in the course. It went pretty well, except at the beginning where I got confused about which agent class to use. <code>CodeAgent</code> was the answer. Other than that, the docs are good, especially the tutorials such as <em>Building good agents</em>.</p>
+
+<p>For the model, I experimented with different ones and built a way to select one via an environment variable:</p>
+
+<pre><code class="language-python">provider_configs = {
+    &quot;anthropic&quot;: (&quot;Anthropic&quot;, &quot;ANTHROPIC_MODEL&quot;, &quot;claude-sonnet-4-5-20250929&quot;, &quot;ANTHROPIC_API_KEY&quot;, None),
+    &quot;gemini&quot;: (&quot;Google Gemini&quot;, &quot;GEMINI_MODEL&quot;, &quot;gemini/gemini-2.5-pro&quot;, &quot;GEMINI_API_KEY&quot;, None),
+    &quot;ollama&quot;: (&quot;Ollama&quot;, &quot;OLLAMA_MODEL&quot;, &quot;ollama_chat/deepseek-r1:70b&quot;, None, &quot;OLLAMA_API_BASE&quot;),
+}
+</code></pre>
+
+<p><code>deepseek-r1:70b</code> running locally via Ollama did really well, but in the end I used Gemini because it can natively watch and understand videos given a YouTube URL, which at least one question required.</p>
+
+<p>The meat of the agent is then essentially this, and the tools referenced here:</p>
+
+<pre><code class="language-python">self.agent = CodeAgent(tools=[DuckDuckGoSearchTool(),
+                                BrowserLikeVisitTool(),
+                                fetch_wikipedia_page,
+                                fetch_wikipedia_sections,
+                                fetch_wikipedia_section,
+                                youtube_visual_analysis_tool],
+                        model=model,
+                        description=&quot;smolagents CodeAgent with DuckDuckGo, &quot;
+                            &quot;Wikipedia, YouTube visual analysis, and base tools&quot;,
+                        instructions=instructions,
+                        additional_authorized_imports=[
+                            &quot;ddgs&quot;,
+                            &quot;markdownify&quot;,
+                            &quot;requests&quot;,
+                            &quot;pandas&quot;,
+                            &quot;io&quot;,        # For BytesIO to handle file bytes
+                            &quot;openpyxl&quot;,  # For Excel file support
+                            &quot;PIL&quot;,       # For image processing
+                        ],
+                        planning_interval=1)
+</code></pre>
+
+<p>Tell the agent what tools it can use and give it <a href="https://huggingface.co/spaces/jugglingbits/Final_Assignment_Template/blob/main/app.py#L60">additional instructions</a>. The instructions are, in my case, simply a hard-coded text of about 400 words. They explain two things: how to use each tool and how to formulate the response. A detailed step-by-step guide was necessary for most tools.</p>
+
+<p>The tools themselves I wrote with heavy Claude Code support - it is an AI challenge after all. Given that I&rsquo;m not too fluent in Python or Wikipedia internals, that was invaluable.</p>
+
+<p>And that&rsquo;s it. 1,500 lines of Python to answer 70% of the questions. Some takeaways:</p>
+
+<ul>
+<li>If you have the RAM, DeepSeek&rsquo;s models on Ollama are pretty good. Save your credits.</li>
+<li>Giving the agent small, focused <a href="https://huggingface.co/docs/smolagents/tutorials/tools">tools</a> is an amazing, relatively low-cost way to enhance its functionality. Just describe clearly how and when to use the tool.</li>
+<li>Iteration speed can be limiting. DeepSeek on Ollama is really slow, and the agent can use the LLM many times to answer a question. I wish I had invested earlier in the ability to run it only on certain questions.</li>
+</ul>
+</div>
+
+
+
+	</div>
+</body>
+
+</html>
