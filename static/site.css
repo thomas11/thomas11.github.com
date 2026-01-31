@@ -69,7 +69,7 @@ only screen and (max-device-width: 8in)
 }
 
 code {
-    font-size: 1.1em;
+    font-size: 1em;
     border: 1px solid #ddd;
     padding: 0 .2em;
 }
